@@ -1,0 +1,29 @@
+/* Global variables */
+:root {
+  --base-font-size: 1rem;
+  --base-font-family: 'Inter';
+  --body-line-height: 1.75;
+  --heading-line-height: 1.25;
+
+  --heading-01: 2.027rem;
+  --heading-02: 1.802rem;
+  --heading-03: 1.602rem;
+  --heading-04: 1.424rem;
+  --heading-05: 1.266rem;
+  --heading-06: 1.125rem;
+  --body-01: 1rem;
+  --body-02: 0.889rem;
+  --caption: 0.79rem;
+  --footnote: 0.702rem;
+  --legal: 0.624rem;
+
+  --spacing-2xs: 0.125rem; // 2px
+  --spacing-xs: 0.25rem; // 4px
+  --spacing-sm: 0.5rem; // 8px
+  --spacing-md: 0.75rem; // 12px
+  --spacing-lg: 1rem; // 16px
+  --spacing-xl: 1.5rem; // 24px
+  --spacing-2xl: 2rem; // 32px
+  --spacing-3xl: 2.5rem; // 40px
+  --spacing-4xl: 3rem; // 48px
+}
