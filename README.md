@@ -9,7 +9,7 @@ This is an accessibility plugin for Figma to help designers and developers captu
   ```
 ## Development
 Import manifest.json into Figma to begin plugin development.
-Configure your Figma [manifest.json](https://www.figma.com/plugin-docs/manifest/) to start development.
+Learn more about Figma [manifest.json](https://www.figma.com/plugin-docs/manifest/) to start development.
   ```bash
   npm run dev 
   ```
