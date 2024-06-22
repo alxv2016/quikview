@@ -1,6 +1,6 @@
 /* https://github.com/tenon-io/wcag-as-json/blob/master/wcag.json */
 
-export interface RootObject {
+export interface Wcag22 {
   ref_id: string;
   title: string;
   description: string;
