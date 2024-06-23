@@ -165,7 +165,6 @@ hr {
   height: 1px;
 }
 
-input,
 textarea {
   display: block;
   border: 0;
@@ -186,16 +185,6 @@ textarea {
   }
 }
 
-input[type='range'] {
-  border: none;
-  &:active,
-  &:focus-visible {
-    outline: none;
-    box-shadow: none;
-  }
-}
-
-input::placeholder,
 textarea::placeholder {
   color: var(--figma-color-text-disabled);
 }
@@ -221,10 +210,6 @@ textarea::-webkit-scrollbar-thumb {
   border-radius: 8px;
 }
 
-label ~ input[type='text'],
-label ~ input[type='search'],
-label ~ input,
-label ~ .input,
 label ~ textarea,
 label ~ .combobox {
   margin-top: var(--spacing-xs);
