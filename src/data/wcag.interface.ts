@@ -1,6 +1,6 @@
 /* https://github.com/tenon-io/wcag-as-json/blob/master/wcag.json */
 
-export interface Wcag22 {
+export interface Critiera {
   ref_id: string;
   title: string;
   description: string;
@@ -14,7 +14,7 @@ export interface Guideline {
   description: string;
   url: string;
   references: Reference[];
-  success_criteria: Successcriterion[];
+  success_criteria?: Successcriterion[];
 }
 
 export interface Successcriterion {
@@ -22,10 +22,11 @@ export interface Successcriterion {
   title: string;
   description: string;
   url: string;
-  level: string;
-  special_cases: Specialcase[] | null;
-  notes: Note[] | null;
+  level?: string;
+  special_cases?: Specialcase[] | null;
+  notes?: Note[] | null;
   references: Reference[];
+  tags?: string[];
 }
 
 export interface Note {
