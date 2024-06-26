@@ -1,23 +1,23 @@
 import {Fragment, useState, useEffect, useRef, useMemo} from 'react';
 import Fuse from 'fuse.js';
 import Input from '../components/input';
-import {Guideline, Critiera, Successcriterion} from '../data/wcag.interface';
+import {Successcriterion} from '../data/wcag.interface';
 import './search.scss';
 
 interface SearchProps {
   data: Successcriterion[];
   keys: any[];
+  placeholder: string;
 }
-function Search({data, keys}: SearchProps): JSX.Element {
+function Search({data, keys, placeholder}: SearchProps): JSX.Element {
   const [query, setQuery] = useState('');
   const [debouncedQuery, setDebouncedQuery] = useState(query);
   const [results, setResults] = useState<Successcriterion[] | null>(null);
-  const [announcement, setAnnouncement] = useState('');
 
   const [isFocused, setIsFocused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const resultsRef = useRef<HTMLUListElement>(null);
+  const listboxRef = useRef<HTMLUListElement>(null);
 
   // Setup fuse keywords
   const fuse = useMemo(
@@ -28,23 +28,7 @@ function Search({data, keys}: SearchProps): JSX.Element {
       }),
     [data, keys]
   );
-
-  console.log('index', activeIndex);
-
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      if (results) {
-        setAnnouncement(
-          results.length === 0 ? 'No results found' : `${results.length} result${results.length > 1 ? 's' : ''} found`
-        );
-      }
-    }, 300); // Debounce period
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [results]);
-
+  // debounce search query
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedQuery(query);
@@ -135,10 +119,7 @@ function Search({data, keys}: SearchProps): JSX.Element {
   };
 
   return (
-    <div>
-      <div role="status" aria-atomic="true" aria-live="polite">
-        <p>{announcement}</p>
-      </div>
+    <div className="wcag-search">
       <Input
         ref={searchInputRef}
         id="autocomplete-input"
@@ -150,7 +131,7 @@ function Search({data, keys}: SearchProps): JSX.Element {
         onBlur={handleBlur}
         autoComplete="off"
         name="input-autocomplete"
-        placeholder="Search something"
+        placeholder={placeholder}
         role="combobox"
         aria-expanded={results ? true : false}
         aria-owns="autocomplete-listbox"
@@ -160,44 +141,32 @@ function Search({data, keys}: SearchProps): JSX.Element {
       ></Input>
       <Fragment>
         {results && (
-          <ul id="autocomplete-listbox" role="listbox" aria-labelledby="autocomplete-input">
+          <ul
+            ref={listboxRef}
+            className="wcag-search__listbox"
+            id="autocomplete-listbox"
+            role="listbox"
+            aria-labelledby="autocomplete-input"
+          >
             {results.map((result, index) => (
               <li
                 key={index}
                 id={`result-${index}`}
                 role="option"
-                className={activeIndex === index ? 'active' : ''}
+                className={activeIndex === index ? 'wcag-list-item wcag-list-item--active' : 'wcag-list-item'}
                 onClick={() => handleResultClick(result)}
                 onMouseDown={(e) => e.preventDefault()}
                 aria-selected={activeIndex === index}
                 aria-posinset={index}
                 aria-setsize={results.length}
               >
-                <span>{result.title}</span>
+                <span className="wcag-list-item__label">{result.title}</span>
               </li>
             ))}
-            {results?.length === 0 && <li>No results found</li>}
+            {results?.length === 0 && <li className="wcag-list-item-no-results">No results found</li>}
           </ul>
         )}
       </Fragment>
-      {/* {isFocused && results!.length > 0 && (
-        <ul id="autocomplete-list" role="listbox" ref={resultsRef}>
-          {results!.map((result, index) => (
-            <li
-              key={index}
-              id={`result-${index}`}
-              role="option"
-              aria-selected={activeIndex === index}
-              onClick={() => handleResultClick(result)}
-              onMouseDown={(e) => e.preventDefault()}
-              className={activeIndex === index ? 'active' : ''}
-            >
-              <strong>{result.title}</strong> - {result.description}
-              <small>Tags: {result.guidelines.map(tag => `${tag.title} (${tag.description})`)}</small>
-            </li>
-          ))}
-        </ul>
-      )} */}
     </div>
   );
 }

@@ -2,7 +2,6 @@ import {useEffect, useState} from 'react';
 import {Critiera, Guideline, Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
 import Search from './components/search';
-import Input from './components/input';
 
 export default function Plugin() {
   // window.onmessage = (e) => console.log('UI LOG', e.data.pluginMessage);
@@ -56,11 +55,9 @@ export default function Plugin() {
   const [data, setData] = useState<Successcriterion[]>(successCriteriaDataset);
   const keys = ['ref_id', 'tags', 'title', 'level'];
 
-  console.log(data);
-
   return (
     <main>
-      <Search data={data} keys={keys} />
+      <Search data={data} keys={keys} placeholder="Search WCAG 2.2" />
     </main>
   );
 }

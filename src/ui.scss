@@ -1,3 +1,7 @@
 @use './reset';
 @use './variables';
 @use './figma-ui';
+
+main {
+  padding: var(--spacing-lg);
+}
