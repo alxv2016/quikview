@@ -8,8 +8,9 @@ interface SearchProps {
   data: Successcriterion[];
   keys: any[];
   placeholder: string;
+  setUserResult: (result: Successcriterion) => void;
 }
-function Search({data, keys, placeholder}: SearchProps): JSX.Element {
+function Search({data, keys, placeholder, setUserResult}: SearchProps): JSX.Element {
   const [query, setQuery] = useState('');
   const [debouncedQuery, setDebouncedQuery] = useState(query);
   const [results, setResults] = useState<Successcriterion[] | null>(null);
@@ -117,6 +118,7 @@ function Search({data, keys, placeholder}: SearchProps): JSX.Element {
 
   const handleResultClick = (result: Successcriterion) => {
     setQuery(result.title);
+    setUserResult(result);
     if (searchInputRef.current) {
       searchInputRef.current.focus();
       setActiveIndex(-1);
@@ -124,12 +126,14 @@ function Search({data, keys, placeholder}: SearchProps): JSX.Element {
         setResults(null);
       }, 200);
     }
-    console.log('Clicked result', query);
   };
 
-  // const handleBlur = () => {
-  //   setTimeout(() => setIsFocused(false), 140);
-  // };
+  const handleBlur = () => {
+    setActiveIndex(-1);
+    setTimeout(() => {
+      setResults(null);
+    }, 200);
+  };
 
   const renderResults = results?.map((result: Successcriterion, index: number) => {
     return (
@@ -162,7 +166,7 @@ function Search({data, keys, placeholder}: SearchProps): JSX.Element {
         search
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
-        // onBlur={handleBlur}
+        onBlur={handleBlur}
         autoComplete="off"
         name="input-autocomplete"
         placeholder={placeholder}

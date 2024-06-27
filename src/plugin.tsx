@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {Critiera, Guideline, Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
 import Search from './components/search';
+import {SearchContext} from './components/searchContext';
 
 export default function Plugin() {
   // window.onmessage = (e) => console.log('UI LOG', e.data.pluginMessage);
@@ -25,28 +26,28 @@ export default function Plugin() {
     return result;
   }
 
-  function extractGuidelines(wcagData: Critiera[]): Guideline[] {
-    let result: Guideline[] = [];
+  // function extractGuidelines(wcagData: Critiera[]): Guideline[] {
+  //   let result: Guideline[] = [];
 
-    function traverse(node: any): void {
-      if (Array.isArray(node)) {
-        node.forEach((item) => traverse(item));
-      } else if (typeof node === 'object' && node !== null) {
-        if (node.hasOwnProperty('guidelines')) {
-          result = result.concat(
-            node.guidelines.map((guideline: Guideline) => {
-              const {success_criteria, ...rest} = guideline;
-              return rest;
-            })
-          );
-        }
-        Object.values(node).forEach((value) => traverse(value));
-      }
-    }
+  //   function traverse(node: any): void {
+  //     if (Array.isArray(node)) {
+  //       node.forEach((item) => traverse(item));
+  //     } else if (typeof node === 'object' && node !== null) {
+  //       if (node.hasOwnProperty('guidelines')) {
+  //         result = result.concat(
+  //           node.guidelines.map((guideline: Guideline) => {
+  //             const {success_criteria, ...rest} = guideline;
+  //             return rest;
+  //           })
+  //         );
+  //       }
+  //       Object.values(node).forEach((value) => traverse(value));
+  //     }
+  //   }
 
-    traverse(wcagData);
-    return result;
-  }
+  //   traverse(wcagData);
+  //   return result;
+  // }
 
   // const guideLines = extractGuidelines(wcagData);
   const successCriteriaDataset = extractSuccessCriteria(wcagData);
@@ -54,10 +55,13 @@ export default function Plugin() {
 
   const [data, setData] = useState<Successcriterion[]>(successCriteriaDataset);
   const keys = ['ref_id', 'tags', 'title', 'level'];
+  const [userResult, setUserResult] = useState<Successcriterion | null>(null);
 
   return (
-    <main>
-      <Search data={data} keys={keys} placeholder="Search WCAG 2.2" />
-    </main>
+    <SearchContext.Provider value={userResult}>
+      <main>
+        <Search data={data} keys={keys} placeholder="Search WCAG 2.2" setUserResult={setUserResult} />
+      </main>
+    </SearchContext.Provider>
   );
 }
