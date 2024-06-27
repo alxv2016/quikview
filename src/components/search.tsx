@@ -2,6 +2,7 @@ import {Fragment, useState, useEffect, useRef, useMemo} from 'react';
 import Fuse from 'fuse.js';
 import Input from '../components/input';
 import {Successcriterion} from '../data/wcag.interface';
+import useDebounce from './useDebounce';
 import './search.scss';
 
 interface SearchProps {
@@ -12,10 +13,8 @@ interface SearchProps {
 }
 function Search({data, keys, placeholder, setUserResult}: SearchProps): JSX.Element {
   const [query, setQuery] = useState('');
-  const [debouncedQuery, setDebouncedQuery] = useState(query);
   const [results, setResults] = useState<Successcriterion[] | null>(null);
-
-  // const [isFocused, setIsFocused] = useState(false);
+  const debouncedQuery = useDebounce(query, 100);
   const [activeIndex, setActiveIndex] = useState(-1);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const listboxRef = useRef<HTMLUListElement>(null);
@@ -29,16 +28,6 @@ function Search({data, keys, placeholder, setUserResult}: SearchProps): JSX.Elem
       }),
     [data, keys]
   );
-  // debounce search query
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedQuery(query);
-    }, 100);
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [query]);
 
   useEffect(() => {
     if (debouncedQuery) {
@@ -51,7 +40,6 @@ function Search({data, keys, placeholder, setUserResult}: SearchProps): JSX.Elem
 
   useEffect(() => {
     if (activeIndex === -1) return;
-
     if (listboxRef.current) {
       listboxRef.current.children[activeIndex].scrollIntoView({block: 'center'});
     }
@@ -86,31 +74,18 @@ function Search({data, keys, placeholder, setUserResult}: SearchProps): JSX.Elem
         }
         break;
       case 'Enter':
-        if (activeIndex >= 0) {
-          e.preventDefault();
-          setQuery(results[activeIndex].title);
-          setActiveIndex(-1);
-          // NOTE: should find a way to clear results and prevent Fuse to run another search
-          // on selected keyboards, this doesn't prevent that and Fuse will still run a search to just be cleared.
-          setTimeout(() => {
-            setResults(null);
-          }, 200);
-        }
-        break;
       case ' ':
         if (activeIndex >= 0) {
           e.preventDefault();
-          setQuery(results[activeIndex].title);
-          setActiveIndex(-1);
-          setTimeout(() => {
-            setResults(null);
-          }, 200);
+          // NOTE: should find a way to clear results and prevent Fuse to run another search
+          // on selected keyboards, this doesn't prevent that and Fuse will still run a search to just be cleared.
+          handleResultClick(results[activeIndex]);
         }
         break;
       case 'Escape':
+        setActiveIndex(-1);
         setResults(null);
         break;
-
       default:
         break;
     }
