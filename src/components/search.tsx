@@ -14,7 +14,7 @@ function Search({data, keys, placeholder}: SearchProps): JSX.Element {
   const [debouncedQuery, setDebouncedQuery] = useState(query);
   const [results, setResults] = useState<Successcriterion[] | null>(null);
 
-  const [isFocused, setIsFocused] = useState(false);
+  // const [isFocused, setIsFocused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const listboxRef = useRef<HTMLUListElement>(null);
@@ -48,29 +48,40 @@ function Search({data, keys, placeholder}: SearchProps): JSX.Element {
     }
   }, [debouncedQuery, fuse]);
 
+  useEffect(() => {
+    if (activeIndex === -1) return;
+
+    if (listboxRef.current) {
+      listboxRef.current.children[activeIndex].scrollIntoView({block: 'center'});
+    }
+  }, [activeIndex]);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
     setActiveIndex(-1);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (!results) return;
+    if (!results || results.length === 0) return;
 
     switch (e.key) {
       case 'ArrowDown':
         e.preventDefault();
         // Move the selection to the next item in the list
         // (prevIndex + 1) % results.length ensures that after the last item, it wraps back to the first item
-        if (results && results.length > 0) {
-          setActiveIndex((prevIndex) => (prevIndex + 1) % results.length);
+        if (results.length > 0) {
+          const nextIndex = (activeIndex + 1) % results.length;
+          setActiveIndex(nextIndex);
+          console.log(activeIndex);
         }
         break;
       case 'ArrowUp':
         e.preventDefault();
         // Move the selection to the previous item in the list
         // (prevIndex - 1 + results.length) % results.length ensures that before the first item, it wraps back to the last item
-        if (results && results.length > 0) {
-          setActiveIndex((prevIndex) => (prevIndex - 1 + results.length) % results.length);
+        if (results.length > 0) {
+          const prevIndex = (activeIndex - 1 + results.length) % results.length;
+          setActiveIndex(prevIndex);
         }
         break;
       case 'Enter':
@@ -106,17 +117,41 @@ function Search({data, keys, placeholder}: SearchProps): JSX.Element {
 
   const handleResultClick = (result: Successcriterion) => {
     setQuery(result.title);
-    setResults(null);
     if (searchInputRef.current) {
       searchInputRef.current.focus();
       setActiveIndex(-1);
+      setTimeout(() => {
+        setResults(null);
+      }, 200);
     }
     console.log('Clicked result', query);
   };
 
-  const handleBlur = () => {
-    setTimeout(() => setIsFocused(false), 100);
-  };
+  // const handleBlur = () => {
+  //   setTimeout(() => setIsFocused(false), 140);
+  // };
+
+  const renderResults = results?.map((result: Successcriterion, index: number) => {
+    return (
+      <li
+        key={index}
+        id={`result-${index}`}
+        role="option" // Ensure each item has role="option"
+        className={activeIndex === index ? 'wcag-list-item wcag-list-item--active' : 'wcag-list-item'}
+        onClick={() => handleResultClick(result)}
+        onMouseDown={(e) => e.preventDefault()}
+        aria-selected={activeIndex === index}
+        aria-posinset={index + 1} // Indexes start from 1 in aria-posinset
+        aria-setsize={results.length}
+      >
+        <div className="wcag-list-item__meta">
+          <span className="wcag-success-criteria">{result.ref_id}</span>
+          <span className="wcag-label">{result.title}</span>
+        </div>
+        <span className="wcag-level">{result.level}</span>
+      </li>
+    );
+  });
 
   return (
     <div className="wcag-search">
@@ -126,9 +161,8 @@ function Search({data, keys, placeholder}: SearchProps): JSX.Element {
         value={query}
         search
         onChange={handleInputChange}
-        onFocus={() => setIsFocused(true)}
         onKeyDown={handleKeyDown}
-        onBlur={handleBlur}
+        // onBlur={handleBlur}
         autoComplete="off"
         name="input-autocomplete"
         placeholder={placeholder}
@@ -148,21 +182,7 @@ function Search({data, keys, placeholder}: SearchProps): JSX.Element {
             role="listbox"
             aria-labelledby="autocomplete-input"
           >
-            {results.map((result, index) => (
-              <li
-                key={index}
-                id={`result-${index}`}
-                role="option"
-                className={activeIndex === index ? 'wcag-list-item wcag-list-item--active' : 'wcag-list-item'}
-                onClick={() => handleResultClick(result)}
-                onMouseDown={(e) => e.preventDefault()}
-                aria-selected={activeIndex === index}
-                aria-posinset={index}
-                aria-setsize={results.length}
-              >
-                <span className="wcag-list-item__label">{result.title}</span>
-              </li>
-            ))}
+            {renderResults}
             {results?.length === 0 && <li className="wcag-list-item-no-results">No results found</li>}
           </ul>
         )}

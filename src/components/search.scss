@@ -21,6 +21,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-size: var(--legal);
   padding: 0 var(--spacing-sm);
   background-color: transparent;
@@ -40,8 +41,26 @@
     color: var(--figma-color-text-onbrand);
     box-shadow: none;
   }
+
+  &__meta {
+    position: relative;
+  }
 }
 
+.wcag-level {
+  position: relative;
+  min-width: 32px;
+  color: var(--figma-color-text-disabled);
+}
+
+.wcag-success-criteria {
+  position: relative;
+  color: var(--figma-color-text-disabled);
+}
+
+.wcag-success-criteria ~ .wcag-label {
+  margin-left: var(--spacing-sm);
+}
 .wcag-list-item.wcag-list-item--active {
   // background-color: var(--figma-color-bg-brand);
   box-shadow: inset 0 0 0 2px hsla(204, 96%, 54%, 100%);
