@@ -1,6 +1,5 @@
-import {Fragment, useState, useEffect, useRef, useMemo} from 'react';
+import {useState, useEffect, useRef, useMemo} from 'react';
 import Fuse from 'fuse.js';
-import Input from '../components/input';
 import {Successcriterion} from '../data/wcag.interface';
 import useDebounce from './useDebounce';
 import './search.scss';
@@ -10,14 +9,16 @@ interface SearchProps {
   keys: any[];
   placeholder: string;
   setUserResult: (result: Successcriterion) => void;
+  onResultsChange: (result: Successcriterion[] | null) => void;
 }
-function Search({data, keys, placeholder, setUserResult}: SearchProps): JSX.Element {
+function Search({data, keys, placeholder, setUserResult, onResultsChange}: SearchProps): JSX.Element {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<Successcriterion[] | null>(null);
   const debouncedQuery = useDebounce(query, 100);
   const [activeIndex, setActiveIndex] = useState(-1);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const listboxRef = useRef<HTMLUListElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   // Setup fuse keywords
   const fuse = useMemo(
@@ -33,8 +34,10 @@ function Search({data, keys, placeholder, setUserResult}: SearchProps): JSX.Elem
     if (debouncedQuery) {
       const result = fuse.search(debouncedQuery).map(({item}) => item);
       setResults(result);
+      onResultsChange(result);
     } else {
-      setResults(null);
+      setResults(results);
+      onResultsChange(results);
     }
   }, [debouncedQuery, fuse]);
 
@@ -48,6 +51,10 @@ function Search({data, keys, placeholder, setUserResult}: SearchProps): JSX.Elem
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
     setActiveIndex(-1);
+    if (e.target.value === '') {
+      setActiveIndex(-1);
+      setResults(null);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -58,19 +65,22 @@ function Search({data, keys, placeholder, setUserResult}: SearchProps): JSX.Elem
         e.preventDefault();
         // Move the selection to the next item in the list
         // (prevIndex + 1) % results.length ensures that after the last item, it wraps back to the first item
-        if (results.length > 0) {
-          const nextIndex = (activeIndex + 1) % results.length;
+        if (results.length > 0 && activeIndex < results.length - 1) {
+          // const nextIndex = (activeIndex + 1) % results.length;
+          const nextIndex = activeIndex + 1;
           setActiveIndex(nextIndex);
-          console.log(activeIndex);
         }
         break;
       case 'ArrowUp':
         e.preventDefault();
         // Move the selection to the previous item in the list
         // (prevIndex - 1 + results.length) % results.length ensures that before the first item, it wraps back to the last item
-        if (results.length > 0) {
-          const prevIndex = (activeIndex - 1 + results.length) % results.length;
+        if (results.length > 0 && activeIndex > 0) {
+          // const prevIndex = (activeIndex - 1 + results.length) % results.length;
+          const prevIndex = activeIndex - 1;
           setActiveIndex(prevIndex);
+        } else if (results.length > 0 && activeIndex == 0) {
+          setActiveIndex(-1);
         }
         break;
       case 'Enter':
@@ -99,7 +109,7 @@ function Search({data, keys, placeholder, setUserResult}: SearchProps): JSX.Elem
       setActiveIndex(-1);
       setTimeout(() => {
         setResults(null);
-      }, 200);
+      }, 100);
     }
   };
 
@@ -115,13 +125,13 @@ function Search({data, keys, placeholder, setUserResult}: SearchProps): JSX.Elem
       <li
         key={index}
         id={`result-${index}`}
-        role="option" // Ensure each item has role="option"
+        role="option"
         className={activeIndex === index ? 'wcag-list-item wcag-list-item--active' : 'wcag-list-item'}
-        onClick={() => handleResultClick(result)}
-        onMouseDown={(e) => e.preventDefault()}
         aria-selected={activeIndex === index}
         aria-posinset={index + 1} // Indexes start from 1 in aria-posinset
         aria-setsize={results.length}
+        onClick={() => handleResultClick(result)}
+        onMouseDown={(e) => e.preventDefault()}
       >
         <div className="wcag-list-item__meta">
           <span className="wcag-success-criteria">{result.ref_id}</span>
@@ -133,39 +143,43 @@ function Search({data, keys, placeholder, setUserResult}: SearchProps): JSX.Elem
   });
 
   return (
-    <div className="wcag-search">
-      <Input
-        ref={searchInputRef}
-        id="autocomplete-input"
+    <div className="form-control wcag-search">
+      <input
+        ref={inputRef}
+        id="combobox-input"
         value={query}
-        search
+        className="input--search"
+        role="combobox"
+        aria-autocomplete="list"
+        aria-expanded={results ? true : false}
+        aria-controls="listbox"
+        aria-activedescendant={activeIndex >= 0 ? `result-${activeIndex}` : ''}
+        placeholder={placeholder}
+        autoComplete="off"
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
         onBlur={handleBlur}
-        autoComplete="off"
-        name="input-autocomplete"
-        placeholder={placeholder}
-        role="combobox"
-        aria-expanded={results ? true : false}
-        aria-owns="autocomplete-listbox"
-        aria-autocomplete="list"
-        aria-activedescendant={activeIndex >= 0 ? `result-${activeIndex}` : undefined}
-        aria-describedby="autocomplete-hint"
-      ></Input>
-      <Fragment>
-        {results && (
-          <ul
-            ref={listboxRef}
-            className="wcag-search__listbox"
-            id="autocomplete-listbox"
-            role="listbox"
-            aria-labelledby="autocomplete-input"
-          >
-            {renderResults}
-            {results?.length === 0 && <li className="wcag-list-item-no-results">No results found</li>}
-          </ul>
-        )}
-      </Fragment>
+      />
+      <div className="search-icon" aria-hidden="true">
+        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M9.04 9.81A4.362 4.362 0 0 1 2 6.364a4.363 4.363 0 1 1 8.727 0 4.348 4.348 0 0 1-.916 2.676l3.484 3.483-.772.771L9.04 9.81Zm.596-3.446a3.272 3.272 0 1 1-6.544 0 3.272 3.272 0 0 1 6.544 0Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      {results && (
+        <ul id="listbox" ref={listboxRef} className="wcag-search__listbox" role="listbox" aria-label="Search results">
+          {renderResults}
+          {results?.length === 0 && (
+            <li className="wcag-list-item-no-results" aria-hidden="true">
+              No results found
+            </li>
+          )}
+        </ul>
+      )}
     </div>
   );
 }

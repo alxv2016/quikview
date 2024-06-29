@@ -3,6 +3,8 @@ import {Critiera, Guideline, Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
 import Search from './components/search';
 import {SearchContext} from './components/searchContext';
+import Announcer from './components/announcer';
+import LiveAnnouncer from './components/announcer';
 
 export default function Plugin() {
   // window.onmessage = (e) => console.log('UI LOG', e.data.pluginMessage);
@@ -56,11 +58,33 @@ export default function Plugin() {
   const [data, setData] = useState<Successcriterion[]>(successCriteriaDataset);
   const keys = ['ref_id', 'tags', 'title', 'level'];
   const [userResult, setUserResult] = useState<Successcriterion | null>(null);
+  const [announcement, setAnnouncement] = useState('');
+
+  const handleUserResult = (result: Successcriterion) => {
+    setUserResult(result);
+    setAnnouncement(`Selected ${result.title}`);
+  };
+
+  const handleResultsChange = (results: Successcriterion[] | null) => {
+    if (results) {
+      setAnnouncement(`Found ${results.length} results`);
+      if (results.length === 0) {
+        setAnnouncement('No results found');
+      }
+    }
+  };
 
   return (
     <SearchContext.Provider value={userResult}>
+      <Announcer message={announcement}></Announcer>
       <main>
-        <Search data={data} keys={keys} placeholder="Search WCAG 2.2" setUserResult={setUserResult} />
+        <Search
+          data={data}
+          keys={keys}
+          placeholder="Search WCAG 2.2"
+          setUserResult={handleUserResult}
+          onResultsChange={handleResultsChange}
+        />
       </main>
     </SearchContext.Provider>
   );
