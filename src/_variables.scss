@@ -19,6 +19,7 @@
 
   // Colors based on figma root color variables
   --color-text: var(--figma-color-text);
+  --color-text-onbrand: var(--figma-color-text-onbrand);
   --color-text-inverse: var(--figma-color-text-oninverse);
   --color-text-disabled: var(--figma-color-text-disabled);
   --color-text-muted: var(--figma-color-text-tertiary);
@@ -26,8 +27,11 @@
   --color-text-accent: var(--figma-color-text-component);
   --color-text-brand: var(--figma-color-text-brand);
   --color-bg: var(--figma-color-bg);
+  --color-bg-hover: var(--figma-color-bg-hover);
+  --color-bg-brand-hover: var(--figma-color-bg-brand-hover);
   --color-bg-inverse: var(--figma-color-bg-inverse);
   --color-bg-disabled: var(--figma-color-bg-disabled);
+  --color-bg-disabled-secondary: var(--figma-color-bg-disabled-secondary);
   --color-bg-disabled-strong: var(--figma-color-bg-disabled-secondary);
   --color-bg-muted: var(--figma-color-bg-hover);
   --color-bg-brand: var(--figma-color-bg-brand);

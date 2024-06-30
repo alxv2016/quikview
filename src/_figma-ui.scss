@@ -3,7 +3,7 @@ body {
   font-family: var(--base-font-family);
   font-size: var(--base-font-size);
   line-height: var(--body-line-height);
-  color: var(--figma-color-text);
+  color: var(--color-text);
   font-size: var(--footnote);
 }
 
@@ -72,8 +72,8 @@ button {
   align-items: center;
   justify-content: center;
   padding: var(--spacing-sm) var(--spacing-md);
-  background-color: var(--figma-color-bg-brand);
-  color: var(--figma-color-text-onbrand);
+  background-color: var(--color-bg-brand);
+  color: var(--color-text-onbrand);
   border: 1px solid transparent;
   font-size: var(--footnote);
   font-weight: 500;
@@ -83,38 +83,38 @@ button {
   transition: box-shadow 125ms ease;
 
   &:active {
-    background-color: var(--figma-color-bg-brand-hover);
+    background-color: var(--color-bg-brand-hover);
     box-shadow: none;
   }
   &:focus-visible {
-    background-color: var(--figma-color-bg-brand-hover);
+    background-color: var(--color-bg-brand-hover);
     box-shadow: 0 0 0 2px hsla(204, 96%, 54%, 100%);
   }
 
   &.btn-secondary {
     color: var(--figma-color-text);
     background-color: transparent;
-    border: 1px solid var(--figma-color-border-disabled-strong);
+    border: 1px solid var(--color-border-disabled-strong);
     &:focus-visible {
       border: 1px solid transparent;
     }
     &:active {
-      border: 1px solid var(--figma-color-bg-brand);
+      border: 1px solid var(--color-bg-brand);
       box-shadow: 0 0 0 2px hsla(204, 96%, 54%, 100%);
     }
   }
 
   &.btn-icon {
-    color: var(--figma-color-icon);
+    color: var(--color-icon);
     background-color: transparent;
     padding: var(--spacing-sm) var(--spacing-sm);
     border: 1px solid transparent;
     border-radius: 90px;
     &:hover {
-      background-color: var(--figma-color-bg-hover);
+      background-color: var(--color-bg-hover);
     }
     &:focus-visible {
-      background-color: var(--figma-color-bg-hover);
+      background-color: var(--color-bg-hover);
       box-shadow: 0 0 0 2px hsla(204, 96%, 54%, 100%);
     }
     &:active {
@@ -128,12 +128,12 @@ button {
 
   &.btn-settings {
     margin-right: auto;
-    border: 1px solid var(--figma-color-border-disabled-strong);
+    border: 1px solid var(--color-border-disabled-strong);
     &:focus-visible {
       border: 1px solid transparent;
     }
     &:active {
-      border: 1px solid var(--figma-color-bg-brand);
+      border: 1px solid var(--color-bg-brand);
       box-shadow: 0 0 0 2px hsla(204, 96%, 54%, 100%);
     }
   }
@@ -154,11 +154,11 @@ legend {
   font-size: var(--footnote);
   font-weight: 500;
   padding: 0;
-  color: var(--figma-color-text);
+  color: var(--color-text);
 }
 
 hr {
-  background-color: var(--figma-color-border);
+  background-color: var(--color-border);
   width: 100%;
   margin: var(--spacing-xl) 0;
   border: 0;
@@ -171,9 +171,9 @@ textarea {
   font-size: var(--footnote);
   padding: 0 var(--spacing-sm);
   border-radius: 2px;
-  border: 1px solid var(--figma-color-border);
+  border: 1px solid var(--color-border);
   background-color: transparent;
-  color: var(--figma-color-text);
+  color: var(--color-text);
   width: 100%;
   min-height: 32px;
   transition: box-shadow 125ms ease;
@@ -186,7 +186,7 @@ textarea {
 }
 
 textarea::placeholder {
-  color: var(--figma-color-text-disabled);
+  color: var(--color-text-disabled);
 }
 
 textarea {
@@ -205,7 +205,7 @@ textarea::-webkit-scrollbar-track {
 }
 
 textarea::-webkit-scrollbar-thumb {
-  background-color: var(--figma-color-bg-disabled-secondary);
+  background-color: var(--color-bg-disabled-secondary);
   outline: none;
   border-radius: 8px;
 }

@@ -4,9 +4,9 @@ input {
   font-size: var(--footnote);
   padding: 0 var(--spacing-sm);
   border-radius: 2px;
-  border: 1px solid var(--figma-color-border);
+  border: 1px solid var(--color-border);
   background-color: transparent;
-  color: var(--figma-color-text);
+  color: var(--color-text);
   width: 100%;
   min-height: 32px;
   transition: box-shadow 125ms ease;
@@ -29,7 +29,7 @@ input[type='search'] {
 }
 
 input::placeholder {
-  color: var(--figma-color-text-disabled);
+  color: var(--color-text-disabled);
 }
 
 label ~ input[type='text'],
@@ -49,7 +49,7 @@ label ~ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--figma-color-text);
+  color: var(--color-text);
   left: 0;
   top: 0;
 }
@@ -103,14 +103,14 @@ label ~ input {
   border: none;
   border-radius: 0;
   padding-left: 32px;
-  color: var(--figma-color-text-onbrand);
+  color: var(--color-text-onbrand);
 
   &:active,
   &:hover,
   &:focus-visible {
     outline: none;
-    background-color: var(--figma-color-bg-brand);
-    color: var(--figma-color-text-onbrand);
+    background-color: var(--color-bg-brand);
+    color: var(--color-text-onbrand);
     box-shadow: none;
   }
 
@@ -122,12 +122,12 @@ label ~ input {
 .wcag-level {
   position: relative;
   min-width: 32px;
-  color: var(--figma-color-text-disabled);
+  color: var(--color-text-disabled);
 }
 
 .wcag-success-criteria {
   position: relative;
-  color: var(--figma-color-text-disabled);
+  color: var(--color-text-disabled);
 }
 
 .wcag-success-criteria ~ .wcag-label {
@@ -162,5 +162,5 @@ label ~ input {
   border: none;
   border-radius: 0;
   padding-left: 32px;
-  color: var(--figma-color-text-onbrand);
+  color: var(--color-text);
 }
