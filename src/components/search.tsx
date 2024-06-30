@@ -15,6 +15,7 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<Successcriterion[] | null>(null);
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [isFocused, setIsFocused] = useState(false);
   const listboxRef = useRef<HTMLUListElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const debouncedQuery = useDebounce(query, 100);
@@ -35,6 +36,7 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
 
   useEffect(() => {
     inputRef.current?.focus();
+    setIsFocused(true);
   }, [data]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,7 +49,6 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (!results?.length) return;
-
     switch (e.key) {
       case 'ArrowDown':
         e.preventDefault();
@@ -82,15 +83,15 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
 
   const handleResultClick = (result: Successcriterion) => {
     context?.setUserResult?.(result);
-
     if (inputRef.current) {
       setQuery('');
-      inputRef.current.focus();
       handleClose();
+      inputRef.current?.focus();
     }
   };
 
   const handleBlur = () => {
+    setTimeout(() => setIsFocused(false), 100);
     handleClose();
   };
 
@@ -100,6 +101,7 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
   };
 
   const handleFocus = () => {
+    setIsFocused(true);
     if (inputRef.current?.value) {
       const result = debouncedQuery ? fuse.search(debouncedQuery).map(({item}) => item) : null;
       setResults(result);
@@ -159,7 +161,7 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
           />
         </svg>
       </div>
-      {results && (
+      {isFocused && results && (
         <ul id="listbox" ref={listboxRef} className="wcag-search__listbox" role="listbox" aria-label="Search results">
           {renderResults}
           {results?.length === 0 && (
