@@ -7,6 +7,13 @@ import Announcer from './components/announcer';
 import {extractSuccessCriteria} from './utils';
 import ButtonGroup from './components/button-group';
 
+enum FilterType {
+  ALL = 0,
+  LEVEL_A = 1,
+  LEVEL_AA = 2,
+  LEVEL_AAA = 3,
+}
+
 export default function Plugin() {
   // window.onmessage = (e) => console.log('UI LOG', e.data.pluginMessage);
   // parent.postMessage({pluginMessage: `ui.html: ${Date.now()}`}, '*');
@@ -27,7 +34,23 @@ export default function Plugin() {
   };
 
   const handleButtonClick = (selectedIndex: number) => {
-    console.log(`Button ${selectedIndex} clicked`);
+    switch (true) {
+      case selectedIndex === FilterType.ALL:
+        setData(successCriteriaDataset);
+        break;
+      case selectedIndex === FilterType.LEVEL_A:
+        const dataSetA = successCriteriaDataset.filter((item) => item.level === 'A');
+        setData(dataSetA);
+        break;
+      case selectedIndex === FilterType.LEVEL_AA:
+        const dataSetAA = successCriteriaDataset.filter((item) => item.level === 'AA');
+        setData(dataSetAA);
+        break;
+      case selectedIndex === FilterType.LEVEL_AAA:
+        const dataSetAAA = successCriteriaDataset.filter((item) => item.level === 'AAA');
+        setData(dataSetAAA);
+        break;
+    }
   };
 
   return (

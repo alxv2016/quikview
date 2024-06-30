@@ -33,6 +33,10 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
     }
   }, [activeIndex]);
 
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, [data]);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
     setActiveIndex(-1);
@@ -95,6 +99,13 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
     setResults(null);
   };
 
+  const handleFocus = () => {
+    if (inputRef.current?.value) {
+      const result = debouncedQuery ? fuse.search(debouncedQuery).map(({item}) => item) : null;
+      setResults(result);
+    }
+  };
+
   const renderResults = results?.map((result: Successcriterion, index: number) => {
     const {ref_id, title, level} = result;
     return (
@@ -136,6 +147,7 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
         onBlur={handleBlur}
+        onFocus={handleFocus}
       />
       <div className="search-icon" aria-hidden="true">
         <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">

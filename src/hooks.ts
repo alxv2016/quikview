@@ -15,7 +15,7 @@ function useFuse(data: Successcriterion[], keys: any[], threshold: number = 0.2)
   return fuse;
 }
 
-function useDebounce(value: string, delay: number): string {
+function useDebounce(value: string | null, delay: number): string | null {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {
