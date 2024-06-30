@@ -2,10 +2,12 @@ import {useContext, useEffect, useState} from 'react';
 import {Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
 import Search from './components/search';
-import SearchContextProvider, {SearchContext} from './components/searchContext';
+import SearchContextProvider from './components/searchContext';
 import Announcer from './components/announcer';
 import {extractSuccessCriteria} from './utils';
 import ButtonGroup from './components/button-group';
+import ButtonIcon from './components/button-icon';
+import {OverflowIcon} from './components/icons';
 
 enum FilterType {
   ALL = 0,
@@ -63,11 +65,16 @@ export default function Plugin() {
           placeholder="Search for a success criterion"
           onResultsChange={handleResultsChange}
         />
-        <ButtonGroup
-          label="Filter by success level"
-          buttons={['All', 'A', 'AA', 'AAA']}
-          onButtonClick={handleButtonClick}
-        />
+        <div className="filter-toolbar">
+          <ButtonGroup
+            label="Filter by success level"
+            buttons={['All', 'A', 'AA', 'AAA']}
+            onButtonClick={handleButtonClick}
+          />
+          <ButtonIcon label="Settings">
+            <OverflowIcon />
+          </ButtonIcon>
+        </div>
       </main>
     </SearchContextProvider>
   );

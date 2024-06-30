@@ -16,6 +16,7 @@
   --caption: 0.79rem;
   --footnote: 0.702rem;
   --legal: 0.624rem;
+  --fineprint: 0.555rem;
 
   // Colors based on figma root color variables
   --color-text: var(--figma-color-text);
@@ -29,6 +30,7 @@
   --color-bg: var(--figma-color-bg);
   --color-bg-hover: var(--figma-color-bg-hover);
   --color-bg-brand-hover: var(--figma-color-bg-brand-hover);
+  --color-bg-brand-active: var(--figma-color-bg-brand-secondary);
   --color-bg-inverse: var(--figma-color-bg-inverse);
   --color-bg-disabled: var(--figma-color-bg-disabled);
   --color-bg-disabled-secondary: var(--figma-color-bg-disabled-secondary);

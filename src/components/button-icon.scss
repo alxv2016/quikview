@@ -1,0 +1,19 @@
+.button-icon {
+  position: relative;
+  background-color: transparent;
+  color: var(--text-color);
+  width: 32px;
+  height: 32px;
+
+  &:hover {
+    background-color: var(--color-bg-brand);
+    color: var(--color-text-onbrand);
+  }
+  &:active {
+    background-color: var(--color-bg-brand-active);
+  }
+}
+
+.button-icon.button-icon--ghost {
+  border: 1px solid var(--color-border);
+}
