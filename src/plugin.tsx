@@ -5,6 +5,7 @@ import Search from './components/search';
 import SearchContextProvider, {SearchContext} from './components/searchContext';
 import Announcer from './components/announcer';
 import {extractSuccessCriteria} from './utils';
+import ButtonGroup from './components/button-group';
 
 export default function Plugin() {
   // window.onmessage = (e) => console.log('UI LOG', e.data.pluginMessage);
@@ -25,6 +26,10 @@ export default function Plugin() {
     }
   };
 
+  const handleButtonClick = (selectedIndex: number) => {
+    console.log(`Button ${selectedIndex} clicked`);
+  };
+
   return (
     <SearchContextProvider>
       <Announcer message={announcement}></Announcer>
@@ -34,6 +39,11 @@ export default function Plugin() {
           keys={keys}
           placeholder="Search for a success criterion"
           onResultsChange={handleResultsChange}
+        />
+        <ButtonGroup
+          label="Filter by success level"
+          buttons={['All', 'A', 'AA', 'AAA']}
+          onButtonClick={handleButtonClick}
         />
       </main>
     </SearchContextProvider>

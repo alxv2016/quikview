@@ -152,7 +152,7 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
           {renderResults}
           {results?.length === 0 && (
             <li className="wcag-list-item-no-results" aria-hidden="true">
-              No results found
+              No results for "{query}" 🥲
             </li>
           )}
         </ul>

@@ -1,0 +1,25 @@
+.button-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-control ~ .button-group {
+  margin-top: var(--spacing-sm);
+}
+.button-group-btn {
+  padding: var(--spacing-2xs) var(--spacing-sm);
+  font-size: var(--legal);
+  min-width: 36px;
+  background-color: transparent;
+  border: 1px solid var(--figma-color-border);
+  text-transform: uppercase;
+}
+
+.button-group-btn.button-group-btn--active {
+  background-color: #1e1e1e;
+}
+
+.button-group-btn ~ .button-group-btn {
+  margin-left: var(--spacing-sm);
+}
