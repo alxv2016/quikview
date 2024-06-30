@@ -1,6 +1,6 @@
 /* https://github.com/tenon-io/wcag-as-json/blob/master/wcag.json */
 
-export interface Critiera {
+export interface Criterion {
   ref_id: string;
   title: string;
   description: string;

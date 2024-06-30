@@ -1,5 +1,5 @@
 import {useEffect, useRef} from 'react';
-import useDebounce from './useDebounce';
+import {useDebounce} from '../hooks';
 
 interface AnnouncerProps {
   message: string;

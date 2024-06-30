@@ -1,50 +1,35 @@
-import {useState, useEffect, useRef, useMemo} from 'react';
-import Fuse from 'fuse.js';
+import {useState, useEffect, useRef, useMemo, useContext} from 'react';
 import {Successcriterion} from '../data/wcag.interface';
-import useDebounce from './useDebounce';
+import {SearchContext} from './searchContext';
+import {useDebounce, useFuse} from '../hooks';
 import './search.scss';
 
 interface SearchProps {
   data: Successcriterion[];
   keys: any[];
   placeholder: string;
-  setUserResult: (result: Successcriterion) => void;
   onResultsChange: (result: Successcriterion[] | null) => void;
 }
-function Search({data, keys, placeholder, setUserResult, onResultsChange}: SearchProps): JSX.Element {
+
+function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.Element {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<Successcriterion[] | null>(null);
-  const debouncedQuery = useDebounce(query, 100);
   const [activeIndex, setActiveIndex] = useState(-1);
-  const searchInputRef = useRef<HTMLInputElement>(null);
   const listboxRef = useRef<HTMLUListElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  // Setup fuse keywords
-  const fuse = useMemo(
-    () =>
-      new Fuse(data, {
-        keys: keys,
-        threshold: 0.2,
-      }),
-    [data, keys]
-  );
+  const debouncedQuery = useDebounce(query, 100);
+  const context = useContext(SearchContext);
+  const fuse = useFuse(data, keys);
 
   useEffect(() => {
-    if (debouncedQuery) {
-      const result = fuse.search(debouncedQuery).map(({item}) => item);
-      setResults(result);
-      onResultsChange(result);
-    } else {
-      setResults(results);
-      onResultsChange(results);
-    }
+    const result = debouncedQuery ? fuse.search(debouncedQuery).map(({item}) => item) : null;
+    setResults(result);
+    onResultsChange(result);
   }, [debouncedQuery, fuse]);
 
   useEffect(() => {
-    if (activeIndex === -1) return;
-    if (listboxRef.current) {
-      listboxRef.current.children[activeIndex].scrollIntoView({block: 'center'});
+    if (activeIndex !== -1 && listboxRef.current) {
+      listboxRef.current.children[activeIndex]?.scrollIntoView({block: 'center'});
     }
   }, [activeIndex]);
 
@@ -52,31 +37,24 @@ function Search({data, keys, placeholder, setUserResult, onResultsChange}: Searc
     setQuery(e.target.value);
     setActiveIndex(-1);
     if (e.target.value === '') {
-      setActiveIndex(-1);
-      setResults(null);
+      handleClose();
     }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (!results || results.length === 0) return;
+    if (!results?.length) return;
 
     switch (e.key) {
       case 'ArrowDown':
         e.preventDefault();
-        // Move the selection to the next item in the list
-        // (prevIndex + 1) % results.length ensures that after the last item, it wraps back to the first item
         if (results.length > 0 && activeIndex < results.length - 1) {
-          // const nextIndex = (activeIndex + 1) % results.length;
           const nextIndex = activeIndex + 1;
           setActiveIndex(nextIndex);
         }
         break;
       case 'ArrowUp':
         e.preventDefault();
-        // Move the selection to the previous item in the list
-        // (prevIndex - 1 + results.length) % results.length ensures that before the first item, it wraps back to the last item
         if (results.length > 0 && activeIndex > 0) {
-          // const prevIndex = (activeIndex - 1 + results.length) % results.length;
           const prevIndex = activeIndex - 1;
           setActiveIndex(prevIndex);
         } else if (results.length > 0 && activeIndex == 0) {
@@ -87,14 +65,11 @@ function Search({data, keys, placeholder, setUserResult, onResultsChange}: Searc
       case ' ':
         if (activeIndex >= 0) {
           e.preventDefault();
-          // NOTE: should find a way to clear results and prevent Fuse to run another search
-          // on selected keyboards, this doesn't prevent that and Fuse will still run a search to just be cleared.
           handleResultClick(results[activeIndex]);
         }
         break;
       case 'Escape':
-        setActiveIndex(-1);
-        setResults(null);
+        handleClose();
         break;
       default:
         break;
@@ -102,25 +77,26 @@ function Search({data, keys, placeholder, setUserResult, onResultsChange}: Searc
   };
 
   const handleResultClick = (result: Successcriterion) => {
-    setQuery(result.title);
-    setUserResult(result);
-    if (searchInputRef.current) {
-      searchInputRef.current.focus();
-      setActiveIndex(-1);
-      setTimeout(() => {
-        setResults(null);
-      }, 100);
+    context?.setUserResult?.(result);
+
+    if (inputRef.current) {
+      setQuery('');
+      inputRef.current.focus();
+      handleClose();
     }
   };
 
   const handleBlur = () => {
+    handleClose();
+  };
+
+  const handleClose = () => {
     setActiveIndex(-1);
-    setTimeout(() => {
-      setResults(null);
-    }, 200);
+    setResults(null);
   };
 
   const renderResults = results?.map((result: Successcriterion, index: number) => {
+    const {ref_id, title, level} = result;
     return (
       <li
         key={index}
@@ -134,10 +110,11 @@ function Search({data, keys, placeholder, setUserResult, onResultsChange}: Searc
         onMouseDown={(e) => e.preventDefault()}
       >
         <div className="wcag-list-item__meta">
-          <span className="wcag-success-criteria">{result.ref_id}</span>
-          <span className="wcag-label">{result.title}</span>
+          <span className="sr-only">Success criterion</span>
+          <span className="wcag-success-criteria">{ref_id} </span>
+          <span className="wcag-label">{title} </span>
         </div>
-        <span className="wcag-level">{result.level}</span>
+        <span className="sr-only">Level</span> <span className="wcag-level">{level}</span>
       </li>
     );
   });
@@ -151,7 +128,7 @@ function Search({data, keys, placeholder, setUserResult, onResultsChange}: Searc
         className="input--search"
         role="combobox"
         aria-autocomplete="list"
-        aria-expanded={results ? true : false}
+        aria-expanded={!!results}
         aria-controls="listbox"
         aria-activedescendant={activeIndex >= 0 ? `result-${activeIndex}` : ''}
         placeholder={placeholder}
