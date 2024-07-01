@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from 'react';
+import {useContext, useEffect, useRef, useState, MouseEvent} from 'react';
 import {Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
 import Search from './components/search';
@@ -8,6 +8,7 @@ import {extractSuccessCriteria} from './utils';
 import ButtonGroup from './components/button-group';
 import ButtonIcon from './components/button-icon';
 import {OverflowIcon} from './components/icons';
+import BottomSheet from './components/bottom-sheet';
 
 enum FilterType {
   ALL = 0,
@@ -25,6 +26,7 @@ export default function Plugin() {
   const keys = ['ref_id', 'tags', 'title', 'level'];
   const [data, setData] = useState<Successcriterion[]>(successCriteriaDataset);
   const [announcement, setAnnouncement] = useState('');
+  const bottomSheetRef = useRef<HTMLDialogElement>(null);
 
   const handleResultsChange = (results: Successcriterion[] | null) => {
     if (results) {
@@ -55,6 +57,16 @@ export default function Plugin() {
     }
   };
 
+  const toggleBottomSheet = () => {
+    if (!bottomSheetRef.current) return;
+    bottomSheetRef.current.hasAttribute('open') ? bottomSheetRef.current.close() : bottomSheetRef.current.showModal();
+  };
+
+  // const handleClose = (e: MouseEvent<HTMLDialogElement>) => {
+  //   console.log(e);
+  //   // bottomSheetRef.current?.close();
+  // }
+
   return (
     <SearchContextProvider>
       <Announcer message={announcement}></Announcer>
@@ -71,11 +83,14 @@ export default function Plugin() {
             buttons={['All', 'A', 'AA', 'AAA']}
             onButtonClick={handleButtonClick}
           />
-          <ButtonIcon label="Settings">
+          <ButtonIcon label="Settings" onClick={toggleBottomSheet}>
             <OverflowIcon />
           </ButtonIcon>
         </div>
       </main>
+      <BottomSheet ref={bottomSheetRef} toggleBottomSheet={toggleBottomSheet}>
+        <div>Hello</div>
+      </BottomSheet>
     </SearchContextProvider>
   );
 }
