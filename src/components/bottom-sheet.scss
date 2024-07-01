@@ -1,0 +1,82 @@
+.bottom-sheet {
+  width: 100%;
+  max-width: 768px;
+  max-height: 80%;
+  padding: 0;
+  margin: 0;
+  inset: 0;
+  margin-top: auto;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transform: translateY(80px);
+
+  &__content {
+    position: relative;
+    width: 100%;
+    padding: var(--spacing-md);
+  }
+}
+
+.bottom-sheet[open] {
+  animation: open 320ms ease forwards;
+}
+
+.bottom-sheet.animate-fadeout {
+  animation: close 320ms ease forwards;
+}
+
+@keyframes open {
+  from {
+    transform: translateY(80px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes close {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(80px);
+  }
+}
+// dialog::backdrop {
+//   background-color: rgba(0,0,0,0.125);
+// }
+
+// dialog::backdrop {
+//   transition: background-color 320ms ease;
+// }
+
+// html:has(dialog[open]) {
+//   overflow: hidden;
+// }
+
+// dialog:not([open]) {
+//   pointer-events: none;
+//   visibility: hidden;
+// }
+
+// @keyframes fade-in {
+//   from {
+//     display: none;
+//     transform: translateY(-70px);
+//   }
+//   to {
+//     display: block;
+//     transform: translateY(0);
+//   }
+// }
+
+// @keyframes fade-out {
+//   from {
+//     display: block;
+//     transform: translateY(0);
+//   }
+//   to {
+//     display: none;
+//     transform: translateY(-70px);
+//   }
+// }

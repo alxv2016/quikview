@@ -1,20 +1,96 @@
-import {useEffect, useState} from 'react';
-import {Wcag22} from './data/wcag.interface';
+import {useContext, useEffect, useRef, useState, MouseEvent} from 'react';
+import {Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
+import Search from './components/search';
+import SearchContextProvider from './components/searchContext';
+import Announcer from './components/announcer';
+import {extractSuccessCriteria} from './utils';
+import ButtonGroup from './components/button-group';
+import ButtonIcon from './components/button-icon';
+import {OverflowIcon} from './components/icons';
+import BottomSheet from './components/bottom-sheet';
 
-function Plugin() {
-  window.onmessage = (e) => console.log('UI LOG', e.data.pluginMessage);
-  parent.postMessage({pluginMessage: `ui.html: ${Date.now()}`}, '*');
-
-  const [data, setData] = useState<Wcag22[]>(wcagData);
-  console.log(data);
-
-  return (
-    <main>
-      <img src={require('../assets/logo.svg')} />
-      <h2>Rectangle Creator</h2>
-    </main>
-  );
+enum FilterType {
+  ALL = 0,
+  LEVEL_A = 1,
+  LEVEL_AA = 2,
+  LEVEL_AAA = 3,
 }
 
-export default Plugin;
+export default function Plugin() {
+  // window.onmessage = (e) => console.log('UI LOG', e.data.pluginMessage);
+  // parent.postMessage({pluginMessage: `ui.html: ${Date.now()}`}, '*');
+  console.log('App component rendered');
+  const successCriteriaDataset = extractSuccessCriteria(wcagData);
+
+  const keys = ['ref_id', 'tags', 'title', 'level'];
+  const [data, setData] = useState<Successcriterion[]>(successCriteriaDataset);
+  const [announcement, setAnnouncement] = useState('');
+  const bottomSheetRef = useRef<HTMLDialogElement>(null);
+
+  const handleResultsChange = (results: Successcriterion[] | null) => {
+    if (results) {
+      setAnnouncement(`Found ${results.length} results`);
+      if (results.length === 0) {
+        setAnnouncement('No results found');
+      }
+    }
+  };
+
+  const handleButtonClick = (selectedIndex: number) => {
+    switch (true) {
+      case selectedIndex === FilterType.ALL:
+        setData(successCriteriaDataset);
+        break;
+      case selectedIndex === FilterType.LEVEL_A:
+        const dataSetA = successCriteriaDataset.filter((item) => item.level === 'A');
+        setData(dataSetA);
+        break;
+      case selectedIndex === FilterType.LEVEL_AA:
+        const dataSetAA = successCriteriaDataset.filter((item) => item.level === 'AA');
+        setData(dataSetAA);
+        break;
+      case selectedIndex === FilterType.LEVEL_AAA:
+        const dataSetAAA = successCriteriaDataset.filter((item) => item.level === 'AAA');
+        setData(dataSetAAA);
+        break;
+    }
+  };
+
+  const toggleBottomSheet = () => {
+    if (!bottomSheetRef.current) return;
+    bottomSheetRef.current.hasAttribute('open') ? bottomSheetRef.current.close() : bottomSheetRef.current.showModal();
+  };
+
+  // const handleClose = (e: MouseEvent<HTMLDialogElement>) => {
+  //   console.log(e);
+  //   // bottomSheetRef.current?.close();
+  // }
+
+  return (
+    <SearchContextProvider>
+      <Announcer message={announcement}></Announcer>
+      <main>
+        <Search
+          data={data}
+          keys={keys}
+          placeholder="Search for a success criterion"
+          onResultsChange={handleResultsChange}
+        />
+        <div className="filter-toolbar">
+          <ButtonGroup
+            label="Filter by success level"
+            buttons={['All', 'A', 'AA', 'AAA']}
+            onButtonClick={handleButtonClick}
+          />
+          <ButtonIcon label="Settings" onClick={toggleBottomSheet}>
+            <OverflowIcon />
+          </ButtonIcon>
+        </div>
+      </main>
+      <BottomSheet ref={bottomSheetRef} toggleBottomSheet={toggleBottomSheet}>
+        <div>Hello</div>
+      </BottomSheet>
+    </SearchContextProvider>
+  );
+}

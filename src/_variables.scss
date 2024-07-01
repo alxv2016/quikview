@@ -16,6 +16,35 @@
   --caption: 0.79rem;
   --footnote: 0.702rem;
   --legal: 0.624rem;
+  --fineprint: 0.555rem;
+
+  // Colors based on figma root color variables
+  --color-text: var(--figma-color-text);
+  --color-text-onbrand: var(--figma-color-text-onbrand);
+  --color-text-inverse: var(--figma-color-text-oninverse);
+  --color-text-disabled: var(--figma-color-text-disabled);
+  --color-text-muted: var(--figma-color-text-tertiary);
+  --color-text-secondary: var(--figma-color-text-secondary);
+  --color-text-accent: var(--figma-color-text-component);
+  --color-text-brand: var(--figma-color-text-brand);
+  --color-bg: var(--figma-color-bg);
+  --color-bg-hover: var(--figma-color-bg-hover);
+  --color-bg-brand-hover: var(--figma-color-bg-brand-hover);
+  --color-bg-brand-active: var(--figma-color-bg-brand-secondary);
+  --color-bg-inverse: var(--figma-color-bg-inverse);
+  --color-bg-disabled: var(--figma-color-bg-disabled);
+  --color-bg-disabled-secondary: var(--figma-color-bg-disabled-secondary);
+  --color-bg-disabled-strong: var(--figma-color-bg-disabled-secondary);
+  --color-bg-muted: var(--figma-color-bg-hover);
+  --color-bg-brand: var(--figma-color-bg-brand);
+  --color-border: var(--figma-color-border);
+  --color-border-brand: var(--figma-color-border-brand-strong);
+  --color-border-disabled: var(--figma-color-border-disabled);
+  --color-border-disabled-strong: var(--figma-color-border-disabled-strong);
+  --color-icon: var(--figma-color-icon);
+  --color-icon-inverse: var(--figma-color-icon-oninverse);
+  --color-icon-onbrand: var(--figma-color-icon-onbrand);
+  --color-icon-disabled: var(--figma-color-icon-disabled);
 
   --spacing-2xs: 0.125rem; // 2px
   --spacing-xs: 0.25rem; // 4px
