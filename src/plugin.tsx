@@ -1,5 +1,5 @@
 import {useContext, useEffect, useRef, useState, MouseEvent} from 'react';
-import {Successcriterion} from './data/wcag.interface';
+import {Criterion, Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
 import Search from './components/search';
 import SearchContextProvider from './components/searchContext';
@@ -7,8 +7,9 @@ import Announcer from './components/announcer';
 import {extractSuccessCriteria} from './utils';
 import ButtonGroup from './components/button-group';
 import ButtonIcon from './components/button-icon';
-import {OverflowIcon} from './components/icons';
+import {OperableIcon, OverflowIcon, PerceivableIcon, RobustIcon, UnderstandableIcon} from './components/icons';
 import BottomSheet from './components/bottom-sheet';
+import ListItem from './components/list-item';
 
 enum FilterType {
   ALL = 0,
@@ -67,6 +68,55 @@ export default function Plugin() {
   //   // bottomSheetRef.current?.close();
   // }
 
+  const iconMap: {
+    [key: string]: {
+      icon: JSX.Element;
+      color: string;
+      backgroundColor: string;
+      borderColor: string;
+    };
+  } = {
+    Perceivable: {
+      icon: <PerceivableIcon />,
+      color: '#015353',
+      backgroundColor: '#1BC4C4',
+      borderColor: '#98FFFF',
+    },
+    Operable: {
+      icon: <OperableIcon />,
+      color: '#706800',
+      backgroundColor: '#FFEB00',
+      borderColor: '#FFF9B1',
+    },
+    Understandable: {
+      icon: <UnderstandableIcon />,
+      color: '#120263',
+      backgroundColor: '#7B61FF',
+      borderColor: '#9F8DFF',
+    },
+    Robust: {
+      icon: <RobustIcon />,
+      color: '#042A62',
+      backgroundColor: '#18A0FB',
+      borderColor: '#71C6FF',
+    },
+  };
+
+  const renderPOURItems = wcagData.map((item: Criterion, index: number) => {
+    const {icon, color, backgroundColor, borderColor} = iconMap[item.title];
+    return (
+      <li key={index}>
+        <ListItem
+          icon={icon}
+          data={item}
+          iconColor={color}
+          iconBGColor={backgroundColor}
+          iconBorderColor={borderColor}
+        ></ListItem>
+      </li>
+    );
+  });
+
   return (
     <SearchContextProvider>
       <Announcer message={announcement}></Announcer>
@@ -86,6 +136,10 @@ export default function Plugin() {
           <ButtonIcon label="Settings" onClick={toggleBottomSheet}>
             <OverflowIcon />
           </ButtonIcon>
+        </div>
+        <div className="pour">
+          <span className="pour-heading">Explore by POUR</span>
+          <ul className="pour-list">{renderPOURItems}</ul>
         </div>
       </main>
       <BottomSheet ref={bottomSheetRef} toggleBottomSheet={toggleBottomSheet}>

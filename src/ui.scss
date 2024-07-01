@@ -14,3 +14,29 @@ main {
   width: 100%;
   margin-top: var(--spacing-sm);
 }
+
+.pour {
+  position: relative;
+  margin-top: var(--spacing-xl);
+  width: 100%;
+}
+
+.pour-heading {
+  display: block;
+  line-height: var(--ui-line-height);
+  color: var(--color-text-muted);
+  font-size: var(--legal);
+}
+
+.pour-list {
+  position: relative;
+  width: 100%;
+
+  li ~ li {
+    margin-top: var(--spacing-sm);
+  }
+}
+
+.pour-heading ~ .pour-list {
+  margin-top: var(--spacing-sm);
+}
