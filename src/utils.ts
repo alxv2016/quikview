@@ -18,20 +18,21 @@ export function extractSuccessCriteria(dataset: Criterion[]) {
   return result;
 }
 
-export function extractGuidelines(dataset: Criterion[]): Guideline[] {
-  let result: Guideline[] = [];
+export function extractGuidelines(dataset: Guideline[]) {
+  let result: Successcriterion[] = [];
 
   function traverse(node: any): void {
     if (Array.isArray(node)) {
       node.forEach((item) => traverse(item));
     } else if (typeof node === 'object' && node !== null) {
-      if (node.hasOwnProperty('guidelines')) {
-        result = result.concat(
-          node.guidelines.map((guideline: Guideline) => {
-            const {success_criteria, ...rest} = guideline;
-            return rest;
-          })
-        );
+      if (node.hasOwnProperty('success_criteria')) {
+        result = result.concat(node.success_criteria);
+        // result = result.concat(
+        //   node.guidelines.map((guideline: Guideline) => {
+        //     const {success_criteria, ...rest} = guideline;
+        //     return rest;
+        //   })
+        // );
       }
       Object.values(node).forEach((value) => traverse(value));
     }

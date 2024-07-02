@@ -1,4 +1,4 @@
-import {useContext, useEffect, useRef, useState, MouseEvent} from 'react';
+import {useContext, useEffect, useRef, useState, MouseEvent, ReactNode} from 'react';
 import {Criterion, Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
 import Search from './components/search';
@@ -10,6 +10,7 @@ import ButtonIcon from './components/button-icon';
 import {OperableIcon, OverflowIcon, PerceivableIcon, RobustIcon, UnderstandableIcon} from './components/icons';
 import BottomSheet from './components/bottom-sheet';
 import ListItem from './components/list-item';
+import PourList from './components/pour-list';
 
 enum FilterType {
   ALL = 0,
@@ -27,6 +28,7 @@ export default function Plugin() {
   const keys = ['ref_id', 'tags', 'title', 'level'];
   const [data, setData] = useState<Successcriterion[]>(successCriteriaDataset);
   const [announcement, setAnnouncement] = useState('');
+  const [bottomSheetContent, setBottomSheetContent] = useState<ReactNode>(null);
   const bottomSheetRef = useRef<HTMLDialogElement>(null);
 
   const handleResultsChange = (results: Successcriterion[] | null) => {
@@ -67,6 +69,11 @@ export default function Plugin() {
   //   console.log(e);
   //   // bottomSheetRef.current?.close();
   // }
+  const handlePourClick = (item: Criterion) => {
+    console.log(item);
+    setBottomSheetContent(<PourList data={item} />);
+    toggleBottomSheet();
+  };
 
   const iconMap: {
     [key: string]: {
@@ -112,6 +119,7 @@ export default function Plugin() {
           iconColor={color}
           iconBGColor={backgroundColor}
           iconBorderColor={borderColor}
+          onClick={() => handlePourClick(item)}
         ></ListItem>
       </li>
     );
@@ -143,7 +151,7 @@ export default function Plugin() {
         </div>
       </main>
       <BottomSheet ref={bottomSheetRef} toggleBottomSheet={toggleBottomSheet}>
-        <div>Hello</div>
+        {bottomSheetContent}
       </BottomSheet>
     </SearchContextProvider>
   );

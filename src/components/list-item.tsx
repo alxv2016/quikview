@@ -10,10 +10,10 @@ interface ListItemProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   iconBorderColor?: string;
 }
 
-function ListItem({icon, data, iconColor, iconBGColor, iconBorderColor}: ListItemProps): JSX.Element {
+function ListItem({icon, data, iconColor, iconBGColor, iconBorderColor, ...props}: ListItemProps): JSX.Element {
   const {title, description} = data;
   return (
-    <button className="list-item">
+    <button className="list-item" {...props}>
       <div
         className="list-item-icon"
         style={
