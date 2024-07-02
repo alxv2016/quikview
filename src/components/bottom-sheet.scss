@@ -7,6 +7,9 @@
   inset: 0;
   margin-top: auto;
   transform: translateY(100%);
+  border: none;
+  color: currentColor;
+  background-color: var(--color-bg);
 
   &__content {
     position: relative;
@@ -21,6 +24,19 @@
 
 .bottom-sheet.animate-fadeout {
   animation: close 320ms ease forwards;
+}
+
+dialog::backdrop {
+  transition: background-color 320ms ease;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+dialog:not([open]) {
+  pointer-events: none;
+  visibility: hidden;
 }
 
 @keyframes open {
@@ -40,41 +56,3 @@
     transform: translateY(100%);
   }
 }
-// dialog::backdrop {
-//   background-color: rgba(0,0,0,0.125);
-// }
-
-// dialog::backdrop {
-//   transition: background-color 320ms ease;
-// }
-
-// html:has(dialog[open]) {
-//   overflow: hidden;
-// }
-
-// dialog:not([open]) {
-//   pointer-events: none;
-//   visibility: hidden;
-// }
-
-// @keyframes fade-in {
-//   from {
-//     display: none;
-//     transform: translateY(-70px);
-//   }
-//   to {
-//     display: block;
-//     transform: translateY(0);
-//   }
-// }
-
-// @keyframes fade-out {
-//   from {
-//     display: block;
-//     transform: translateY(0);
-//   }
-//   to {
-//     display: none;
-//     transform: translateY(-70px);
-//   }
-// }

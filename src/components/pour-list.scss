@@ -1,4 +1,59 @@
 .pour-list {
+  --pour-accent: #1bc4c4;
   position: relative;
   width: 100%;
+}
+
+.pour-item {
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+
+  &__header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.pour-item-title-group {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.pour-item-overline,
+.pour-item-sc,
+.pour-item-title,
+.pour-item-description {
+  display: block;
+  line-height: var(--ui-line-height);
+}
+
+.pour-item-overline,
+.pour-item-description {
+  font-size: var(--legal);
+}
+
+.pour-item-overline {
+  color: var(--pour-accent);
+}
+
+.pour-item-description,
+.pour-item-sc {
+  color: var(--color-text-muted);
+}
+
+.pour-item-sc ~ .pour-item-title {
+  margin-left: var(--spacing-xs);
+}
+
+.pour-item-overline ~ .pour-item-title-group {
+  margin-top: var(--spacing-2xs);
+}
+
+.pour-item-title-group ~ .pour-item-description {
+  margin-top: var(--spacing-sm);
 }

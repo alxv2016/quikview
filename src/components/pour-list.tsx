@@ -11,10 +11,19 @@ interface PourListProps extends HTMLAttributes<HTMLUListElement> {
 function PourList({data, pourAccent, ...props}: PourListProps): JSX.Element {
   const pourDataset = extractGuidelines(data.guidelines);
   const renderPOURItems = pourDataset.map((item: Successcriterion, index: number) => {
+    const {title, description, ref_id} = item;
     return (
       <li key={index}>
-        {item.title}
-        {item.description}
+        <button className="pour-item">
+          <div className="pour-item__header">
+            <span className="pour-item-overline">{data.title}</span>
+            <div className="pour-item-title-group">
+              <span className="pour-item-sc">{ref_id}</span>
+              <span className="pour-item-title">{title}</span>
+            </div>
+            <span className="pour-item-description">{description}</span>
+          </div>
+        </button>
       </li>
     );
   });
