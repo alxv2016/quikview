@@ -1,7 +1,11 @@
-.pour-list {
+.criterion-list {
   --pour-accent: #1bc4c4;
   position: relative;
   width: 100%;
+
+  .criterion-list-item ~ .criterion-list-item {
+    margin-top: var(--spacing-sm);
+  }
 }
 
 .pour-item {
@@ -16,6 +20,15 @@
     display: flex;
     flex-direction: column;
   }
+
+  &__footer {
+    position: relative;
+    width: 100%;
+  }
+}
+
+.pour-item__header ~ .pour-item__footer {
+  margin-top: var(--spacing-sm);
 }
 
 .pour-item-title-group {
@@ -56,4 +69,26 @@
 
 .pour-item-title-group ~ .pour-item-description {
   margin-top: var(--spacing-sm);
+}
+
+.pour-item-tags {
+  position: relative;
+  display: flex;
+  width: 100%;
+
+  .pour-tag ~ .pour-tag {
+    margin-left: var(--spacing-xs);
+  }
+}
+
+.pour-tag {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xs) var(--spacing-sm);
+  border-radius: 90px;
+  border: 1px solid var(--color-border);
+  min-width: 36px;
+  font-size: var(--fineprint);
 }
