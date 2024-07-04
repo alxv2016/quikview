@@ -24,6 +24,17 @@
             "description": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose, except for the situations listed below.",
             "url": "https://www.w3.org/TR/WCAG22/#non-text-content",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who can’t fully see or hear content can understand it."
+            },
+            "benefits": [
+              "This Success Criterion helps people who have difficulty perceiving visual content. Assistive technology can read text aloud, present it visually, or convert it to braille.",
+              "Text alternatives may help some people who have difficulty understanding the meaning of photographs, drawings, and other images (e.g., line drawings, graphic designs, paintings, three-dimensional representations), graphs, charts, animations, etc.",
+              "People who are deaf, are hard of hearing, or who are having trouble understanding audio information for any reason can read the text presentation. Research is ongoing regarding automatic translation of text into sign language.",
+              "People who are deaf-blind can read the text in braille.",
+              "Additionally, text alternatives support the ability to search for non-text content and to repurpose content in a variety of ways."
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -89,6 +100,17 @@
             "description": "For prerecorded audio-only and prerecorded video-only media, the following are true, except when the audio or video is a media alternative for text and is clearly labeled as such.",
             "url": "https://www.w3.org/TR/WCAG22/#audio-only-and-video-only-prerecorded",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who can’t fully see or hear content can understand it."
+            },
+            "benefits": [
+              "This Success Criterion helps people who have difficulty perceiving visual content. Assistive technology can read text alternatives aloud, present them visually, or convert them to braille.",
+              "Alternatives for timed-based media that are text based may help some people who have difficulty understanding the meaning of prerecorded video content.",
+              "People who are deaf, are hard of hearing, or who are having trouble understanding audio information for any reason can read the text presentation. Research is ongoing regarding automatic translation of text into sign language.",
+              "People who are deaf-blind can read the text in braille.",
+              "Additionally, text supports the ability to search for non-text content and to repurpose content in a variety of ways."
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -120,6 +142,13 @@
             "description": "Captions are provided for all prerecorded audio content in synchronized media, except when the media is a media alternative for text and is clearly labeled as such.",
             "url": "https://www.w3.org/TR/WCAG22/#captions-prerecorded",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who are deaf or hard of hearing can understand audio in videos."
+            },
+            "benefits": [
+              "People who are deaf or have a hearing loss can access the auditory information in the synchronized media content through captions."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -140,6 +169,13 @@
             "description": "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media, except when the media is a media alternative for text and is clearly labeled as such.",
             "url": "https://www.w3.org/TR/WCAG22/#audio-description-or-media-alternative-prerecorded",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who are blind or who cannot understand the visual content can have it described."
+            },
+            "benefits": [
+              "This Success Criterion may help some people who have difficulty watching video or other synchronized media content, including people who have difficulty perceiving or understanding moving images."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -160,6 +196,13 @@
             "description": "Captions are provided for all live audio content in synchronized media.",
             "url": "https://www.w3.org/TR/WCAG22/#captions-live",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who are deaf or hard of hearing can understand audio in real-time video content."
+            },
+            "benefits": [
+              "People who are deaf or have a hearing loss can access the auditory information in the synchronized media content through captions."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -180,6 +223,13 @@
             "description": "Audio description is provided for all prerecorded video content in synchronized media.",
             "url": "https://www.w3.org/TR/WCAG22/#audio-description-prerecorded",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who cannot see or understand the visual content can hear about it while playing videos."
+            },
+            "benefits": [
+              "People who are blind or have low vision as well as those with cognitive limitations who have difficulty interpreting visually what is happening benefit from audio description of visual information."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -200,6 +250,13 @@
             "description": "Sign language interpretation is provided for all prerecorded audio content in synchronized media.",
             "url": "https://www.w3.org/TR/WCAG22/#sign-language-prerecorded",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who are deaf or hard of hearing have more ways to understand multimedia content."
+            },
+            "benefits": [
+              "People whose human language is a sign language sometimes have limited reading ability. These individuals may not be able to read and comprehend the captions and thus require a sign language interpretation to gain access to the synchronized media content."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -220,6 +277,13 @@
             "description": "Where pauses in foreground audio are insufficient to allow audio descriptions to convey the sense of the video, extended audio description is provided for all prerecorded video content in synchronized media.",
             "url": "https://www.w3.org/TR/WCAG22/#extended-audio-description-prerecorded",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who are blind or who cannot understand the visual content can have it described to them while playing videos."
+            },
+            "benefits": [
+              "People who are blind, people with low vision who cannot see the screen, as well as those with cognitive limitations who have difficulty interpreting visually what is happening, often use audio description of the visual information. However, if there is too much dialogue the audio description is insufficient. Extended audio description can provide the additional information needed to understand the video."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -240,6 +304,13 @@
             "description": "An alternative for time-based media is provided for all prerecorded synchronized media and for all prerecorded video-only media.",
             "url": "https://www.w3.org/TR/WCAG22/#media-alternative-prerecorded",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "More people, including those who are deaf-blind, can better understand the content at their own pace."
+            },
+            "benefits": [
+              "People who are deaf-blind, who cannot see well or at all, and who also cannot hear well or at all can get access to information in audio-visual presentations."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -260,6 +331,11 @@
             "description": " An alternative for time-based media that presents equivalent information for live audio-only content is provided.",
             "url": "https://www.w3.org/TR/WCAG22/#audio-only-live",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who cannot hear or understand real-time audio can read an equivalent."
+            },
+            "benefits": null,
             "special_cases": null,
             "notes": null,
             "references": [
@@ -294,6 +370,15 @@
             "description": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.",
             "url": "https://www.w3.org/TR/WCAG22/#info-and-relationships",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People can adapt the presentation to suit their needs while preserving the original meaning."
+            },
+            "benefits": [
+              "This Success Criterion helps people with different disabilities by allowing user agents to adapt content according to the needs of individual users.",
+              "Users who are blind (using a screen reader) benefit when information conveyed through color is also available in text (including text alternatives for images that use color to convey information).",
+              "Users who are deaf-blind using braille (text) refreshable displays may be unable to access color-dependent information."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -314,6 +399,14 @@
             "description": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.",
             "url": "https://www.w3.org/TR/WCAG22/#meaningful-sequence",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Sound distracts some people, and also interferes with screen readers."
+            },
+            "benefits": [
+              "Individuals who use screen reading technologies can hear the screen reader without other sounds playing. This is especially important for those who are hard of hearing and for those whose screen readers use the system volume (so they cannot turn sound down and screen reader up).",
+              "This Success Criterion also benefits people who have difficulty focusing on visual content (including text) when audio is playing."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -334,6 +427,13 @@
             "description": "Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, size, visual location, orientation, or sound.",
             "url": "https://www.w3.org/TR/WCAG22/#sensory-characteristics",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who are blind or have low vision need non-visual instructions."
+            },
+            "benefits": [
+              "People who are blind and people who have low vision may not be able to understand instructions if they rely only on a description of the shape and/or location of content. Providing additional information in any instructions other than shape and/or location will allow users to understand the instructions even if they cannot perceive shape and/or location."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -358,6 +458,14 @@
             "description": "Content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.",
             "url": "https://www.w3.org/TR/WCAG22/#orientation",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Wheelchair users and others may have devices mounted in a fixed orientation."
+            },
+            "benefits": [
+              "Users with dexterity impairments, who have a mounted device will be able to use the content in their fixed orientation.",
+              "Users with low-vision will be able to view content in the orientation that works best for them, for example to increase the text size by viewing content in landscape."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -382,6 +490,15 @@
             "description": "The purpose of each input field collecting information about the user can be programmatically determined when:",
             "url": "https://www.w3.org/TR/WCAG22/#identify-input-purpose",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people with cognitive disabilities may not understand the input's purpose from the label alone."
+            },
+            "benefits": [
+              "People with language and memory related disabilities or disabilities that affects executive function and decision-making benefit from the browser auto-filling personal information (such as name or address) when the autocomplete attribute is used to meet this Success Criterion, which means information does not need to be remembered by the user.",
+              "People with cerebral palsy, stroke, head injury, motor neuron disease or learning disability sometimes prefer images for communication. They can employ assistive technology which adds icons to input fields to communicate the purpose of the fields visually.",
+              "People with motor impairments also benefit from reducing the need for manual input when filling out forms."
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -411,6 +528,14 @@
             "description": "In content implemented using markup languages, the purpose of User Interface Components, icons, and regions can be programmatically determined.",
             "url": "https://www.w3.org/TR/WCAG22/#identify-purpose",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people with cognitive disabilities may not understand a control's purpose from the name alone."
+            },
+            "benefits": [
+              "People who benefit have many different cognitive disabilities including: Memory, Focus and attention, Language-related, Executive function and decision making.",
+              "Meeting this Success Criterion helps users who need extra support or a familiar interface, including the need for: Symbols and graphics with which users are familiar, Fewer features and less cognitive overload, Keyboard shortcuts"
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -445,6 +570,17 @@
             "description": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
             "url": "https://www.w3.org/TR/WCAG22/#use-of-color",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Not everyone sees colors or sees them the same way."
+            },
+            "benefits": [
+              "Users with partial sight often experience limited color vision.",
+              "Some older users may not be able to see color well.",
+              "Users who have color-blindness benefit when information conveyed by color is available in other visual ways.",
+              "People using limited color monochrome displays may be unable to access color-dependent information.",
+              "Users who have problems distinguishing between colors can look or listen for text cues."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -469,6 +605,14 @@
             "description": "If any audio on a Web page plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level.",
             "url": "https://www.w3.org/TR/WCAG22/#audio-control",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Sound distracts some people, and also interferes with screen readers."
+            },
+            "benefits": [
+              "Individuals who use screen reading technologies can hear the screen reader without other sounds playing. This is especially important for those who are hard of hearing and for those whose screen readers use the system volume (so they cannot turn sound down and screen reader up).",
+              "This Success Criterion also benefits people who have difficulty focusing on visual content (including text) when audio is playing."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -493,6 +637,13 @@
             "description": " The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following:",
             "url": "https://www.w3.org/TR/WCAG22/#contrast-minimum",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people cannot read faint text."
+            },
+            "benefits": [
+              "People with low vision often have difficulty reading text that does not contrast with its background. This can be exacerbated if the person has a color vision deficiency that lowers the contrast even further. Providing a minimum luminance contrast ratio between the text and its background can make the text more readable even if the person does not see the full range of colors. It also works for the rare individuals who see no color."
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -529,6 +680,13 @@
             "description": "Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
             "url": "https://www.w3.org/TR/WCAG22/#resize-text",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people can only read text when it is bigger."
+            },
+            "benefits": [
+              "This Success Criterion helps people with low vision by letting them increase text size in content so that they can read it."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -549,6 +707,15 @@
             "description": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text except for the following:",
             "url": "https://www.w3.org/TR/WCAG22/#images-of-text",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People cannot alter how text looks in images."
+            },
+            "benefits": [
+              "People with low vision (who may have trouble reading the text with the authored font family, size and/or color).",
+              "People with visual tracking problems (who may have trouble reading the text with the authored line spacing and/or alignment).",
+              "People with cognitive disabilities that affect reading."
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -584,6 +751,13 @@
             "description": "The visual presentation of text and images of text has a contrast ratio of at least 7:1, except for the following: ",
             "url": "https://www.w3.org/TR/WCAG22/#contrast-enhanced",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people cannot read text with minimum contrast."
+            },
+            "benefits": [
+              "People with low vision often have difficulty reading text that does not contrast with its background. This can be exacerbated if the person has a color vision deficiency that lowers the contrast even further. Providing a minimum luminance contrast ratio between the text and its background can make the text more readable even if the person does not see the full range of colors. It also works for the rare individuals who see no color."
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -620,6 +794,13 @@
             "description": "For prerecorded audio-only content that (1) contains primarily speech in the foreground, (2) is not an audio CAPTCHA or audio logo, and (3) is not vocalization intended to be primarily musical expression such as singing or rapping, at least one of the following is true:",
             "url": "https://www.w3.org/TR/WCAG22/#low-or-no-background-audio",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who are hard of hearing may have difficulty distinguishing speech from music and other sounds."
+            },
+            "benefits": [
+              "People who are hard of hearing often have great difficulty separating speech from background sound."
+            ],
             "special_cases": [
               {
                 "type": "at_least_one",
@@ -660,6 +841,17 @@
             "description": "For the visual presentation of blocks of text, a mechanism is available to achieve the following:",
             "url": "https://www.w3.org/TR/WCAG22/#visual-presentation",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some text formats are more readable for people with cognitive disabilities and low vision."
+            },
+            "benefits": [
+              "This Success Criterion helps low vision users by letting them see text without distracting presentational features. It lets them configure text in ways that will be easier for them to see by letting them control the color and size of blocks of text.",
+              "This Success Criterion helps people with cognitive, language and learning disabilities perceive text and track their location within blocks of text.",
+              "People with some cognitive disabilities can read text better when they select their own foreground and background color combinations.",
+              "People with some cognitive disabilities can track their locations more easily when blocks of text are narrow and when they can configure the amount of space between lines and paragraphs.",
+              "People with some cognitive disabilities can read text more easily when the spacing between words is regular."
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -701,6 +893,15 @@
             "description": "Images of text are only used for pure decoration or where a particular presentation of text is essential to the information being conveyed.",
             "url": "https://www.w3.org/TR/WCAG22/#images-of-text-no-exception",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People cannot alter how text looks in images."
+            },
+            "benefits": [
+              "People with low vision (who may have trouble reading the text with the authored font family, size and/or color).",
+              "People with visual tracking problems (who may have trouble reading the text with the authored line spacing and/or alignment).",
+              "People with cognitive disabilities that affect reading."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -725,6 +926,13 @@
             "description": "Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:",
             "url": "https://www.w3.org/TR/WCAG22/#reflow",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who need bigger text find it difficult if they must scroll to read long lines."
+            },
+            "benefits": [
+              "This Success Criterion helps people with low vision who require text enlargement by enabling them to read the content seamlessly, eliminating the necessity to scroll in multiple directions."
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -765,6 +973,13 @@
             "description": "The visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):",
             "url": "https://www.w3.org/TR/WCAG22/#non-text-contrast",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people cannot see elements with low contrast."
+            },
+            "benefits": [
+              "People with low vision often have difficulty perceiving graphics that have insufficient contrast. This can be exacerbated if the person has a color vision deficiency that lowers the contrast even further. Providing a relative luminance (lightness difference) of 3:1 or greater can make these items more distinguishable when the person does not see a full range of colors."
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -796,6 +1011,15 @@
             "description": "In content implemented using markup languages that support the following text style properties, no loss of content or functionality occurs by setting all of the following and by changing no other style property:",
             "url": "https://www.w3.org/TR/WCAG22/#text-spacing",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people need text with different spacing or font characteristics."
+            },
+            "benefits": [
+              "People with low vision who require increased space between lines, words, and letters are able to read text.",
+              "People with dyslexia may increase space between lines, words, and letters to increase reading speed.",
+              "Although not required by this SC, white space between blocks of text can help people with cognitive disabilities discern sections and call out boxes."
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -837,6 +1061,16 @@
             "description": "Where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:",
             "url": "https://www.w3.org/TR/WCAG22/#content-on-hover-or-focus",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Unpredictable temporary content can be hard for some to consume and may disrupt others."
+            },
+            "benefits": [
+              "Users with low vision who view content under magnification will be better able to view content on hover or focus without reducing their desired magnification.",
+              "Users who increase the size of mouse cursors via platform settings or assistive technology will be able to employ a technique to view obscured content on hover.",
+              "Users with low vision or cognitive disabilities will have adequate time to perceive additional content appearing on hover or focus and to view the trigger content with less distraction.",
+              "Users with low pointer accuracy will be able to more easily dismiss unintentionally-triggered additional content."
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -906,6 +1140,15 @@
             "description": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user's movement and not just the endpoints.",
             "url": "https://www.w3.org/TR/WCAG22/#keyboard",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Many people rely on the keyboard interface, including blind and some mobility impaired people."
+            },
+            "benefits": [
+              "People who are blind (who cannot use devices such as mice that require eye-hand coordination)",
+              "People with low vision (who may have trouble finding or tracking a pointer indicator on screen)",
+              "Some people with hand tremors find using a mouse very difficult and therefore usually use a keyboard"
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -933,6 +1176,13 @@
             "description": "If keyboard focus can be moved to a component of the page using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away.",
             "url": "https://www.w3.org/TR/WCAG22/#no-keyboard-trap",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who rely on the keyboard often have no other means to navigate."
+            },
+            "benefits": [
+              "People who rely on a keyboard or keyboard interface to use the Web including people who are blind and people with physical disabilities."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -957,6 +1207,11 @@
             "description": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
             "url": "https://www.w3.org/TR/WCAG22/#keyboard-no-exception",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who can only use the keyboard interface need to be able to accomplish everything."
+            },
+            "benefits": null,
             "special_cases": null,
             "notes": null,
             "references": [
@@ -977,6 +1232,15 @@
             "description": "If a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:",
             "url": "https://www.w3.org/TR/WCAG22/#character-key-shortcuts",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Character-key shortcuts are easy to accidentally trigger, especially with speech input."
+            },
+            "benefits": [
+              "Speech users will be able to turn off single-key shortcuts so they can avoid accidentally firing batches of them at once. This will allow speech users to make full use of programs that offer single-key shortcuts to keyboard users.",
+              "Keyboard-only users who have dexterity challenges can also be prone to accidentally hitting keys. Those users would be able to avoid problematic single character shortcuts by turning them off or modifying them to include at least one non-character key.",
+              "Allowing all shortcut keys to be remapped can help users with some cognitive disabilities, since the same shortcuts can be assigned to perform the same actions across different applications."
+            ],
             "special_cases": [
               {
                 "type": "at_least_one",
