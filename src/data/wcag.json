@@ -1291,6 +1291,15 @@
             "description": "For each time limit that is set by the content, at least one of the following is true:",
             "url": "https://www.w3.org/TR/WCAG22/#timing-adjustable",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People with disabilities may need more time to complete activities."
+            },
+            "benefits": [
+              "People with physical disabilities often need more time to react, to type and to complete activities. People with low vision need more time to locate things on screen and to read. People who are blind and using screen readers may need more time to understand screen layouts, to find information and to operate controls. People who have cognitive or language limitations need more time to read and to understand. People who are deaf and communicate in sign language may need more time to read information printed in text (which may be a second language for some).",
+              "In circumstances where a sign-language interpreter may be relating audio content to a user who is deaf, control over time limits is also important.",
+              "People with reading disabilities, cognitive limitations, and learning disabilities who may need more time to read or comprehend information can have additional time to read the information by pausing the content."
+            ],
             "special_cases": [
               {
                 "type": "at_least_one",
@@ -1346,6 +1355,14 @@
             "description": "For moving, blinking, scrolling, or auto-updating information, all of the following are true:",
             "url": "https://www.w3.org/TR/WCAG22/#pause-stop-hide",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people with cognitive disabilities and attention deficits cannot concentrate with continual movement."
+            },
+            "benefits": [
+              "Providing content that stops blinking after five seconds or providing a mechanism for users to stop blinking content allows people with certain disabilities to interact with the Web page.",
+              "One use of content that blinks is to draw the visitor's attention to that content. Although this is an effective technique for all users with vision, it can be a problem for some users if it persists. For certain groups, including people with low literacy, reading and intellectual disabilities, and people with attention deficit disorders, content that blinks may make it difficult or even impossible to interact with the rest of the Web page."
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -1390,6 +1407,14 @@
             "description": "Timing is not an essential part of the event or activity presented by the content, except for non-interactive synchronized media and real-time events.",
             "url": "https://www.w3.org/TR/WCAG22/#no-timing",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People with disabilities often need more time to complete actions."
+            },
+            "benefits": [
+              "People with physical disabilities often need more time to react, to type and to complete activities. People with low vision need more time to locate things on screen and to read. People who are blind and using screen readers may need more time to understand screen layouts, to find information and to operate controls. People who have cognitive or language limitations need more time to read and to understand. People who are deaf and communicate in sign language may need more time to read information printed in text (which may be a second language for some).",
+              "In circumstances where a sign-language interpreter may be relating audio content to a user who is deaf, control over time limits is also important."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1410,6 +1435,14 @@
             "description": "Interruptions can be postponed or suppressed by the user, except interruptions involving an emergency.",
             "url": "https://www.w3.org/TR/WCAG22/#interruptions",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Updates distract and disrupt assistive technology users and people with attention deficits."
+            },
+            "benefits": [
+              "Individuals with attention deficit disorders can focus on content without distraction.",
+              "Individuals with low vision or who use screen readers will not have content updated while they are viewing it (which can lead to discontinuity and misunderstanding if they start reading in one topic and finish in another)."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1430,6 +1463,14 @@
             "description": "When an authenticated session expires, the user can continue the activity without loss of data after re-authenticating.",
             "url": "https://www.w3.org/TR/WCAG22/#re-authenticating",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people may require additional time to complete an activity."
+            },
+            "benefits": [
+              "This Success Criterion benefits people who may require additional time to complete an activity. People with cognitive limitations may read slowly and require additional time to read and respond to a questionnaire. Users interacting via a screen reader may need extra time to navigate and complete a complicated form. A person with motor impairments or who navigates with an alternative input device may require additional time to navigate through or complete input within a form.",
+              "In circumstances where a sign-language interpreter may be relating audio content to a user who is deaf, control over time limits is also important."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1450,6 +1491,15 @@
             "description": "Users are warned of the duration of any user inactivity that could cause data loss, unless the data is preserved for more than 20 hours when the user does not take any actions.",
             "url": "https://www.w3.org/TR/WCAG22/#timeouts",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People with disabilities may need more time to complete actions."
+            },
+            "benefits": [
+              "This Success Criterion helps users by ensuring they are notified about timeouts related to inactivity.",
+              "When a user knows how much time they are allowed for a task, they will know whether they can take a needed break and resume their work without needing to start again. This enables many users to complete tasks online that they otherwise could not do. If a situation exists where a timeout is necessary, the user is warned at the start of the task about the length of inactivity that would generate a timeout. The user can then decide if they can manage this task or not in the given time, or if they need to prepare materials in advance of starting a process. This will reduce the frustration of losing work due to a timeout.",
+              "This Success Criterion helps people with many different cognitive disabilities, including people with: language-related, memory-related, focus-and-attention-related, and disabilities that affect executive function and decision making."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1488,6 +1538,13 @@
             "description": "Web pages do not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.",
             "url": "https://www.w3.org/TR/WCAG22/#three-flashes-or-below-threshold",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Flashing content can cause migraines, dizziness, nausea, and seizures."
+            },
+            "benefits": [
+              "Individuals who have seizures when viewing flashing material will be able to view all of the material on a site without having a seizure and without having to miss the full experience of the content by being limited to text alternatives. This includes people with photosensitive epilepsy as well as other photosensitive seizure disorders."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1512,6 +1569,13 @@
             "description": "Web pages do not contain anything that flashes more than three times in any one second period.",
             "url": "https://www.w3.org/TR/WCAG22/#three-flashes",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Flashing content can cause migraines, dizziness, nausea, and seizures."
+            },
+            "benefits": [
+              "Individuals who have seizures when viewing flashing material will be able to view all of the material on a site without having a seizure and without having to miss the full experience of the content by being limited to text alternatives. This includes people with photosensitive epilepsy as well as other photosensitive seizure disorders."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1532,6 +1596,13 @@
             "description": "Motion animation triggered by interaction can be disabled, unless the animation is essential to the functionality or the information being conveyed.",
             "url": "https://www.w3.org/TR/WCAG22/#animation-from-interactions",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People can get sick from motion effects."
+            },
+            "benefits": [
+              "People with vestibular disorders need control over movement triggered by interactions. Non-essential movement can trigger vestibular disorder reactions. Vestibular (inner ear) disorder reactions include distraction, dizziness, headaches and nausea."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1566,6 +1637,17 @@
             "description": "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
             "url": "https://www.w3.org/TR/WCAG22/#bypass-blocks",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Users reliant on the keyboard interface can move around pages efficiently."
+            },
+            "benefits": [
+              "When this Success Criterion is not satisfied, it may be difficult for people with some disabilities to reach the main content of a Web page quickly and easily.",
+              "Screen reader users who visit several pages on the same site can avoid having to hear all header content and dozens of navigation links on every page before the main content is spoken.",
+              "People who use only the keyboard or a keyboard interface can reach content with fewer keystrokes. Otherwise, they might have to make dozens of keystrokes before reaching a link in the main content area. This can take a long time and may cause severe physical pain for some users.",
+              "People who use screen magnifiers do not have to search through the same header content or other blocks of information to find where the main content begins each time they enter a new page.",
+              "People with cognitive limitations as well as people who use screen readers may benefit when links are grouped into lists."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1586,6 +1668,16 @@
             "description": "Web pages have titles that describe topic or purpose.",
             "url": "https://www.w3.org/TR/WCAG22/#page-titled",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Page titles help users identify and distinguish different pages."
+            },
+            "benefits": [
+              "This criterion benefits all users in allowing users to quickly and easily identify whether the information contained in the Web page is relevant to their needs.",
+              "People with visual disabilities will benefit from being able to differentiate content when multiple Web pages are open.",
+              "People with cognitive disabilities, limited short-term memory and reading disabilities also benefit from the ability to identify content by its title.",
+              "This criterion also benefits people with severe mobility impairments whose mode of operation relies on audio when navigating between Web pages."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1606,6 +1698,17 @@
             "description": "If a Web page can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.",
             "url": "https://www.w3.org/TR/WCAG22/#focus-order",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Navigating a site or application with only the keyboard will make sense."
+            },
+            "benefits": [
+              "These techniques benefit keyboard users who navigate documents sequentially and expect the focus order to be consistent with the sequential reading order.",
+              "People with mobility impairments who must rely on keyboard access for operating a page benefit from a logical, usable focus order.",
+              "People with disabilities that make reading difficult can become disoriented when tabbing takes focus someplace unexpected. They benefit from a logical focus order.",
+              "People with visual impairments can become disoriented when tabbing takes focus someplace unexpected or when they cannot easily find the content surrounding an interactive element.",
+              "Only a small portion of the page may be visible to an individual using a screen magnifier at a high level of magnification. Such a user may interpret a field in the wrong context if the focus order is not logical."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1626,6 +1729,15 @@
             "description": "The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link context, except where the purpose of the link would be ambiguous to users in general.",
             "url": "https://www.w3.org/TR/WCAG22/#link-purpose-in-context",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People with visual and cognitive disabilities can navigate more easily."
+            },
+            "benefits": [
+              "This Success Criterion helps people with motion impairment by letting them skip links that they are not interested in, avoiding the keystrokes needed to visit the referenced content and then returning to the current content.",
+              "People with cognitive limitations will not become disoriented by multiple means of navigation to and from content they are not interested in.",
+              "People with visual disabilities will be able to determine the purpose of a link by exploring the link's context."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1646,6 +1758,14 @@
             "description": "More than one way is available to locate a Web page within a set of Web pages except where the Web Page is the result of, or a step in, a process.",
             "url": "https://www.w3.org/TR/WCAG22/#link-purpose-in-context",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Not everyone can navigate content in the same way."
+            },
+            "benefits": [
+              "Providing an opportunity to navigate sites in more than one manner can help people find information faster. Users with visual impairments may find it easier to navigate to the correct part of the site by using a search, rather than scrolling through a large navigation bar using a screen magnifier or screen reader. A person with cognitive disabilities may prefer a table of contents or site map that provides an overview of the site rather than reading and traversing through several Web pages. Some users may prefer to explore the site in a sequential manner, moving from Web page to Web page in order to best understand the concepts and layout.",
+              "Individuals with cognitive limitations may find it easier to use search features than to use a hierarchical navigation scheme that may be difficult to understand."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1666,6 +1786,15 @@
             "description": "Headings and labels describe topic or purpose.",
             "url": "https://www.w3.org/TR/WCAG22/#headings-and-labels",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People can orient themselves, especially those with cognitive or visual disabilities."
+            },
+            "benefits": [
+              "Descriptive headings are especially helpful for users who have disabilities that make reading slow and for people with limited short-term memory. These people benefit when section titles make it possible to predict what each section contains.",
+              "Form input controls with labels that clearly describe the content that is expected to be entered helps users know how to successfully complete the form.",
+              "When headings and labels are also correctly marked up and identified in accordance with 1.3.1: Info and Relationships, this Success Criterion helps people who use screen readers by ensuring that labels and headings are clearer when presented in a different format – for example, in an automatically generated list of headings, a table of contents, or when jumping from heading to heading within a page."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1686,6 +1815,14 @@
             "description": "Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.",
             "url": "https://www.w3.org/TR/WCAG22/#focus-visible",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Without a focus indicator, sighted keyboard users cannot operate the page."
+            },
+            "benefits": [
+              "This Success Criterion helps anyone who relies on the keyboard to operate the page, by letting them visually determine the component on which keyboard operations will interact at any point in time.",
+              "People with attention limitations, short term memory limitations, or limitations in executive processes benefit by being able to discover where the focus is located."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1706,6 +1843,13 @@
             "description": "Information about the user's location within a set of Web pages is available.",
             "url": "https://www.w3.org/TR/WCAG22/#location",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Location indicators reduce confusion for people with cognitive disabilities."
+            },
+            "benefits": [
+              "This Success Criterion is helpful for people with a short attention span who may become confused when following a long series of navigation steps to a Web page. It is also helpful when a user follows a link directly to a page deep within a set of Web pages and needs to navigate that Web site to understand the content of that page or to find more related information."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1726,6 +1870,15 @@
             "description": "A mechanism is available to allow the purpose of each link to be identified from link text alone, except where the purpose of the link would be ambiguous to users in general.",
             "url": "https://www.w3.org/TR/WCAG22/#link-purpose-link-only",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Descriptive link text is more understandable for all users, especially when using assistive technology."
+            },
+            "benefits": [
+              "This Success Criterion helps people with motion impairment by letting them skip Web pages that they are not interested in, avoiding the keystrokes needed to visit the referenced content and then return to the current content.",
+              "People with cognitive limitations will not become disoriented by extra navigation to and from content they are not interested in.",
+              "People with visual disabilities will benefit from not losing their place in the content when they return to the original page. The screen reader's list of links is more useful for finding information because the target of the links are described."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1746,6 +1899,16 @@
             "description": "Section headings are used to organize the content.",
             "url": "https://www.w3.org/TR/WCAG22/#section-headings",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People can orient themselves, especially those with cognitive or visual disabilities."
+            },
+            "benefits": [
+              "People who are blind will know when they have moved from one section of a Web page to another and will know the purpose of each section.",
+              "People with some learning disabilities will be able to use the headings to understand the overall organization of the page content more easily.",
+              "People who navigate content by keyboard will be able to jump the focus from heading to heading, enabling them to find quickly content of interest.",
+              "In pages where content in part of the page updates, headings can be used to quickly access updated content."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1773,6 +1936,15 @@
             "description": "When a user interface component receives keyboard focus, the component is not entirely hidden due to author-created content.",
             "url": "https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who can't use a mouse need to see what has keyboard focus."
+            },
+            "benefits": [
+              "Sighted users who rely on a keyboard interface to operate the page will be able to see the component which gets keyboard focus. Such users include those who rely on a keyboard or on devices which use the keyboard interface, including speech input, sip-and-puff software, onscreen keyboards, scanning software, and a variety of assistive technologies and alternate keyboards.",
+              "People with limited or low vision, who may primarily user a pointer for screen orientation and repositioning, nonetheless benefit from a visible indication of the current point of keyboard interaction, especially where magnification reduces the overall viewing portion of the screen.",
+              "People with attention limitations, short term memory limitations, or limitations in executive processes benefit by being able to discover where the focus is located."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1800,6 +1972,15 @@
             "description": "When a user interface component receives keyboard focus, no part of the component is hidden by author-created content.",
             "url": "https://www.w3.org/TR/WCAG22/#focus-not-obscured-enhanced",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who can't use a mouse need to see what has keyboard focus."
+            },
+            "benefits": [
+              "Sighted users who rely on a keyboard interface to operate the page will be able to see the component which gets keyboard focus. Such users include those who rely on devices which use the keyboard interface, including speech input, sip-and-puff software, on-screen keyboards, scanning software, and a variety of assistive technologies and alternate keyboards.",
+              "People with limited or low vision but who rely upon a pointing device (for viewport orientation and repositioning) benefit from a clearly visible indication of the current point of keyboard interaction, especially where magnification reduces the overall useable portion of content.",
+              "People with attention limitations, short term memory limitations, or limitations in executive processes benefit by being able to more easily discover where the focus is located."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1820,6 +2001,14 @@
             "description": "When the keyboard focus indicator is visible, an area of the focus indicator meets all the following:",
             "url": "https://www.w3.org/TR/WCAG22/#focus-appearance",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Many people can't see small changes in visual appearance, including older people."
+            },
+            "benefits": [
+              "This Success Criterion helps anyone who relies on the keyboard to operate the page, by letting them visually determine the component on which keyboard operations will interact at any point in time.",
+              "People with attention limitations, short term memory limitations, or limitations in executive processes benefit by being able to discover where the focus is located."
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -1881,6 +2070,15 @@
             "description": "All functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential.",
             "url": "https://www.w3.org/TR/WCAG22/#pointer-gestures",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Not everyone can perform complex and multi-touch gestures."
+            },
+            "benefits": [
+              "Users who cannot (accurately) perform path-based pointer gestures - on a touchscreen, or with a mouse - will have alternative means for operating the content.",
+              "Users who cannot perform multi-pointer gestures on a touchscreen (for instance, because they are operating the touchscreen with an alternative input such as a head pointer) will have a single-pointer alternative for operating the content.",
+              "Users who may not understand the custom gesture interaction intended by the author will be able to rely on simple, frequently used gestures to interact. This can be especially beneficial for users with cognitive or learning disabilities."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1905,6 +2103,15 @@
             "description": "For functionality that can be operated using a single pointer, at least one of the following is true:",
             "url": "https://www.w3.org/TR/WCAG22/#pointer-cancellation",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Make it easier for anyone to recover from something they didn’t mean to do."
+            },
+            "benefits": [
+              "Makes it easier for all users to recover from hitting the wrong target.",
+              "Helps people with visual disabilities, cognitive limitations, and motor impairments by reducing the chance that a control will be accidentally activated or an action will occur unexpectedly, and also ensures that where complex controls are activated, a means of Undoing or Aborting the action is available.",
+              "Individuals who are unable to detect changes of context are less likely to become disoriented while navigating a site."
+            ],
             "special_cases": [
               {
                 "type": "at_least_one",
@@ -1953,6 +2160,14 @@
             "description": "For user interface components with labels that include text or images of text, the name contains the text that is presented visually.",
             "url": "https://www.w3.org/TR/WCAG22/#label-in-name",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People who operate with voice interaction use the visible labels in their commands."
+            },
+            "benefits": [
+              "Speech-input users can directly activate controls on a page with fewer surprising changes of focus.",
+              "Text-to-speech users will have a better experience because the labels that they hear match the visible text labels that they see on the screen."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1977,6 +2192,14 @@
             "description": "Functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:",
             "url": "https://www.w3.org/TR/WCAG22/#motion-actuation",
             "level": "A",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people cannot hold or move a device steadily."
+            },
+            "benefits": [
+              "This Success Criterion helps people who may be unable to perform particular motions (such as tilting, shaking, or gesturing) because the device may be mounted or users may be physically unable to perform the necessary movement. This success criterion ensures that users can still operate all functionality by other means such as touch or via assistive technologies.",
+              "Other users will benefit in situations where they are unable to move their devices."
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -2003,11 +2226,24 @@
           },
           {
             "ref_id": "2.5.5",
-            "tags": ["Operable", "Input Modalities", "SC 2.5.5", "AAA"],
+            "tags": ["Operable", "Input Modalities", "Hit target", "SC 2.5.5", "AAA"],
             "title": "Target Size",
             "description": "The size of the target for pointer inputs is at least 44 by 44 CSS pixels except when:",
             "url": "https://www.w3.org/TR/WCAG22/#target-size",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people cannot tap small objects."
+            },
+            "benefits": [
+              "Users who use a mobile device where touch screen is the primary mode of interaction",
+              "Users with mobility impairments, such as hand tremors",
+              "Users who use a mobile device in environments where they are exposed to shaking such as public transportation",
+              "Users who find fine motor movements difficult",
+              "Users who access a device using one hand",
+              "Users with large fingers, or who are operating the device with only a part of their finger or knuckle",
+              "Users who have low vision may better see the target"
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -2056,6 +2292,15 @@
             "description": "Web content does not restrict use of input modalities available on a platform except where the restriction is essential, required to ensure the security of the content, or required to respect user settings.",
             "url": "https://www.w3.org/TR/WCAG22/#concurrent-input-mechanisms",
             "level": "AAA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "People may not be able to work using just one input method."
+            },
+            "benefits": [
+              "Users can interact with web content with whichever input mechanism is preferred and available to them.",
+              "Users may switch between input mechanisms when they desire or the circumstances require it.",
+              "Users are allowed to add and remove input mechanisms at any point, where supported by the operating system."
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -2076,6 +2321,13 @@
             "description": "All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.",
             "url": "https://www.w3.org/TR/WCAG22/#dragging-movements",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people cannot use a mouse to drag items."
+            },
+            "benefits": [
+              "Users who struggle with performing dragging movements can still operate an interface with a pointer interface."
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -2095,11 +2347,24 @@
           },
           {
             "ref_id": "2.5.8",
-            "tags": ["Operable", "Input Modalities", "SC 2.5.8", "AA"],
+            "tags": ["Operable", "Input Modalities", "Hit target", "SC 2.5.8", "AA"],
             "title": "Target Size (Minimum)",
             "description": "The size of the target for pointer inputs is at least 24 by 24 CSS pixels, except where:",
             "url": "https://www.w3.org/TR/WCAG22/#target-size-minimum",
             "level": "AA",
+            "brief": {
+              "title": "Why it's important",
+              "description": "Some people with physical impairments cannot click small buttons that are close together."
+            },
+            "benefits": [
+              "Having targets with sufficient size - or at least sufficient target spacing - can help all users who may have difficulty in confidently targeting or operating small controls.",
+              "People who use a mobile device where the touch screen is the primary mode of interaction.",
+              "People using mouse, stylus or touch input who have mobility impairments such as hand tremors.",
+              "People using a device in environments where they are exposed to shaking such as public transportation.",
+              "Mouse users who have difficulty with fine motor movements.",
+              "People who access a device using one hand.",
+              "People with large fingers, or who are operating the device with only a part of their finger or knuckle."
+            ],
             "notes": null,
             "special_cases": [
               {
