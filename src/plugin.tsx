@@ -2,7 +2,7 @@ import {useContext, useEffect, useRef, useState, MouseEvent, ReactNode} from 're
 import {Criterion, Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
 import Search from './components/search';
-import SearchContextProvider from './components/searchContext';
+import SearchContextProvider, {SearchContext} from './components/searchContext';
 import Announcer from './components/announcer';
 import {extractSuccessCriteria} from './utils';
 import ButtonGroup from './components/button-group';
@@ -29,7 +29,21 @@ export default function Plugin() {
   const [data, setData] = useState<Successcriterion[]>(successCriteriaDataset);
   const [announcement, setAnnouncement] = useState('');
   const [bottomSheetContent, setBottomSheetContent] = useState<ReactNode>(null);
-  const bottomSheetRef = useRef<HTMLDialogElement>(null);
+  const bottomSheetRef = useRef<{closeBottomSheet: () => void; toggleBottomSheet: () => void}>(null);
+
+  const openBottomSheet = () => {
+    if (bottomSheetRef.current) {
+      bottomSheetRef.current.toggleBottomSheet();
+    }
+  };
+
+  const closeBottomSheet = () => {
+    if (bottomSheetRef.current) {
+      bottomSheetRef.current.closeBottomSheet();
+    }
+  };
+
+  const context = useContext(SearchContext);
 
   const handleResultsChange = (results: Successcriterion[] | null) => {
     if (results) {
@@ -60,19 +74,10 @@ export default function Plugin() {
     }
   };
 
-  const toggleBottomSheet = () => {
-    if (!bottomSheetRef.current) return;
-    bottomSheetRef.current.hasAttribute('open') ? bottomSheetRef.current.close() : bottomSheetRef.current.showModal();
-  };
-
-  // const handleClose = (e: MouseEvent<HTMLDialogElement>) => {
-  //   console.log(e);
-  //   // bottomSheetRef.current?.close();
-  // }
   const handlePourClick = (item: Criterion) => {
     console.log(item);
-    setBottomSheetContent(<PourList data={item} />);
-    toggleBottomSheet();
+    setBottomSheetContent(<PourList data={item} onCloseBottomSheet={closeBottomSheet} />);
+    openBottomSheet();
   };
 
   const iconMap: {
@@ -141,7 +146,7 @@ export default function Plugin() {
             buttons={['All', 'A', 'AA', 'AAA']}
             onButtonClick={handleButtonClick}
           />
-          <ButtonIcon label="Settings" onClick={toggleBottomSheet}>
+          <ButtonIcon label="Settings" onClick={openBottomSheet}>
             <OverflowIcon />
           </ButtonIcon>
         </div>
@@ -150,9 +155,7 @@ export default function Plugin() {
           <ul className="pour-list">{renderPOURItems}</ul>
         </div>
       </main>
-      <BottomSheet ref={bottomSheetRef} toggleBottomSheet={toggleBottomSheet}>
-        {bottomSheetContent}
-      </BottomSheet>
+      <BottomSheet ref={bottomSheetRef}>{bottomSheetContent}</BottomSheet>
     </SearchContextProvider>
   );
 }

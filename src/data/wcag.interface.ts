@@ -23,8 +23,7 @@ export interface Successcriterion {
   description: string;
   url: string;
   level: string;
-  brief: Brief;
-  benefits?: Benefits | null;
+  brief?: Brief[];
   special_cases?: Specialcase[] | null;
   notes?: Note[] | null;
   references: Reference[];
@@ -34,10 +33,6 @@ export interface Successcriterion {
 export interface Brief {
   title: string;
   description: string;
-}
-
-export interface Benefits {
-  benefits: string[];
 }
 
 export interface Note {

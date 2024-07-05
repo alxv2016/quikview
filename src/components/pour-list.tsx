@@ -1,22 +1,27 @@
-import {HTMLAttributes, useContext} from 'react';
+import {HTMLAttributes, RefObject, useContext, useRef} from 'react';
 import {Criterion, Successcriterion} from '../data/wcag.interface';
 import './pour-list.scss';
 import {extractGuidelines, extractSuccessCriteria} from '../utils';
 import {SearchContext} from './searchContext';
+import CriterionDetails from './criterion-details';
 
 interface PourListProps extends HTMLAttributes<HTMLUListElement> {
   data: Criterion;
   pourAccent?: string;
+  onCloseBottomSheet: () => void;
 }
 
-function PourList({data, pourAccent, ...props}: PourListProps): JSX.Element {
+function PourList({data, pourAccent, onCloseBottomSheet, ...props}: PourListProps): JSX.Element {
   const pourDataset = extractGuidelines(data.guidelines);
   const context = useContext(SearchContext);
 
-  console.log(context?.userResult);
-
   const handleResultClick = (item: Successcriterion) => {
     context?.setUserResult?.(item);
+  };
+
+  const closeBottomSheet = () => {
+    context?.setUserResult(null);
+    onCloseBottomSheet();
   };
 
   const renderPOURItems = pourDataset.map((item: Successcriterion, index: number) => {
@@ -50,7 +55,10 @@ function PourList({data, pourAccent, ...props}: PourListProps): JSX.Element {
 
   return (
     <ul className="criterion-list" {...props}>
-      {renderPOURItems}
+      {!context?.userResult && renderPOURItems}
+      {context?.userResult && <CriterionDetails data={context.userResult} />}
+      <button onClick={() => context?.setUserResult(null)}>test</button>
+      <button onClick={closeBottomSheet}>Close</button>
     </ul>
   );
 }
