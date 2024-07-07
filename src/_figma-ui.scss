@@ -104,6 +104,22 @@ button {
     }
   }
 
+  &.btn-ghost {
+    color: var(--color-text);
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-bg-hover);
+    }
+
+    &:active {
+      background-color: var(--color-bg-active);
+      box-shadow: 0 0 0 2px hsla(204, 96%, 54%, 100%);
+    }
+  }
+
   &.btn-icon {
     color: var(--color-icon);
     background-color: transparent;

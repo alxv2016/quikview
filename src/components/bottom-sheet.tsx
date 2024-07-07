@@ -9,6 +9,7 @@ import {
   MouseEvent,
 } from 'react';
 import './bottom-sheet.scss';
+import ActionBar from './actionbar';
 
 interface DialogProps extends DialogHTMLAttributes<HTMLDialogElement> {
   children: ReactNode;

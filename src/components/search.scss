@@ -55,7 +55,7 @@ label ~ input {
 }
 
 .input--search {
-  padding-left: var(--spacing-2xl);
+  padding-left: 32px;
 }
 
 .sr-only {
@@ -77,8 +77,9 @@ label ~ input {
 
 .wcag-search__listbox {
   position: absolute;
-  background-color: #1e1e1e;
-  border-radius: 3px;
+  background-color: var(--color-bg-dark);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
   overflow: auto;
   left: 0;
   top: 36px;
@@ -94,7 +95,6 @@ label ~ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: var(--legal);
   padding: 0 var(--spacing-sm);
   background-color: transparent;
   width: 100%;
@@ -112,27 +112,18 @@ label ~ input {
     background-color: var(--color-bg-brand);
     color: var(--color-text-onbrand);
     box-shadow: none;
+
+    .wcag-ref-id {
+      color: #ffffff;
+    }
   }
-
-  &__meta {
-    position: relative;
-  }
 }
 
-.wcag-level {
+.wcag-ref-id {
   position: relative;
-  min-width: 32px;
-  color: var(--color-text-disabled);
+  color: #d9d9d9;
 }
 
-.wcag-success-criteria {
-  position: relative;
-  color: var(--color-text-disabled);
-}
-
-.wcag-success-criteria ~ .wcag-label {
-  margin-left: var(--spacing-sm);
-}
 .wcag-list-item.wcag-list-item--active {
   // background-color: var(--figma-color-bg-brand);
   box-shadow: inset 0 0 0 2px hsla(204, 96%, 54%, 100%);

@@ -74,9 +74,9 @@ export default function Plugin() {
     }
   };
 
-  const handlePourClick = (item: Criterion) => {
+  const handlePourClick = (item: Criterion, color: string) => {
     console.log(item);
-    setBottomSheetContent(<PourList data={item} onCloseBottomSheet={closeBottomSheet} />);
+    setBottomSheetContent(<PourList data={item} pourAccent={color} onCloseBottomSheet={closeBottomSheet} />);
     openBottomSheet();
   };
 
@@ -85,37 +85,32 @@ export default function Plugin() {
       icon: JSX.Element;
       color: string;
       backgroundColor: string;
-      borderColor: string;
     };
   } = {
     Perceivable: {
       icon: <PerceivableIcon />,
       color: '#015353',
-      backgroundColor: '#1BC4C4',
-      borderColor: '#98FFFF',
+      backgroundColor: '#22DEDE',
     },
     Operable: {
       icon: <OperableIcon />,
       color: '#706800',
       backgroundColor: '#FFEB00',
-      borderColor: '#FFF9B1',
     },
     Understandable: {
       icon: <UnderstandableIcon />,
       color: '#120263',
-      backgroundColor: '#7B61FF',
-      borderColor: '#9F8DFF',
+      backgroundColor: '#9F8DFF',
     },
     Robust: {
       icon: <RobustIcon />,
       color: '#042A62',
-      backgroundColor: '#18A0FB',
-      borderColor: '#71C6FF',
+      backgroundColor: '#3BB0FF',
     },
   };
 
   const renderPOURItems = wcagData.map((item: Criterion, index: number) => {
-    const {icon, color, backgroundColor, borderColor} = iconMap[item.title];
+    const {icon, color, backgroundColor} = iconMap[item.title];
     return (
       <li key={index}>
         <ListItem
@@ -123,8 +118,7 @@ export default function Plugin() {
           data={item}
           iconColor={color}
           iconBGColor={backgroundColor}
-          iconBorderColor={borderColor}
-          onClick={() => handlePourClick(item)}
+          onClick={() => handlePourClick(item, backgroundColor)}
         ></ListItem>
       </li>
     );
@@ -134,24 +128,26 @@ export default function Plugin() {
     <SearchContextProvider>
       <Announcer message={announcement}></Announcer>
       <main>
-        <Search
-          data={data}
-          keys={keys}
-          placeholder="Search for a success criterion"
-          onResultsChange={handleResultsChange}
-        />
-        <div className="filter-toolbar">
-          <ButtonGroup
-            label="Filter by success level"
-            buttons={['All', 'A', 'AA', 'AAA']}
-            onButtonClick={handleButtonClick}
+        <div className="plugin-header">
+          <Search
+            data={data}
+            keys={keys}
+            placeholder="Search for a success criterion"
+            onResultsChange={handleResultsChange}
           />
-          <ButtonIcon label="Settings" onClick={openBottomSheet}>
-            <OverflowIcon />
-          </ButtonIcon>
+          <div className="search-filters">
+            <ButtonGroup
+              label="Filter by success level"
+              buttons={['All', 'A', 'AA', 'AAA']}
+              onButtonClick={handleButtonClick}
+            />
+            <ButtonIcon label="Settings" onClick={openBottomSheet}>
+              <OverflowIcon />
+            </ButtonIcon>
+          </div>
         </div>
-        <div className="pour">
-          <span className="pour-heading">Explore by POUR</span>
+        <div className="plugin-body">
+          <span className="label">Explore by POUR</span>
           <ul className="pour-list">{renderPOURItems}</ul>
         </div>
       </main>

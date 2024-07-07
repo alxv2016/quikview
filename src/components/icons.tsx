@@ -12,6 +12,14 @@ function OverflowIcon(): JSX.Element {
   );
 }
 
+function PlusIcon(): JSX.Element {
+  return (
+    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.333 8.667h-4V7.333h4v-4h1.334v4h4v1.334h-4v4H7.333v-4Z" fill="currentColor" />
+    </svg>
+  );
+}
+
 function PerceivableIcon(): JSX.Element {
   return (
     <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -74,4 +82,4 @@ function PatternsIcon(): JSX.Element {
   );
 }
 
-export {OverflowIcon, PerceivableIcon, OperableIcon, UnderstandableIcon, RobustIcon, PatternsIcon};
+export {OverflowIcon, PlusIcon, PerceivableIcon, OperableIcon, UnderstandableIcon, RobustIcon, PatternsIcon};

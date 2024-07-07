@@ -1,4 +1,4 @@
-figma.showUI(__html__, {height: 575, width: 430, title: 'A Figma plugin', themeColors: true});
+figma.showUI(__html__, {height: 620, width: 380, title: 'A Figma plugin', themeColors: true});
 
 //Figma api service
 figma.ui.onmessage = (message) => {

@@ -2,41 +2,49 @@
 @use './variables';
 @use './figma-ui';
 
-main {
-  padding: var(--spacing-lg);
+body {
+  background-color: var(--color-bg);
 }
 
-.filter-toolbar {
+.plugin-header {
+  position: relative;
+  padding: var(--spacing-md);
+  padding-top: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.search-filters {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-top: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
 }
 
-.pour {
+.plugin-body {
   position: relative;
-  margin-top: var(--spacing-xl);
   width: 100%;
+  padding: var(--spacing-md);
+  padding-top: var(--spacing-xl);
 }
 
-.pour-heading {
+.label {
   display: block;
   line-height: var(--ui-line-height);
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   font-size: var(--legal);
+  font-weight: 600;
 }
 
 .pour-list {
   position: relative;
   width: 100%;
-
   li ~ li {
     margin-top: var(--spacing-sm);
   }
 }
 
-.pour-heading ~ .pour-list {
+.label ~ .pour-list {
   margin-top: var(--spacing-sm);
 }

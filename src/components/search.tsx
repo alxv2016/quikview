@@ -122,12 +122,9 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
         onClick={() => handleResultClick(result)}
         onMouseDown={(e) => e.preventDefault()}
       >
-        <div className="wcag-list-item__meta">
-          <span className="sr-only">Success criterion</span>
-          <span className="wcag-success-criteria">{ref_id} </span>
-          <span className="wcag-label">{title} </span>
+        <div className="wcag-label">
+          <span className="wcag-ref-id">{ref_id}</span> {title}
         </div>
-        <span className="sr-only">Level</span> <span className="wcag-level">{level}</span>
       </li>
     );
   });
