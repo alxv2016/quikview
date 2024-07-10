@@ -1,5 +1,7 @@
+import {MouseEvent} from 'react';
 import {Successcriterion} from '../data/wcag.interface';
 import './criterion-details.scss';
+import {InfoIcon} from './icons';
 
 interface CriterionDetailsProps {
   data: Successcriterion;
@@ -23,9 +25,33 @@ function CriterionDetails({data}: CriterionDetailsProps): JSX.Element {
     );
   });
 
+  const handleLink = (e: MouseEvent, url: string) => {
+    e.preventDefault();
+    window.open(url, '_blank');
+  };
+
+  const renderRefs = references.map((item, index) => {
+    const {title, url} = item;
+    return (
+      <a key={index} href={url} className="ref-link" onClick={(e) => handleLink(e, url)}>
+        {title}
+      </a>
+    );
+  });
+
   const renderSpecialCases = special_cases?.map((item, index) => {
-    const {type, title} = item;
-    return <div key={index}>{title}</div>;
+    const {type, title, description} = item;
+    return (
+      <div key={index} className="special-case">
+        <div className="special-case-title">{title}</div>
+        {description && <div className="special-case-description">{description}</div>}
+      </div>
+    );
+  });
+
+  const renderNotes = notes?.map((note, index) => {
+    const {content} = note;
+    return <div key={index}>{content}</div>;
   });
 
   return (
@@ -44,11 +70,23 @@ function CriterionDetails({data}: CriterionDetailsProps): JSX.Element {
       </div>
       {special_cases && (
         <div className="special-cases">
-          <div className="special-cases-header">
+          <div className="special-cases__header">
+            <InfoIcon />
             {special_cases[0].type === SpecialCases.EXCEPTION ? 'Exceptions' : 'No exceptions'}
           </div>
+          <div className="special-cases__body">{renderSpecialCases}</div>
         </div>
       )}
+      {notes && (
+        <div className="special-cases special-cases--info">
+          <div className="special-cases__header">Notes</div>
+          <div className="special-cases__body">{renderNotes}</div>
+        </div>
+      )}
+      <div className="brief">
+        <div className="brief-title">References</div>
+        <div className="brief-description">{renderRefs}</div>
+      </div>
     </div>
   );
 }

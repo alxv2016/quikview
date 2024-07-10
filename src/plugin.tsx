@@ -11,6 +11,7 @@ import {OperableIcon, OverflowIcon, PerceivableIcon, RobustIcon, UnderstandableI
 import BottomSheet from './components/bottom-sheet';
 import ListItem from './components/list-item';
 import PourList from './components/pour-list';
+import CriterionDetails from './components/criterion-details';
 
 enum FilterType {
   ALL = 0,
@@ -80,6 +81,12 @@ export default function Plugin() {
     openBottomSheet();
   };
 
+  const handleResultSelected = (result: Successcriterion) => {
+    console.log('search selected');
+    setBottomSheetContent(<CriterionDetails data={result} />);
+    openBottomSheet();
+  };
+
   const iconMap: {
     [key: string]: {
       icon: JSX.Element;
@@ -134,6 +141,7 @@ export default function Plugin() {
             keys={keys}
             placeholder="Search for a success criterion"
             onResultsChange={handleResultsChange}
+            onResultsSelected={handleResultSelected}
           />
           <div className="search-filters">
             <ButtonGroup

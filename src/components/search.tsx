@@ -9,9 +9,10 @@ interface SearchProps {
   keys: any[];
   placeholder: string;
   onResultsChange: (result: Successcriterion[] | null) => void;
+  onResultsSelected: (result: Successcriterion) => void;
 }
 
-function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.Element {
+function Search({data, keys, placeholder, onResultsChange, onResultsSelected}: SearchProps): JSX.Element {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<Successcriterion[] | null>(null);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -83,6 +84,7 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
 
   const handleResultClick = (result: Successcriterion) => {
     context?.setUserResult?.(result);
+    onResultsSelected(result);
     if (inputRef.current) {
       setQuery('');
       handleClose();
