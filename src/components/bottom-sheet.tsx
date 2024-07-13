@@ -9,35 +9,32 @@ import {
   MouseEvent,
 } from 'react';
 import './bottom-sheet.scss';
-import ActionBar from './actionbar';
 
 interface DialogProps extends DialogHTMLAttributes<HTMLDialogElement> {
   children: ReactNode;
+  onClose?: () => void;
 }
 
-const BottomSheet = forwardRef<{closeBottomSheet: () => void; toggleBottomSheet: () => void}, DialogProps>(
-  function BottomSheet({children}: DialogProps, ref): JSX.Element {
+const BottomSheet = forwardRef<{closeBottomSheet: () => void; openBottomSheet: () => void}, DialogProps>(
+  function BottomSheet({children, onClose}: DialogProps, ref): JSX.Element {
     const [isAnimating, setIsAnimating] = useState(false);
     const internalRef = useRef<HTMLDialogElement>(null);
     // Expose the internalDialogRef through the forwarded dialogRef
     // Expose the toggleBottomSheet and closeBottomSheet functions through the ref
     useImperativeHandle(ref, () => ({
-      toggleBottomSheet,
+      openBottomSheet,
       closeBottomSheet,
     }));
 
     useEffect(() => {
       const handleAnimationEnd = (event: AnimationEvent) => {
         if (!internalRef.current) return;
-
         if (event.animationName === 'close') {
-          // Handle fadeout animation end
-          console.log('Fadeout animation ended');
           internalRef.current.close();
+          internalRef.current.classList.remove('animate-fadeout');
+          setIsAnimating(false);
+          onClose?.();
         }
-        internalRef.current.classList.remove('animate-fadeout');
-        // Hide the element after animation ends
-        setIsAnimating(false);
       };
 
       if (internalRef.current) {
@@ -49,9 +46,9 @@ const BottomSheet = forwardRef<{closeBottomSheet: () => void; toggleBottomSheet:
           internalRef.current.removeEventListener('animationend', handleAnimationEnd);
         }
       };
-    }, [isAnimating]);
+    }, [isAnimating, onClose]);
 
-    const toggleBottomSheet = () => {
+    const openBottomSheet = () => {
       if (!internalRef.current) return;
       internalRef.current.showModal();
     };
@@ -71,11 +68,9 @@ const BottomSheet = forwardRef<{closeBottomSheet: () => void; toggleBottomSheet:
     };
 
     const handleKeydown = (event: React.KeyboardEvent<HTMLDialogElement>) => {
-      if (!internalRef.current) return;
       if (event.key === 'Escape') {
         event.preventDefault();
-        internalRef.current.classList.add('animate-fadeout');
-        setIsAnimating(true);
+        closeBottomSheet();
       }
     };
 

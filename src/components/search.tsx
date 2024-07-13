@@ -1,7 +1,6 @@
-import {useState, useEffect, useRef, useMemo, useContext} from 'react';
+import {useState, useEffect, useRef} from 'react';
 import {Successcriterion} from '../data/wcag.interface';
-import {SearchContext} from './searchContext';
-import {useDebounce, useFuse} from '../hooks';
+import {useDataQueryContext, useDebounce, useFuse} from '../hooks';
 import './search.scss';
 
 interface SearchProps {
@@ -20,7 +19,7 @@ function Search({data, keys, placeholder, onResultsChange, onResultsSelected}: S
   const listboxRef = useRef<HTMLUListElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const debouncedQuery = useDebounce(query, 100);
-  const context = useContext(SearchContext);
+  const {dataQuery, setDataQuery} = useDataQueryContext();
   const fuse = useFuse(data, keys);
 
   useEffect(() => {
@@ -83,7 +82,7 @@ function Search({data, keys, placeholder, onResultsChange, onResultsSelected}: S
   };
 
   const handleResultClick = (result: Successcriterion) => {
-    context?.setUserResult?.(result);
+    setDataQuery(result);
     onResultsSelected(result);
     if (inputRef.current) {
       setQuery('');

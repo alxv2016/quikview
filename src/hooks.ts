@@ -1,6 +1,8 @@
-import {useEffect, useMemo, useRef, useState} from 'react';
+import {useContext, useEffect, useMemo, useRef, useState} from 'react';
 import Fuse from 'fuse.js';
 import {Successcriterion} from './data/wcag.interface';
+import {DataQueryContext} from './components/DataQueryContext';
+import {GuidelinesContext} from './components/GudelinesContext';
 
 function useFuse(data: Successcriterion[], keys: any[], threshold: number = 0.2) {
   const fuse = useMemo(
@@ -31,4 +33,20 @@ function useDebounce(value: string | null, delay: number): string | null {
   return debouncedValue;
 }
 
-export {useFuse, useDebounce};
+const useDataQueryContext = () => {
+  const context = useContext(DataQueryContext);
+  if (!context) {
+    throw new Error('DataQueryContext must be used within an DataQueryContextProvider');
+  }
+  return context;
+};
+
+const useGuidelinesContext = () => {
+  const context = useContext(GuidelinesContext);
+  if (!context) {
+    throw new Error('GuidelinesContext must be used within an GuidelinesContextProvider');
+  }
+  return context;
+};
+
+export {useFuse, useDebounce, useDataQueryContext, useGuidelinesContext};

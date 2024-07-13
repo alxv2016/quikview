@@ -1,14 +1,15 @@
-.criterion-list {
+.guidelines {
   position: relative;
   width: 100%;
   padding-bottom: 54px;
+  padding: var(--spacing-md);
 
-  .criterion-list-item ~ .criterion-list-item {
+  .guideline ~ .guideline {
     margin-top: var(--spacing-sm);
   }
 }
 
-.pour-item {
+.success-criteria {
   position: relative;
   width: 100%;
   background-color: transparent;
@@ -48,39 +49,39 @@
   }
 }
 
-.pour-item__header ~ .pour-item__footer {
+.success-criteria__header ~ .success-criteria__footer {
   margin-top: var(--spacing-lg);
 }
 
-.pour-title {
+.sc-title {
   color: var(--color-text);
   font-weight: 600;
 }
 
-.pour-ref-id {
+.sc-ref-id {
   color: var(--color-text-secondary);
 }
 
-.pour-description {
+.sc-description {
   color: var(--color-text-secondary);
   font-size: var(--legal);
 }
 
-.pour-title ~ .pour-description {
+.sc-title ~ .sc-description {
   margin-top: var(--spacing-xs);
 }
 
-.pour-item-tags {
+.sc-tags {
   position: relative;
   display: flex;
   width: 100%;
 
-  .pour-tag ~ .pour-tag {
+  .sc-tag ~ .sc-tag {
     margin-left: var(--spacing-xs);
   }
 }
 
-.pour-tag {
+.sc-tag {
   position: relative;
   display: flex;
   align-items: center;
@@ -92,4 +93,22 @@
   min-height: 20px;
   font-size: var(--fineprint);
   color: var(--color-text);
+}
+
+.nav-toolbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  min-height: 44px;
+  padding: var(--spacing-xs) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-bg);
+  z-index: 2;
+}
+
+.nav-title {
+  color: var(--color-text-secondary);
+  font-weight: 600;
 }

@@ -1,7 +1,8 @@
-import {MouseEvent} from 'react';
+import {MouseEvent, useContext} from 'react';
 import {Successcriterion} from '../data/wcag.interface';
 import './criterion-details.scss';
 import {InfoIcon} from './icons';
+import {useDataQueryContext} from '../hooks';
 
 interface CriterionDetailsProps {
   data: Successcriterion;
@@ -14,6 +15,7 @@ enum SpecialCases {
 
 function CriterionDetails({data}: CriterionDetailsProps): JSX.Element {
   const {ref_id, title, description, url, level, brief, special_cases, notes, references} = data;
+  const {dataQuery, setDataQuery} = useDataQueryContext();
 
   const renderBrief = brief?.map((item, index) => {
     const {title, description} = item;
@@ -28,6 +30,10 @@ function CriterionDetails({data}: CriterionDetailsProps): JSX.Element {
   const handleLink = (e: MouseEvent, url: string) => {
     e.preventDefault();
     window.open(url, '_blank');
+  };
+
+  const handleClose = () => {
+    setDataQuery(null);
   };
 
   const renderRefs = references.map((item, index) => {
@@ -56,6 +62,11 @@ function CriterionDetails({data}: CriterionDetailsProps): JSX.Element {
 
   return (
     <div className="criterion">
+      <div className="action-bar">
+        <div className="action-bar__container">
+          <button onClick={handleClose}>Close</button>
+        </div>
+      </div>
       <div className="criterion__header">
         <div className="criterion-title-group">
           <div className="criterion-overline">Understanding {ref_id}</div>

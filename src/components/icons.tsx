@@ -93,4 +93,34 @@ function InfoIcon(): JSX.Element {
   );
 }
 
-export {OverflowIcon, PlusIcon, PerceivableIcon, OperableIcon, UnderstandableIcon, RobustIcon, PatternsIcon, InfoIcon};
+function BackIcon(): JSX.Element {
+  return (
+    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M5.217 8.667 8.95 12.4l-.95.933L2.667 8 8 2.667l.95.933-3.733 3.733h8.116v1.334H5.217Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function HomeIcon(): JSX.Element {
+  return (
+    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2.667 14V6L8 2l5.333 4v8h-4V9.333H6.667V14h-4Z" fill="currentColor" />
+    </svg>
+  );
+}
+
+export {
+  OverflowIcon,
+  PlusIcon,
+  PerceivableIcon,
+  OperableIcon,
+  UnderstandableIcon,
+  RobustIcon,
+  PatternsIcon,
+  InfoIcon,
+  BackIcon,
+  HomeIcon,
+};
