@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   padding: var(--spacing-md);
-  padding-top: var(--spacing-lg);
+  padding-top: var(--spacing-sm);
   padding-bottom: 64px;
   display: flex;
   flex-direction: column;
@@ -49,6 +49,16 @@
   margin-top: var(--spacing-xs);
 }
 
+.criterion-tags {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.criterion-title ~ .criterion-tags {
+  margin-top: var(--spacing-xs);
+}
+
 .level-tag {
   position: relative;
   display: inline-flex;
@@ -59,7 +69,10 @@
   padding: var(--spacing-2xs) var(--spacing-xs);
   border: 1px solid var(--color-border);
   border-radius: 4px;
-  margin-right: auto;
+}
+
+.level-tag ~ .level-tag {
+  margin-left: var(--spacing-xs);
 }
 
 .criterion-description {

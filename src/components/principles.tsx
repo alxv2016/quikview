@@ -7,12 +7,15 @@ import PourList from './guidelines';
 import BottomSheet from './bottom-sheet';
 import {DataQueryContext} from './DataQueryContext';
 import {useGuidelinesContext} from '../hooks';
+import Guidelines from './guidelines';
+import Page from './page';
 
 interface PrinciplesProps {
   data: Criterion[] | null;
+  handleClick: (item: Criterion) => void;
 }
 
-function Principles({data}: PrinciplesProps): JSX.Element {
+function Principles({data, handleClick}: PrinciplesProps): JSX.Element {
   const {guidelines, setGuidelines} = useGuidelinesContext();
 
   const iconMap: {
@@ -44,10 +47,6 @@ function Principles({data}: PrinciplesProps): JSX.Element {
     },
   };
 
-  const handlePrincipleClick = (item: Criterion) => {
-    setGuidelines(item);
-  };
-
   const renderPrinciples = data?.map((item: Criterion, index: number) => {
     const {icon, color, backgroundColor} = iconMap[item.title];
     return (
@@ -57,7 +56,7 @@ function Principles({data}: PrinciplesProps): JSX.Element {
           data={item}
           iconColor={color}
           iconBGColor={backgroundColor}
-          onClick={() => handlePrincipleClick(item)}
+          onClick={() => handleClick(item)}
         ></ListItem>
       </li>
     );
@@ -66,7 +65,7 @@ function Principles({data}: PrinciplesProps): JSX.Element {
   return (
     <Fragment>
       <div className="principles">
-        <div className="label">Browse guidelines by principles</div>
+        <div className="label">Browse guidelines by principle</div>
         <ul className="principles-list">{renderPrinciples}</ul>
       </div>
     </Fragment>

@@ -1,7 +1,6 @@
 import {Fragment, HTMLAttributes, MouseEvent, RefObject, useContext, useRef} from 'react';
 import {Criterion, Successcriterion} from '../data/wcag.interface';
 import {extractGuidelines, extractSuccessCriteria} from '../utils';
-import CriterionDetails from './criterion-details';
 import ButtonIcon from './button-icon';
 import {HomeIcon, OverflowIcon, PlusIcon} from './icons';
 import './guidelines.scss';
@@ -9,16 +8,18 @@ import {useDataQueryContext, useGuidelinesContext} from '../hooks';
 
 interface GuidelinesProps extends HTMLAttributes<HTMLUListElement> {
   data: Criterion;
+  handleClick: (item: Successcriterion) => void;
 }
 
-function Guidelines({data}: GuidelinesProps): JSX.Element {
+function Guidelines({data, handleClick}: GuidelinesProps): JSX.Element {
   const guidelinesData = extractGuidelines(data.guidelines);
   const {dataQuery, setDataQuery} = useDataQueryContext();
   const {guidelines, setGuidelines} = useGuidelinesContext();
 
-  const handleResultClick = (item: Successcriterion) => {
-    setDataQuery(item);
-  };
+  // const handleResultClick = (item: Successcriterion) => {
+  //   setDataQuery(item);
+  //   setGuidelines(null);
+  // };
 
   const handleCreate = (e: MouseEvent) => {
     e.stopPropagation();
@@ -39,7 +40,7 @@ function Guidelines({data}: GuidelinesProps): JSX.Element {
 
     return (
       <li key={index} className="guideline">
-        <div role="button" tabIndex={0} className="success-criteria" onClick={() => handleResultClick(item)}>
+        <div role="button" tabIndex={0} className="success-criteria" onClick={() => handleClick(item)}>
           <div className="success-criteria__header">
             <div className="sc-title">
               <span className="sc-ref-id">{ref_id}</span> {title}
@@ -72,16 +73,7 @@ function Guidelines({data}: GuidelinesProps): JSX.Element {
 
   return (
     <Fragment>
-      <div className="nav-toolbar">
-        <div className="nav-title">{data.title}</div>
-        <ButtonIcon label="Home" onClick={handleNav}>
-          <HomeIcon />
-        </ButtonIcon>
-      </div>
-      <ul className="guidelines">
-        {!dataQuery && renderGuidelines}
-        {dataQuery && <CriterionDetails data={dataQuery} />}
-      </ul>
+      <ul className="guidelines">{renderGuidelines}</ul>
     </Fragment>
   );
 }

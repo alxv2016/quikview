@@ -1,8 +1,9 @@
-import {MouseEvent, useContext} from 'react';
+import {Fragment, MouseEvent, useContext} from 'react';
 import {Successcriterion} from '../data/wcag.interface';
 import './criterion-details.scss';
-import {InfoIcon} from './icons';
+import {BackIcon, InfoIcon, OverflowIcon} from './icons';
 import {useDataQueryContext} from '../hooks';
+import ButtonIcon from './button-icon';
 
 interface CriterionDetailsProps {
   data: Successcriterion;
@@ -14,7 +15,7 @@ enum SpecialCases {
 }
 
 function CriterionDetails({data}: CriterionDetailsProps): JSX.Element {
-  const {ref_id, title, description, url, level, brief, special_cases, notes, references} = data;
+  const {ref_id, title, description, tags, url, level, brief, special_cases, notes, references} = data;
   const {dataQuery, setDataQuery} = useDataQueryContext();
 
   const renderBrief = brief?.map((item, index) => {
@@ -60,45 +61,49 @@ function CriterionDetails({data}: CriterionDetailsProps): JSX.Element {
     return <div key={index}>{content}</div>;
   });
 
+  const renderTags = tags?.map((tag, index) => {
+    return (
+      <div key={index} className="level-tag">
+        {tag}
+      </div>
+    );
+  });
+
   return (
-    <div className="criterion">
-      <div className="action-bar">
-        <div className="action-bar__container">
-          <button onClick={handleClose}>Close</button>
-        </div>
-      </div>
-      <div className="criterion__header">
-        <div className="criterion-title-group">
-          <div className="criterion-overline">Understanding {ref_id}</div>
-          <div className="criterion-title">{title}</div>
-          <div className="level-tag">Level {level}</div>
-        </div>
-        {renderBrief}
-        <div className="criterion-success">
-          <div className="criterion-subtitle">Success criterion</div>
-          <div className="criterion-description">{description}</div>
-        </div>
-      </div>
-      {special_cases && (
-        <div className="special-cases">
-          <div className="special-cases__header">
-            <InfoIcon />
-            {special_cases[0].type === SpecialCases.EXCEPTION ? 'Exceptions' : 'No exceptions'}
+    <Fragment>
+      <div className="criterion">
+        <div className="criterion__header">
+          <div className="criterion-title-group">
+            <div className="criterion-title">{title}</div>
+            <div className="criterion-tags">{renderTags}</div>
           </div>
-          <div className="special-cases__body">{renderSpecialCases}</div>
+          {renderBrief}
+          <div className="criterion-success">
+            <div className="criterion-subtitle">Success criterion</div>
+            <div className="criterion-description">{description}</div>
+          </div>
         </div>
-      )}
-      {notes && (
-        <div className="special-cases special-cases--info">
-          <div className="special-cases__header">Notes</div>
-          <div className="special-cases__body">{renderNotes}</div>
+        {special_cases && (
+          <div className="special-cases">
+            <div className="special-cases__header">
+              <InfoIcon />
+              {special_cases[0].type === SpecialCases.EXCEPTION ? 'Exceptions' : 'No exceptions'}
+            </div>
+            <div className="special-cases__body">{renderSpecialCases}</div>
+          </div>
+        )}
+        {notes && (
+          <div className="special-cases special-cases--info">
+            <div className="special-cases__header">Notes</div>
+            <div className="special-cases__body">{renderNotes}</div>
+          </div>
+        )}
+        <div className="brief">
+          <div className="brief-title">References</div>
+          <div className="brief-description">{renderRefs}</div>
         </div>
-      )}
-      <div className="brief">
-        <div className="brief-title">References</div>
-        <div className="brief-description">{renderRefs}</div>
       </div>
-    </div>
+    </Fragment>
   );
 }
 

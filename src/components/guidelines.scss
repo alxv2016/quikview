@@ -94,21 +94,3 @@
   font-size: var(--fineprint);
   color: var(--color-text);
 }
-
-.nav-toolbar {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  min-height: 44px;
-  padding: var(--spacing-xs) var(--spacing-md);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--color-bg);
-  z-index: 2;
-}
-
-.nav-title {
-  color: var(--color-text-secondary);
-  font-weight: 600;
-}
