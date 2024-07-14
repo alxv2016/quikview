@@ -2,8 +2,9 @@
 :root {
   --base-font-size: 1rem;
   --base-font-family: 'Inter';
-  --body-line-height: 1.75;
+  --body-line-height: 1.5;
   --heading-line-height: 1.25;
+  --ui-line-height: 1.25;
 
   --heading-01: 2.027rem;
   --heading-02: 1.802rem;
@@ -28,7 +29,9 @@
   --color-text-accent: var(--figma-color-text-component);
   --color-text-brand: var(--figma-color-text-brand);
   --color-bg: var(--figma-color-bg);
+  --color-bg-dark: #2c2c2c;
   --color-bg-hover: var(--figma-color-bg-hover);
+  --color-bg-active: var(--figma-color-bg-tertiary);
   --color-bg-brand-hover: var(--figma-color-bg-brand-hover);
   --color-bg-brand-active: var(--figma-color-bg-brand-secondary);
   --color-bg-inverse: var(--figma-color-bg-inverse);
@@ -45,6 +48,8 @@
   --color-icon-inverse: var(--figma-color-icon-oninverse);
   --color-icon-onbrand: var(--figma-color-icon-onbrand);
   --color-icon-disabled: var(--figma-color-icon-disabled);
+  --color-border-warning: var(--figma-color-border-onwarning);
+  --color-border-brand: var(--figma-color-border-brand-strong);
 
   --spacing-2xs: 0.125rem; // 2px
   --spacing-xs: 0.25rem; // 4px

@@ -22,11 +22,17 @@ export interface Successcriterion {
   title: string;
   description: string;
   url: string;
-  level?: string;
+  level: string;
+  brief?: Brief[];
   special_cases?: Specialcase[] | null;
   notes?: Note[] | null;
   references: Reference[];
   tags?: string[];
+}
+
+export interface Brief {
+  title: string;
+  description: string;
 }
 
 export interface Note {

@@ -2,15 +2,68 @@
 @use './variables';
 @use './figma-ui';
 
-main {
-  padding: var(--spacing-lg);
+body {
+  background-color: var(--color-bg);
+  height: 100%;
 }
 
-.filter-toolbar {
+strong {
+  font-weight: 600;
+}
+
+.plugin-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.plugin-header {
+  position: relative;
+  padding: var(--spacing-md);
+  padding-top: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.plugin-footer {
+  margin-top: auto;
+  font-size: var(--legal);
+  padding: var(--spacing-md);
+  color: var(--color-text-secondary);
+}
+
+.search-filters {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-top: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
+}
+
+.nav-toolbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  min-height: 44px;
+  padding: var(--spacing-xs) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-bg);
+  z-index: 2;
+}
+
+.nav-title {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.nav-btn-group {
+  position: relative;
+  button ~ button {
+    margin-left: var(--spacing-2xs);
+  }
 }

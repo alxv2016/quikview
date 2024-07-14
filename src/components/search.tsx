@@ -1,7 +1,6 @@
-import {useState, useEffect, useRef, useMemo, useContext} from 'react';
+import {useState, useEffect, useRef} from 'react';
 import {Successcriterion} from '../data/wcag.interface';
-import {SearchContext} from './searchContext';
-import {useDebounce, useFuse} from '../hooks';
+import {useDataQueryContext, useDebounce, useFuse} from '../hooks';
 import './search.scss';
 
 interface SearchProps {
@@ -9,9 +8,10 @@ interface SearchProps {
   keys: any[];
   placeholder: string;
   onResultsChange: (result: Successcriterion[] | null) => void;
+  onResultsSelected: (result: Successcriterion) => void;
 }
 
-function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.Element {
+function Search({data, keys, placeholder, onResultsChange, onResultsSelected}: SearchProps): JSX.Element {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<Successcriterion[] | null>(null);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -19,7 +19,7 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
   const listboxRef = useRef<HTMLUListElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const debouncedQuery = useDebounce(query, 100);
-  const context = useContext(SearchContext);
+  const {dataQuery, setDataQuery} = useDataQueryContext();
   const fuse = useFuse(data, keys);
 
   useEffect(() => {
@@ -82,7 +82,8 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
   };
 
   const handleResultClick = (result: Successcriterion) => {
-    context?.setUserResult?.(result);
+    setDataQuery(result);
+    onResultsSelected(result);
     if (inputRef.current) {
       setQuery('');
       handleClose();
@@ -122,12 +123,9 @@ function Search({data, keys, placeholder, onResultsChange}: SearchProps): JSX.El
         onClick={() => handleResultClick(result)}
         onMouseDown={(e) => e.preventDefault()}
       >
-        <div className="wcag-list-item__meta">
-          <span className="sr-only">Success criterion</span>
-          <span className="wcag-success-criteria">{ref_id} </span>
-          <span className="wcag-label">{title} </span>
+        <div className="wcag-label">
+          <span className="wcag-ref-id">{ref_id}</span> {title}
         </div>
-        <span className="sr-only">Level</span> <span className="wcag-level">{level}</span>
       </li>
     );
   });

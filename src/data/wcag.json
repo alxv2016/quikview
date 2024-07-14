@@ -19,11 +19,21 @@
         "success_criteria": [
           {
             "ref_id": "1.1.1",
-            "tags": ["Perceivable", "Text Alternatives", "SC 1.1.1", "A"],
+            "tags": ["Perceivable", "Text Alternatives", "A"],
             "title": "Non-text Content",
             "description": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose, except for the situations listed below.",
             "url": "https://www.w3.org/TR/WCAG22/#non-text-content",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who can’t fully see or hear content can understand it."
+              },
+              {
+                "title": "What to do",
+                "description": "Create a text alternative for visual and auditory content."
+              }
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -84,11 +94,21 @@
         "success_criteria": [
           {
             "ref_id": "1.2.1",
-            "tags": ["Perceivable", "Time-based Media", "SC 1.2.1", "A"],
+            "tags": ["Perceivable", "Time-based Media", "A"],
             "title": "Audio-only and Video-only (Prerecorded)",
             "description": "For prerecorded audio-only and prerecorded video-only media, the following are true, except when the audio or video is a media alternative for text and is clearly labeled as such.",
             "url": "https://www.w3.org/TR/WCAG22/#audio-only-and-video-only-prerecorded",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who can’t fully see or hear content can understand it."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide an alternative when content is perceivable with only one sense."
+              }
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -115,11 +135,21 @@
           },
           {
             "ref_id": "1.2.2",
-            "tags": ["Perceivable", "Time-based Media", "SC 1.2.2", "A"],
+            "tags": ["Perceivable", "Time-based Media", "A"],
             "title": "Captions (Prerecorded)",
             "description": "Captions are provided for all prerecorded audio content in synchronized media, except when the media is a media alternative for text and is clearly labeled as such.",
             "url": "https://www.w3.org/TR/WCAG22/#captions-prerecorded",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who are deaf or hard of hearing can understand audio in videos."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide synchronized text for audio content in existing videos."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -135,11 +165,21 @@
           },
           {
             "ref_id": "1.2.3",
-            "tags": ["Perceivable", "Time-based Media", "SC 1.2.3", "A"],
+            "tags": ["Perceivable", "Time-based Media", "A"],
             "title": "Audio Description or Media Alternative (Prerecorded)",
             "description": "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media, except when the media is a media alternative for text and is clearly labeled as such.",
             "url": "https://www.w3.org/TR/WCAG22/#audio-description-or-media-alternative-prerecorded",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who are blind or who cannot understand the visual content can have it described."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide a description of the visual content in videos."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -155,11 +195,21 @@
           },
           {
             "ref_id": "1.2.4",
-            "tags": ["Perceivable", "Time-based Media", "SC 1.2.4", "AA"],
+            "tags": ["Perceivable", "Time-based Media", "AA"],
             "title": "Captions (Live)",
             "description": "Captions are provided for all live audio content in synchronized media.",
             "url": "https://www.w3.org/TR/WCAG22/#captions-live",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who are deaf or hard of hearing can understand audio in real-time video content."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide synchronized text for audio content in real-time videos."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -175,11 +225,21 @@
           },
           {
             "ref_id": "1.2.5",
-            "tags": ["Perceivable", "Time-based Media", "SC 1.2.5", "AA"],
+            "tags": ["Perceivable", "Time-based Media", "AA"],
             "title": "Audio Description (Prerecorded)",
             "description": "Audio description is provided for all prerecorded video content in synchronized media.",
             "url": "https://www.w3.org/TR/WCAG22/#audio-description-prerecorded",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who cannot see or understand the visual content can hear about it while playing videos."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide a synchronized spoken description of the visual content in videos."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -195,11 +255,21 @@
           },
           {
             "ref_id": "1.2.6",
-            "tags": ["Perceivable", "Time-based Media", "SC 1.2.6", "AAA"],
+            "tags": ["Perceivable", "Time-based Media", "AAA"],
             "title": "Sign Language (Prerecorded)",
             "description": "Sign language interpretation is provided for all prerecorded audio content in synchronized media.",
             "url": "https://www.w3.org/TR/WCAG22/#sign-language-prerecorded",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who are deaf or hard of hearing have more ways to understand multimedia content."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide sign language interpretation for audio content in existing videos."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -215,11 +285,21 @@
           },
           {
             "ref_id": "1.2.7",
-            "tags": ["Perceivable", "Time-based Media", "SC 1.2.7", "AAA"],
+            "tags": ["Perceivable", "Time-based Media", "AAA"],
             "title": "Extended Audio Description (Prerecorded)",
             "description": "Where pauses in foreground audio are insufficient to allow audio descriptions to convey the sense of the video, extended audio description is provided for all prerecorded video content in synchronized media.",
             "url": "https://www.w3.org/TR/WCAG22/#extended-audio-description-prerecorded",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who are blind or who cannot understand the visual content can have it described to them while playing videos."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide extended spoken descriptions of the visual content in videos."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -235,11 +315,21 @@
           },
           {
             "ref_id": "1.2.8",
-            "tags": ["Perceivable", "Time-based Media", "SC 1.2.8", "AAA"],
+            "tags": ["Perceivable", "Time-based Media", "AAA"],
             "title": "Media Alternative (Prerecorded)",
             "description": "An alternative for time-based media is provided for all prerecorded synchronized media and for all prerecorded video-only media.",
             "url": "https://www.w3.org/TR/WCAG22/#media-alternative-prerecorded",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "More people, including those who are deaf-blind, can better understand the content at their own pace."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide a text equivalent for all content in videos."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -255,11 +345,21 @@
           },
           {
             "ref_id": "1.2.9",
-            "tags": ["Perceivable", "Time-based Media", "SC 1.2.9", "AAA"],
+            "tags": ["Perceivable", "Time-based Media", "AAA"],
             "title": "Audio-only (Live)",
             "description": " An alternative for time-based media that presents equivalent information for live audio-only content is provided.",
             "url": "https://www.w3.org/TR/WCAG22/#audio-only-live",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who cannot hear or understand real-time audio can read an equivalent."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide a text equivalent for live audio-only content."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -289,11 +389,21 @@
         "success_criteria": [
           {
             "ref_id": "1.3.1",
-            "tags": ["Perceivable", "Acaptable", "SC 1.3.1", "A"],
+            "tags": ["Perceivable", "Acaptable", "A"],
             "title": "Info and Relationships",
             "description": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.",
             "url": "https://www.w3.org/TR/WCAG22/#info-and-relationships",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People can adapt the presentation to suit their needs while preserving the original meaning."
+              },
+              {
+                "title": "What to do",
+                "description": "Use code to reinforce relationships and information conveyed through presentation."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -310,10 +420,20 @@
           {
             "ref_id": "1.3.2",
             "title": "Meaningful Sequence",
-            "tags": ["Perceivable", "Acaptable", "SC 1.3.2", "A"],
+            "tags": ["Perceivable", "Acaptable", "A"],
             "description": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.",
             "url": "https://www.w3.org/TR/WCAG22/#meaningful-sequence",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Sound distracts some people, and also interferes with screen readers."
+              },
+              {
+                "title": "What to do",
+                "description": "Use code to preserve meaningful content order."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -329,11 +449,21 @@
           },
           {
             "ref_id": "1.3.3",
-            "tags": ["Perceivable", "Acaptable", "SC 1.3.3", "A"],
+            "tags": ["Perceivable", "Acaptable", "A"],
             "title": "Sensory Characteristics",
             "description": "Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, size, visual location, orientation, or sound.",
             "url": "https://www.w3.org/TR/WCAG22/#sensory-characteristics",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who are blind or have low vision need non-visual instructions."
+              },
+              {
+                "title": "What to do",
+                "description": "Describe controls by name, not just by appearance or location."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -353,11 +483,21 @@
           },
           {
             "ref_id": "1.3.4",
-            "tags": ["Perceivable", "Acaptable", "SC 1.3.4", "AA"],
+            "tags": ["Perceivable", "Acaptable", "AA"],
             "title": "Orientation",
             "description": "Content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.",
             "url": "https://www.w3.org/TR/WCAG22/#orientation",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Wheelchair users and others may have devices mounted in a fixed orientation."
+              },
+              {
+                "title": "What to do",
+                "description": "Don't lock content to either portrait or landscape presentation."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -377,11 +517,21 @@
           },
           {
             "ref_id": "1.3.5",
-            "tags": ["Perceivable", "Acaptable", "SC 1.3.5", "AA"],
+            "tags": ["Perceivable", "Acaptable", "AA"],
             "title": "Identify Input Purpose",
             "description": "The purpose of each input field collecting information about the user can be programmatically determined when:",
             "url": "https://www.w3.org/TR/WCAG22/#identify-input-purpose",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people with cognitive disabilities may not understand the input's purpose from the label alone."
+              },
+              {
+                "title": "What to do",
+                "description": "Use code to indicate the purpose of common inputs, where technology allows."
+              }
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -406,11 +556,21 @@
           },
           {
             "ref_id": "1.3.6",
-            "tags": ["Perceivable", "Acaptable", "SC 1.3.6", "AAA"],
+            "tags": ["Perceivable", "Acaptable", "AAA"],
             "title": "Identify Purpose",
             "description": "In content implemented using markup languages, the purpose of User Interface Components, icons, and regions can be programmatically determined.",
             "url": "https://www.w3.org/TR/WCAG22/#identify-purpose",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people with cognitive disabilities may not understand a control's purpose from the name alone."
+              },
+              {
+                "title": "What to do",
+                "description": "Use code to indicate the meaning of all controls and other key information, where available."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -440,11 +600,21 @@
         "success_criteria": [
           {
             "ref_id": "1.4.1",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.1", "A"],
+            "tags": ["Perceivable", "Distinguishable", "A"],
             "title": "Use of Color",
             "description": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
             "url": "https://www.w3.org/TR/WCAG22/#use-of-color",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Not everyone sees colors or sees them the same way."
+              },
+              {
+                "title": "What to do",
+                "description": "Use information in addition to color, such as shape or text, to convey meaning."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -464,11 +634,21 @@
           },
           {
             "ref_id": "1.4.2",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.2", "A"],
+            "tags": ["Perceivable", "Distinguishable", "A"],
             "title": "Audio Control",
             "description": "If any audio on a Web page plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level.",
             "url": "https://www.w3.org/TR/WCAG22/#audio-control",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Sound distracts some people, and also interferes with screen readers."
+              },
+              {
+                "title": "What to do",
+                "description": "If you play audio content automatically, let people turn it down or off."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -488,11 +668,21 @@
           },
           {
             "ref_id": "1.4.3",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.3", "AA"],
+            "tags": ["Perceivable", "Distinguishable", "AA"],
             "title": "Contrast (Minimum)",
             "description": " The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following:",
             "url": "https://www.w3.org/TR/WCAG22/#contrast-minimum",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people cannot read faint text."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide sufficient contrast between text and its background."
+              }
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -524,11 +714,21 @@
           },
           {
             "ref_id": "1.4.4",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.4", "AA"],
+            "tags": ["Perceivable", "Distinguishable", "AA"],
             "title": "Resize text",
             "description": "Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
             "url": "https://www.w3.org/TR/WCAG22/#resize-text",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people can only read text when it is bigger."
+              },
+              {
+                "title": "What to do",
+                "description": "Ensure text can be doubled in size."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -544,11 +744,21 @@
           },
           {
             "ref_id": "1.4.5",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.5", "AA"],
+            "tags": ["Perceivable", "Distinguishable", "AA"],
             "title": "Images of Text",
             "description": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text except for the following:",
             "url": "https://www.w3.org/TR/WCAG22/#images-of-text",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People cannot alter how text looks in images."
+              },
+              {
+                "title": "What to do",
+                "description": "Use text instead of pictures of text."
+              }
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -579,11 +789,21 @@
           },
           {
             "ref_id": "1.4.6",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.6", "AAA"],
+            "tags": ["Perceivable", "Distinguishable", "AAA"],
             "title": "Contrast (Enhanced)",
             "description": "The visual presentation of text and images of text has a contrast ratio of at least 7:1, except for the following: ",
             "url": "https://www.w3.org/TR/WCAG22/#contrast-enhanced",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people cannot read text with minimum contrast."
+              },
+              {
+                "title": "What to do",
+                "description": "Strongly contrast text against its background."
+              }
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -615,11 +835,21 @@
           },
           {
             "ref_id": "1.4.7",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.7", "AAA"],
+            "tags": ["Perceivable", "Distinguishable", "AAA"],
             "title": "Low or No Background Audio",
             "description": "For prerecorded audio-only content that (1) contains primarily speech in the foreground, (2) is not an audio CAPTCHA or audio logo, and (3) is not vocalization intended to be primarily musical expression such as singing or rapping, at least one of the following is true:",
             "url": "https://www.w3.org/TR/WCAG22/#low-or-no-background-audio",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who are hard of hearing may have difficulty distinguishing speech from music and other sounds."
+              },
+              {
+                "title": "What to do",
+                "description": "Avoid or lessen background sound, or let users turn it off."
+              }
+            ],
             "special_cases": [
               {
                 "type": "at_least_one",
@@ -655,11 +885,21 @@
           },
           {
             "ref_id": "1.4.8",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.8", "AAA"],
+            "tags": ["Perceivable", "Distinguishable", "AAA"],
             "title": "Visual Presentation",
             "description": "For the visual presentation of blocks of text, a mechanism is available to achieve the following:",
             "url": "https://www.w3.org/TR/WCAG22/#visual-presentation",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some text formats are more readable for people with cognitive disabilities and low vision."
+              },
+              {
+                "title": "What to do",
+                "description": "Meet text display requirements or allow users to adjust them."
+              }
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -696,11 +936,21 @@
           },
           {
             "ref_id": "1.4.9",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.9", "AAA"],
+            "tags": ["Perceivable", "Distinguishable", "AAA"],
             "title": "Images of Text (No Exception)",
             "description": "Images of text are only used for pure decoration or where a particular presentation of text is essential to the information being conveyed.",
             "url": "https://www.w3.org/TR/WCAG22/#images-of-text-no-exception",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People cannot alter how text looks in images."
+              },
+              {
+                "title": "What to do",
+                "description": "Do not use pictures of text unless there is no other way to present information."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -720,11 +970,21 @@
           },
           {
             "ref_id": "1.4.10",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.10", "AA"],
+            "tags": ["Perceivable", "Distinguishable", "AA"],
             "title": "Reflow",
             "description": "Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:",
             "url": "https://www.w3.org/TR/WCAG22/#reflow",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who need bigger text find it difficult if they must scroll to read long lines."
+              },
+              {
+                "title": "What to do",
+                "description": "Make lines of text reflow within the viewport."
+              }
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -760,11 +1020,21 @@
           },
           {
             "ref_id": "1.4.11",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.11", "AA"],
+            "tags": ["Perceivable", "Distinguishable", "AA"],
             "title": "Non-text Contrast",
             "description": "The visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):",
             "url": "https://www.w3.org/TR/WCAG22/#non-text-contrast",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people cannot see elements with low contrast."
+              },
+              {
+                "title": "What to do",
+                "description": "Ensure meaningful visual cues achieve 3:1 against the background."
+              }
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -791,11 +1061,21 @@
           },
           {
             "ref_id": "1.4.12",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.12", "AA"],
+            "tags": ["Perceivable", "Distinguishable", "AA"],
             "title": "Text Spacing",
             "description": "In content implemented using markup languages that support the following text style properties, no loss of content or functionality occurs by setting all of the following and by changing no other style property:",
             "url": "https://www.w3.org/TR/WCAG22/#text-spacing",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people need text with different spacing or font characteristics."
+              },
+              {
+                "title": "What to do",
+                "description": "Ensure content adapts to user-defined text settings."
+              }
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -832,11 +1112,21 @@
           },
           {
             "ref_id": "1.4.13",
-            "tags": ["Perceivable", "Distinguishable", "SC 1.4.13", "AA"],
+            "tags": ["Perceivable", "Distinguishable", "AA"],
             "title": "Content on Hover or Focus",
             "description": "Where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:",
             "url": "https://www.w3.org/TR/WCAG22/#content-on-hover-or-focus",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Unpredictable temporary content can be hard for some to consume and may disrupt others."
+              },
+              {
+                "title": "What to do",
+                "description": "If hover or focus causes content changes, ensure interaction is predictable."
+              }
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -901,11 +1191,21 @@
         "success_criteria": [
           {
             "ref_id": "2.1.1",
-            "tags": ["Operable", "Keyboard Accessible", "SC 2.1.1", "A"],
+            "tags": ["Operable", "Keyboard Accessible", "A"],
             "title": "Keyboard",
             "description": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user's movement and not just the endpoints.",
             "url": "https://www.w3.org/TR/WCAG22/#keyboard",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Many people rely on the keyboard interface, including blind and some mobility impaired people."
+              },
+              {
+                "title": "What to do",
+                "description": "Ensure pointer actions have a keyboard equivalent."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -928,11 +1228,21 @@
           },
           {
             "ref_id": "2.1.2",
-            "tags": ["Operable", "Keyboard Accessible", "SC 2.1.2", "A"],
+            "tags": ["Operable", "Keyboard Accessible", "A"],
             "title": "No Keyboard Trap",
             "description": "If keyboard focus can be moved to a component of the page using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away.",
             "url": "https://www.w3.org/TR/WCAG22/#no-keyboard-trap",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who rely on the keyboard often have no other means to navigate."
+              },
+              {
+                "title": "What to do",
+                "description": "Ensure users always know how to navigate away from components."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -952,11 +1262,21 @@
           },
           {
             "ref_id": "2.1.3",
-            "tags": ["Operable", "Keyboard Accessible", "SC 2.1.3", "AAA"],
+            "tags": ["Operable", "Keyboard Accessible", "AAA"],
             "title": "Keyboard (No Exception)",
             "description": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
             "url": "https://www.w3.org/TR/WCAG22/#keyboard-no-exception",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who can only use the keyboard interface need to be able to accomplish everything."
+              },
+              {
+                "title": "What to do",
+                "description": "Ensure all pointer actions have a keyboard equivalent."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -972,11 +1292,21 @@
           },
           {
             "ref_id": "2.1.4",
-            "tags": ["Operable", "Keyboard Accessible", "SC 2.1.4", "A"],
+            "tags": ["Operable", "Keyboard Accessible", "A"],
             "title": "Character Key Shortcuts",
             "description": "If a keyboard shortcut is implemented in content using only letter (including upper- and lower-case letters), punctuation, number, or symbol characters, then at least one of the following is true:",
             "url": "https://www.w3.org/TR/WCAG22/#character-key-shortcuts",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Character-key shortcuts are easy to accidentally trigger, especially with speech input."
+              },
+              {
+                "title": "What to do",
+                "description": "Ensure character-only shortcut keys can be turned off or modified."
+              }
+            ],
             "special_cases": [
               {
                 "type": "at_least_one",
@@ -1022,11 +1352,21 @@
         "success_criteria": [
           {
             "ref_id": "2.2.1",
-            "tags": ["Operable", "Enough Time", "SC 2.2.1", "A"],
+            "tags": ["Operable", "Enough Time", "A"],
             "title": "Timing Adjustable",
             "description": "For each time limit that is set by the content, at least one of the following is true:",
             "url": "https://www.w3.org/TR/WCAG22/#timing-adjustable",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People with disabilities may need more time to complete activities."
+              },
+              {
+                "title": "What to do",
+                "description": "Let users turn off, adjust, or extend time limits."
+              }
+            ],
             "special_cases": [
               {
                 "type": "at_least_one",
@@ -1077,11 +1417,21 @@
           },
           {
             "ref_id": "2.2.2",
-            "tags": ["Operable", "Enough Time", "SC 2.2.2", "A"],
+            "tags": ["Operable", "Enough Time", "A"],
             "title": "Pause, Stop, Hide",
             "description": "For moving, blinking, scrolling, or auto-updating information, all of the following are true:",
             "url": "https://www.w3.org/TR/WCAG22/#pause-stop-hide",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people with cognitive disabilities and attention deficits cannot concentrate with continual movement."
+              },
+              {
+                "title": "What to do",
+                "description": "Let users control content changes that occur in parallel with other content."
+              }
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -1121,11 +1471,21 @@
           },
           {
             "ref_id": "2.2.3",
-            "tags": ["Operable", "Enough Time", "SC 2.2.3", "AAA"],
+            "tags": ["Operable", "Enough Time", "AAA"],
             "title": "No Timing",
             "description": "Timing is not an essential part of the event or activity presented by the content, except for non-interactive synchronized media and real-time events.",
             "url": "https://www.w3.org/TR/WCAG22/#no-timing",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People with disabilities often need more time to complete actions."
+              },
+              {
+                "title": "What to do",
+                "description": "Do not use time limits, except for video and live events."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1141,11 +1501,21 @@
           },
           {
             "ref_id": "2.2.4",
-            "tags": ["Operable", "Enough Time", "SC 2.2.4", "AAA"],
+            "tags": ["Operable", "Enough Time", "AAA"],
             "title": "Interruptions",
             "description": "Interruptions can be postponed or suppressed by the user, except interruptions involving an emergency.",
             "url": "https://www.w3.org/TR/WCAG22/#interruptions",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Updates distract and disrupt assistive technology users and people with attention deficits."
+              },
+              {
+                "title": "What to do",
+                "description": "Let people delay or turn off updates, except in emergencies."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1161,11 +1531,21 @@
           },
           {
             "ref_id": "2.2.5",
-            "tags": ["Operable", "Enough Time", "SC 2.2.5", "AAA"],
+            "tags": ["Operable", "Enough Time", "AAA"],
             "title": "Re-authenticating",
             "description": "When an authenticated session expires, the user can continue the activity without loss of data after re-authenticating.",
             "url": "https://www.w3.org/TR/WCAG22/#re-authenticating",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people may require additional time to complete an activity."
+              },
+              {
+                "title": "What to do",
+                "description": "Preserve users' prior activity and data through reauthentication."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1181,11 +1561,21 @@
           },
           {
             "ref_id": "2.2.6",
-            "tags": ["Operable", "Enough Time", "SC 2.2.6", "AAA"],
+            "tags": ["Operable", "Enough Time", "AAA"],
             "title": "Timeouts",
             "description": "Users are warned of the duration of any user inactivity that could cause data loss, unless the data is preserved for more than 20 hours when the user does not take any actions.",
             "url": "https://www.w3.org/TR/WCAG22/#timeouts",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People with disabilities may need more time to complete actions."
+              },
+              {
+                "title": "What to do",
+                "description": "Tell users how long their session can be inactive before they may lose information."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1219,11 +1609,21 @@
         "success_criteria": [
           {
             "ref_id": "2.3.1",
-            "tags": ["Operable", "Seizures", "SC 2.3.1", "A"],
+            "tags": ["Operable", "Seizures", "A"],
             "title": "Three Flashes or Below Threshold",
             "description": "Web pages do not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.",
             "url": "https://www.w3.org/TR/WCAG22/#three-flashes-or-below-threshold",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Flashing content can cause migraines, dizziness, nausea, and seizures."
+              },
+              {
+                "title": "What to do",
+                "description": "Avoid content that flashes, or keep it under thresholds."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1243,11 +1643,21 @@
           },
           {
             "ref_id": "2.3.2",
-            "tags": ["Operable", "Seizures", "SC 2.3.2", "AAA"],
+            "tags": ["Operable", "Seizures", "AAA"],
             "title": "Three Flashes",
             "description": "Web pages do not contain anything that flashes more than three times in any one second period.",
             "url": "https://www.w3.org/TR/WCAG22/#three-flashes",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Flashing content can cause migraines, dizziness, nausea, and seizures."
+              },
+              {
+                "title": "What to do",
+                "description": "Do not flash content more than 3 times a second."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1263,11 +1673,21 @@
           },
           {
             "ref_id": "2.3.3",
-            "tags": ["Operable", "Seizures", "SC 2.3.3", "AAA"],
+            "tags": ["Operable", "Seizures", "AAA"],
             "title": "Animation from Interactions",
             "description": "Motion animation triggered by interaction can be disabled, unless the animation is essential to the functionality or the information being conveyed.",
             "url": "https://www.w3.org/TR/WCAG22/#animation-from-interactions",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People can get sick from motion effects."
+              },
+              {
+                "title": "What to do",
+                "description": "Support user preferences for motion, and eliminate unnecessary motion effects."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1297,11 +1717,21 @@
         "success_criteria": [
           {
             "ref_id": "2.4.1",
-            "tags": ["Operable", "Navigable", "SC 2.4.1", "A"],
+            "tags": ["Operable", "Navigable", "A"],
             "title": "Bypass Blocks",
             "description": "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
             "url": "https://www.w3.org/TR/WCAG22/#bypass-blocks",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Users reliant on the keyboard interface can move around pages efficiently."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide a means of skipping repeating content."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1317,11 +1747,21 @@
           },
           {
             "ref_id": "2.4.2",
-            "tags": ["Operable", "Navigable", "SC 2.4.2", "A"],
+            "tags": ["Operable", "Navigable", "A"],
             "title": "Page Titled",
             "description": "Web pages have titles that describe topic or purpose.",
             "url": "https://www.w3.org/TR/WCAG22/#page-titled",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Page titles help users identify and distinguish different pages."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide a descriptive page title using appropriate technology."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1337,11 +1777,21 @@
           },
           {
             "ref_id": "2.4.3",
-            "tags": ["Operable", "Navigable", "SC 2.4.3", "A"],
+            "tags": ["Operable", "Navigable", "A"],
             "title": "Focus Order",
             "description": "If a Web page can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.",
             "url": "https://www.w3.org/TR/WCAG22/#focus-order",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Navigating a site or application with only the keyboard will make sense."
+              },
+              {
+                "title": "What to do",
+                "description": "Elements receive focus in an order that preserves meaning."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1357,11 +1807,21 @@
           },
           {
             "ref_id": "2.4.4",
-            "tags": ["Operable", "Navigable", "SC 2.4.4", "A"],
+            "tags": ["Operable", "Navigable", "A"],
             "title": "Link Purpose (In Context)",
             "description": "The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link context, except where the purpose of the link would be ambiguous to users in general.",
             "url": "https://www.w3.org/TR/WCAG22/#link-purpose-in-context",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People with visual and cognitive disabilities can navigate more easily."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide descriptive names or context for all links."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1377,11 +1837,21 @@
           },
           {
             "ref_id": "2.4.5",
-            "tags": ["Operable", "Navigable", "SC 2.4.5", "AA"],
+            "tags": ["Operable", "Navigable", "AA"],
             "title": "Multiple Ways",
             "description": "More than one way is available to locate a Web page within a set of Web pages except where the Web Page is the result of, or a step in, a process.",
             "url": "https://www.w3.org/TR/WCAG22/#link-purpose-in-context",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Not everyone can navigate content in the same way."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide at least two options for reaching the same content."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1397,11 +1867,21 @@
           },
           {
             "ref_id": "2.4.6",
-            "tags": ["Operable", "Navigable", "SC 2.4.6", "AA"],
+            "tags": ["Operable", "Navigable", "AA"],
             "title": "Headings and Labels",
             "description": "Headings and labels describe topic or purpose.",
             "url": "https://www.w3.org/TR/WCAG22/#headings-and-labels",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People can orient themselves, especially those with cognitive or visual disabilities."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide descriptive headings and labels"
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1417,11 +1897,21 @@
           },
           {
             "ref_id": "2.4.7",
-            "tags": ["Operable", "Navigable", "SC 2.4.7", "AA"],
+            "tags": ["Operable", "Navigable", "AA"],
             "title": "Focus Visible",
             "description": "Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.",
             "url": "https://www.w3.org/TR/WCAG22/#focus-visible",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Without a focus indicator, sighted keyboard users cannot operate the page."
+              },
+              {
+                "title": "What to do",
+                "description": "Ensure each item receiving focus has a visible indicator."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1437,11 +1927,21 @@
           },
           {
             "ref_id": "2.4.8",
-            "tags": ["Operable", "Navigable", "SC 2.4.8", "AAA"],
+            "tags": ["Operable", "Navigable", "AAA"],
             "title": "Location",
             "description": "Information about the user's location within a set of Web pages is available.",
             "url": "https://www.w3.org/TR/WCAG22/#location",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Location indicators reduce confusion for people with cognitive disabilities."
+              },
+              {
+                "title": "What to do",
+                "description": "Use breadcrumbs, site maps, or other indicators to give context."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1457,11 +1957,21 @@
           },
           {
             "ref_id": "2.4.9",
-            "tags": ["Operable", "Navigable", "SC 2.4.9", "AAA"],
+            "tags": ["Operable", "Navigable", "AAA"],
             "title": "Link Purpose (Link Only)",
             "description": "A mechanism is available to allow the purpose of each link to be identified from link text alone, except where the purpose of the link would be ambiguous to users in general.",
             "url": "https://www.w3.org/TR/WCAG22/#link-purpose-link-only",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Descriptive link text is more understandable for all users, especially when using assistive technology."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide descriptive names for all links."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1477,11 +1987,21 @@
           },
           {
             "ref_id": "2.4.10",
-            "tags": ["Operable", "Navigable", "SC 2.4.10", "AAA"],
+            "tags": ["Operable", "Navigable", "AAA"],
             "title": "Section Headings",
             "description": "Section headings are used to organize the content.",
             "url": "https://www.w3.org/TR/WCAG22/#section-headings",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People can orient themselves, especially those with cognitive or visual disabilities."
+              },
+              {
+                "title": "What to do",
+                "description": "Where content is organized in sections, provide section headings."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1504,11 +2024,21 @@
           },
           {
             "ref_id": "2.4.11",
-            "tags": ["Operable", "Navigable", "SC 2.4.11", "AA"],
+            "tags": ["Operable", "Navigable", "AA"],
             "title": "Focus Not Obscured (Minimum)",
             "description": "When a user interface component receives keyboard focus, the component is not entirely hidden due to author-created content.",
             "url": "https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who can't use a mouse need to see what has keyboard focus."
+              },
+              {
+                "title": "What to do",
+                "description": "Ensure when an item gets keyboard focus, it is at least partially visible."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1531,11 +2061,21 @@
           },
           {
             "ref_id": "2.4.12",
-            "tags": ["Operable", "Navigable", "SC 2.4.12", "AAA"],
+            "tags": ["Operable", "Navigable", "AAA"],
             "title": "Focus Not Obscured (Enhanced)",
             "description": "When a user interface component receives keyboard focus, no part of the component is hidden by author-created content.",
             "url": "https://www.w3.org/TR/WCAG22/#focus-not-obscured-enhanced",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who can't use a mouse need to see what has keyboard focus."
+              },
+              {
+                "title": "What to do",
+                "description": "Ensure when an item gets keyboard focus, it is fully visible."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1551,11 +2091,21 @@
           },
           {
             "ref_id": "2.4.13",
-            "tags": ["Operable", "Navigable", "SC 2.4.13", "AAA"],
+            "tags": ["Operable", "Navigable", "AAA"],
             "title": "Focus Appearance",
             "description": "When the keyboard focus indicator is visible, an area of the focus indicator meets all the following:",
             "url": "https://www.w3.org/TR/WCAG22/#focus-appearance",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Many people can't see small changes in visual appearance, including older people."
+              },
+              {
+                "title": "What to do",
+                "description": "Use a focus indicator of sufficient size and contrast."
+              }
+            ],
             "special_cases": [
               {
                 "type": "all_true",
@@ -1612,11 +2162,21 @@
         "success_criteria": [
           {
             "ref_id": "2.5.1",
-            "tags": ["Operable", "Input Modalities", "SC 2.5.1", "A"],
+            "tags": ["Operable", "Input Modalities", "A"],
             "title": "Pointer Gestures",
             "description": "All functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture, unless a multipoint or path-based gesture is essential.",
             "url": "https://www.w3.org/TR/WCAG22/#pointer-gestures",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Not everyone can perform complex and multi-touch gestures."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide single-point operation for all functions."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1636,11 +2196,21 @@
           },
           {
             "ref_id": "2.5.2",
-            "tags": ["Operable", "Input Modalities", "SC 2.5.2", "A"],
+            "tags": ["Operable", "Input Modalities", "A"],
             "title": "Pointer Cancellation",
             "description": "For functionality that can be operated using a single pointer, at least one of the following is true:",
             "url": "https://www.w3.org/TR/WCAG22/#pointer-cancellation",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Make it easier for anyone to recover from something they didn’t mean to do."
+              },
+              {
+                "title": "What to do",
+                "description": "Make pointer cancellation predictable and consistent."
+              }
+            ],
             "special_cases": [
               {
                 "type": "at_least_one",
@@ -1684,11 +2254,21 @@
           },
           {
             "ref_id": "2.5.3",
-            "tags": ["Operable", "Input Modalities", "SC 2.5.3", "A"],
+            "tags": ["Operable", "Input Modalities", "A"],
             "title": "Label in Name",
             "description": "For user interface components with labels that include text or images of text, the name contains the text that is presented visually.",
             "url": "https://www.w3.org/TR/WCAG22/#label-in-name",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who operate with voice interaction use the visible labels in their commands."
+              },
+              {
+                "title": "What to do",
+                "description": "Where practical, make the control’s text label and name match."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1708,11 +2288,21 @@
           },
           {
             "ref_id": "2.5.4",
-            "tags": ["Operable", "Input Modalities", "SC 2.5.4", "A"],
+            "tags": ["Operable", "Input Modalities", "A"],
             "title": "Motion Actuation",
             "description": "Functionality that can be operated by device motion or user motion can also be operated by user interface components and responding to the motion can be disabled to prevent accidental actuation, except when:",
             "url": "https://www.w3.org/TR/WCAG22/#motion-actuation",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people cannot hold or move a device steadily."
+              },
+              {
+                "title": "What to do",
+                "description": "Don't rely solely on device motion to control page content."
+              }
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -1739,11 +2329,21 @@
           },
           {
             "ref_id": "2.5.5",
-            "tags": ["Operable", "Input Modalities", "SC 2.5.5", "AAA"],
+            "tags": ["Operable", "Input Modalities", "Hit target", "AAA"],
             "title": "Target Size",
             "description": "The size of the target for pointer inputs is at least 44 by 44 CSS pixels except when:",
             "url": "https://www.w3.org/TR/WCAG22/#target-size",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people cannot tap small objects."
+              },
+              {
+                "title": "What to do",
+                "description": "Make custom targets at least 44 by 44 pixels."
+              }
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -1787,11 +2387,21 @@
           },
           {
             "ref_id": "2.5.6",
-            "tags": ["Operable", "Input Modalities", "SC 2.5.6", "AAA"],
+            "tags": ["Operable", "Input Modalities", "AAA"],
             "title": "Concurrent Input Mechanisms",
             "description": "Web content does not restrict use of input modalities available on a platform except where the restriction is essential, required to ensure the security of the content, or required to respect user settings.",
             "url": "https://www.w3.org/TR/WCAG22/#concurrent-input-mechanisms",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People may not be able to work using just one input method."
+              },
+              {
+                "title": "What to do",
+                "description": "Do not prevent users from switching their mode of input."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1807,11 +2417,21 @@
           },
           {
             "ref_id": "2.5.7",
-            "tags": ["Operable", "Input Modalities", "SC 2.5.7", "AA"],
+            "tags": ["Operable", "Input Modalities", "AA"],
             "title": "Dragging Movements",
             "description": "All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.",
             "url": "https://www.w3.org/TR/WCAG22/#dragging-movements",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people cannot use a mouse to drag items."
+              },
+              {
+                "title": "What to do",
+                "description": "For any action that involves dragging, provide a simple pointer alternative."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -1831,11 +2451,21 @@
           },
           {
             "ref_id": "2.5.8",
-            "tags": ["Operable", "Input Modalities", "SC 2.5.8", "AA"],
+            "tags": ["Operable", "Input Modalities", "Hit target", "AA"],
             "title": "Target Size (Minimum)",
             "description": "The size of the target for pointer inputs is at least 24 by 24 CSS pixels, except where:",
             "url": "https://www.w3.org/TR/WCAG22/#target-size-minimum",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people with physical impairments cannot click small buttons that are close together."
+              },
+              {
+                "title": "What to do",
+                "description": "Ensure targets meet a minimum size or have sufficient spacing around them."
+              }
+            ],
             "notes": null,
             "special_cases": [
               {
@@ -1899,11 +2529,21 @@
         "success_criteria": [
           {
             "ref_id": "3.1.1",
-            "tags": ["Understandable", "Readable", "SC 3.1.1", "A"],
+            "tags": ["Understandable", "Readable", "A"],
             "title": "Language of Page",
             "description": "The default human language of each Web page can be programmatically determined.",
             "url": "https://www.w3.org/TR/WCAG22/#language-of-page",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People using assistive technology get information in the correct language."
+              },
+              {
+                "title": "What to do",
+                "description": "Indicate the predominant language on a page."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1919,11 +2559,21 @@
           },
           {
             "ref_id": "3.1.2",
-            "tags": ["Understandable", "Readable", "SC 3.1.2", "AA"],
+            "tags": ["Understandable", "Readable", "AA"],
             "title": "Language of Parts",
             "description": "The human language of each passage or phrase in the content can be programmatically determined except for proper names, technical terms, words of indeterminate language, and words or phrases that have become part of the vernacular of the immediately surrounding text.",
             "url": "https://www.w3.org/TR/WCAG22/#language-of-parts",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People using assistive technology get information in the correct language."
+              },
+              {
+                "title": "What to do",
+                "description": "Indicate when words are in a different language."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1939,11 +2589,21 @@
           },
           {
             "ref_id": "3.1.3",
-            "tags": ["Understandable", "Readable", "SC 3.1.3", "AAA"],
+            "tags": ["Understandable", "Readable", "AAA"],
             "title": "Unusual Words",
             "description": "A mechanism is available for identifying specific definitions of words or phrases used in an unusual or restricted way, including idioms and jargon.",
             "url": "https://www.w3.org/TR/WCAG22/#unusual-words",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "More people, especially those with cognitive disabilities, can understand the meaning of content."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide definitions for technical jargon and unusual terms."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1959,11 +2619,21 @@
           },
           {
             "ref_id": "3.1.4",
-            "tags": ["Understandable", "Readable", "SC 3.1.4", "AAA"],
+            "tags": ["Understandable", "Readable", "AAA"],
             "title": "Abbreviations",
             "description": "A mechanism for identifying the expanded form or meaning of abbreviations is available.",
             "url": "https://www.w3.org/TR/WCAG22/#abbreviations",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people, including those with cognitive disabilities, may not understand the shortened form of words."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide the expanded form of abbreviations to users."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1979,11 +2649,21 @@
           },
           {
             "ref_id": "3.1.5",
-            "tags": ["Understandable", "Readable", "SC 3.1.5", "AAA"],
+            "tags": ["Understandable", "Readable", "AAA"],
             "title": "Reading Level",
             "description": "When text requires reading ability more advanced than the lower secondary education After removal of proper names and titles, supplemental content, or a version that does not require reading ability more advanced than the lower secondary education level, is available.",
             "url": "https://www.w3.org/TR/WCAG22/#reading-level",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "More people, especially those with cognitive disabilities, can understand the meaning of content."
+              },
+              {
+                "title": "What to do",
+                "description": "When text information becomes complex, create a more easily understood version."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -1999,11 +2679,21 @@
           },
           {
             "ref_id": "3.1.6",
-            "tags": ["Understandable", "Readable", "SC 3.1.6", "AAA"],
+            "tags": ["Understandable", "Readable", "AAA"],
             "title": "Pronunciation",
             "description": "A mechanism is available for identifying specific pronunciation of words where meaning of the words, in context, is ambiguous without knowing the pronunciation.",
             "url": "https://www.w3.org/TR/WCAG22/#pronunciation",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people, including those with cognitive disabilities, may not understand the meaning of content."
+              },
+              {
+                "title": "What to do",
+                "description": "Indicate how to pronounce a word, where its meaning is otherwise unclear."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -2033,11 +2723,21 @@
         "success_criteria": [
           {
             "ref_id": "3.2.1",
-            "tags": ["Understandable", "Predictable", "SC 3.2.1", "A"],
+            "tags": ["Understandable", "Predictable", "A"],
             "title": "On Focus",
             "description": "When any component receives focus, it does not initiate a change of context.",
             "url": "https://www.w3.org/TR/WCAG22/#on-focus",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Content that behaves predictably is especially important to people with disabilities."
+              },
+              {
+                "title": "What to do",
+                "description": "Do not change a user's context when items get focus."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -2053,11 +2753,21 @@
           },
           {
             "ref_id": "3.2.2",
-            "tags": ["Understandable", "Predictable", "SC 3.2.2", "A"],
+            "tags": ["Understandable", "Predictable", "A"],
             "title": "On Input",
             "description": "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behavior before using the component.",
             "url": "https://www.w3.org/TR/WCAG22/#on-input",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Content that behaves predictably is especially important to people with disabilities."
+              },
+              {
+                "title": "What to do",
+                "description": "Forewarn users if their context will change based on their input."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -2073,11 +2783,21 @@
           },
           {
             "ref_id": "3.2.3",
-            "tags": ["Understandable", "Predictable", "SC 3.2.3", "AA"],
+            "tags": ["Understandable", "Predictable", "AA"],
             "title": "Consistent Navigation",
             "description": "Navigational mechanisms that are repeated on multiple Web pages within a set of Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
             "url": "https://www.w3.org/TR/WCAG22/#consistent-navigation",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Content that behaves predictably is especially important to people with disabilities."
+              },
+              {
+                "title": "What to do",
+                "description": "Consistently order navigation that repeats across multiple pages."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -2093,11 +2813,21 @@
           },
           {
             "ref_id": "3.2.4",
-            "tags": ["Understandable", "Predictable", "SC 3.2.4", "AA"],
+            "tags": ["Understandable", "Predictable", "AA"],
             "title": "Consistent Identification",
             "description": "Components that have the same functionality within a set of Web pages are identified consistently.",
             "url": "https://www.w3.org/TR/WCAG22/#consistent-identification",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Consistently identified actions are especially important to people with disabilities."
+              },
+              {
+                "title": "What to do",
+                "description": "Identify repeating functions consistently."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -2113,11 +2843,21 @@
           },
           {
             "ref_id": "3.2.5",
-            "tags": ["Understandable", "Predictable", "SC 3.2.5", "AAA"],
+            "tags": ["Understandable", "Predictable", "AAA"],
             "title": "Change on Request",
             "description": "Changes of context are initiated only by user request or a mechanism is available to turn off such changes.",
             "url": "https://www.w3.org/TR/WCAG22/#change-on-request",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Content that behaves predictably is especially important to people with disabilities."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide ways for users to trigger or turn off changes of context."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -2133,11 +2873,21 @@
           },
           {
             "ref_id": "3.2.6",
-            "tags": ["Understandable", "Predictable", "SC 3.2.6", "A"],
+            "tags": ["Understandable", "Predictable", "A"],
             "title": "Consistent Help",
             "description": "If a Web page contains any of the following help mechanisms, and those mechanisms are repeated on multiple Web pages within a set of Web pages, they occur in the same order relative to other page content, unless a change is initiated by the user:",
             "url": "https://www.w3.org/TR/WCAG22/#consistent-help",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who need help can find it more easily if it's in the same place."
+              },
+              {
+                "title": "What to do",
+                "description": "Put help in the same place when it is on multiple pages."
+              }
+            ],
             "special_cases": [
               {
                 "type": "at_least_one",
@@ -2191,11 +2941,21 @@
         "success_criteria": [
           {
             "ref_id": "3.3.1",
-            "tags": ["Understandable", "Input Assistance", "SC 3.3.1", "A"],
+            "tags": ["Understandable", "Input Assistance", "A"],
             "title": "Error Identification",
             "description": "If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.",
             "url": "https://www.w3.org/TR/WCAG22/#error-identification",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Flagging errors helps people with reduced sight and cognitive disabilities resolve them."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide descriptive notification of errors."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -2211,11 +2971,21 @@
           },
           {
             "ref_id": "3.3.2",
-            "tags": ["Understandable", "Input Assistance", "SC 3.3.2", "A"],
+            "tags": ["Understandable", "Input Assistance", "A"],
             "title": "Labels or Instructions",
             "description": "Labels or instructions are provided when content requires user input.",
             "url": "https://www.w3.org/TR/WCAG22/#labels-or-instructions",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Everyone, especially those with cognitive disabilities, will know how to respond."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide labels or instructions for inputs."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -2231,11 +3001,21 @@
           },
           {
             "ref_id": "3.3.3",
-            "tags": ["Understandable", "Input Assistance", "SC 3.3.3", "AA"],
+            "tags": ["Understandable", "Input Assistance", "AA"],
             "title": "Error Suggestion",
             "description": "If an input error is automatically detected and suggestions for correction are known, then the suggestions are provided to the user, unless it would jeopardize the security or purpose of the content.",
             "url": "https://www.w3.org/TR/WCAG22/#error-suggestion",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People can address errors faster and with reduced effort."
+              },
+              {
+                "title": "What to do",
+                "description": "Where errors are detected, suggest known ways to correct them."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -2251,11 +3031,21 @@
           },
           {
             "ref_id": "3.3.4",
-            "tags": ["Understandable", "Input Assistance", "SC 3.3.4", "AA"],
+            "tags": ["Understandable", "Input Assistance", "AA"],
             "title": "Error Prevention (Legal, Financial, Data)",
             "description": " For Web pages that cause legal commitments or financial transactions for the user to occur, that modify or delete user-controllable data in data storage systems, or that submit user test responses, at least one of the following is true:",
             "url": "https://www.w3.org/TR/WCAG22/#error-prevention-legal-financial-data",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People with disabilities may be more likely to make mistakes, or not notice them."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide ways for users to confirm, correct, or reverse important submissions."
+              }
+            ],
             "special_cases": [
               {
                 "type": "at_least_one",
@@ -2287,11 +3077,21 @@
           },
           {
             "ref_id": "3.3.5",
-            "tags": ["Understandable", "Input Assistance", "SC 3.3.5", "AAA"],
+            "tags": ["Understandable", "Input Assistance", "AAA"],
             "title": "Help",
             "description": "Context-sensitive help is available.",
             "url": "https://www.w3.org/TR/WCAG22/#help",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People with cognitive or other disabilities can complete their tasks more easily."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide help to users on the function currently being performed."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [
@@ -2307,11 +3107,21 @@
           },
           {
             "ref_id": "3.3.6",
-            "tags": ["Understandable", "Input Assistance", "SC 3.3.6", "AAA"],
+            "tags": ["Understandable", "Input Assistance", "AAA"],
             "title": "Error Prevention (All)",
             "description": "For Web pages that require the user to submit information, at least one of the following is true:",
             "url": "https://www.w3.org/TR/WCAG22/#error-prevention-all",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People with disabilities may be more likely to make mistakes, or not notice them."
+              },
+              {
+                "title": "What to do",
+                "description": "Provide ways for users to confirm, correct, or reverse any submissions."
+              }
+            ],
             "special_cases": [
               {
                 "type": "at_least_one",
@@ -2343,11 +3153,21 @@
           },
           {
             "ref_id": "3.3.7",
-            "tags": ["Understandable", "Input Assistance", "SC 3.3.7", "A"],
+            "tags": ["Understandable", "Input Assistance", "A"],
             "title": "Redundant Entry",
             "description": "Information previously entered by or provided to the user that is required to be entered again in the same process is either:",
             "url": "https://www.w3.org/TR/WCAG22/#redundant-entry",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people with cognitive disabilities have difficulty remembering what they entered before."
+              },
+              {
+                "title": "What to do",
+                "description": "Don't ask for the same information twice in the same session."
+              }
+            ],
             "special_cases": [
               {
                 "type": "at_least_one",
@@ -2384,11 +3204,21 @@
           },
           {
             "ref_id": "3.3.8",
-            "tags": ["Understandable", "Input Assistance", "SC 3.3.8", "AA"],
+            "tags": ["Understandable", "Input Assistance", "AA"],
             "title": "Accessible Authentication (Minimum)",
             "description": "A cognitive function test (such as remembering a password or solving a puzzle) is not required for any step in an authentication process unless that step provides at least one of the following:",
             "url": "https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people with cognitive disabilities cannot solve puzzles, memorize a username and password, or retype one-time passcodes."
+              },
+              {
+                "title": "What to do",
+                "description": "Don't make people solve, recall, or transcribe something to log in."
+              }
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -2432,11 +3262,21 @@
           },
           {
             "ref_id": "3.3.9",
-            "tags": ["Understandable", "Input Assistance", "SC 3.3.9", "AAA"],
+            "tags": ["Understandable", "Input Assistance", "AAA"],
             "title": "Accessible Authentication (Enhanced)",
             "description": "A cognitive function test (such as remembering a password or solving a puzzle) is not required for any step in an authentication process unless that step provides at least one of the following:",
             "url": "https://www.w3.org/TR/WCAG22/#accessible-authentication-enhanced",
             "level": "AAA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Some people with cognitive disabilities can't do puzzles, including identifying objects and non-text information they previously supplied."
+              },
+              {
+                "title": "What to do",
+                "description": "Don't make people recognize objects or user-supplied images and media to login."
+              }
+            ],
             "special_cases": [
               {
                 "type": "exception",
@@ -2485,11 +3325,21 @@
         "success_criteria": [
           {
             "ref_id": "4.1.1",
-            "tags": ["Robust", "Compatible", "SC 4.1.1", "A"],
+            "tags": ["Robust", "Compatible", "A"],
             "title": "Parsing",
             "description": "In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.",
             "url": "https://www.w3.org/TR/WCAG22/#parsing",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People can browse web content more easily with their assistive technology."
+              },
+              {
+                "title": "What to do",
+                "description": "Create web pages according to specifications."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -2509,11 +3359,21 @@
           },
           {
             "ref_id": "4.1.2",
-            "tags": ["Robust", "Compatible", "SC 4.1.2", "A"],
+            "tags": ["Robust", "Compatible", "A"],
             "title": "Name, Role, Value",
             "description": "For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.",
             "url": "https://www.w3.org/TR/WCAG22/#name-role-value",
             "level": "A",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "Assistive technology only works well when code is done properly."
+              },
+              {
+                "title": "What to do",
+                "description": "Give components correct names, roles, states, and values."
+              }
+            ],
             "special_cases": null,
             "notes": [
               {
@@ -2533,11 +3393,21 @@
           },
           {
             "ref_id": "4.1.3",
-            "tags": ["Robust", "Compatible", "SC 4.1.3", "AA"],
+            "tags": ["Robust", "Compatible", "AA"],
             "title": "Status Messages",
             "description": "In content implemented using markup languages, status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus.",
             "url": "https://www.w3.org/TR/WCAG22/#status-messages",
             "level": "AA",
+            "brief": [
+              {
+                "title": "Why it's important",
+                "description": "People who do not see messages need to be informed about them."
+              },
+              {
+                "title": "What to do",
+                "description": "Let assistive technology notify users about status changes that don't take focus."
+              }
+            ],
             "special_cases": null,
             "notes": null,
             "references": [

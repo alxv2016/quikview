@@ -8,22 +8,22 @@ import {
   useEffect,
   MouseEvent,
 } from 'react';
-import './bottom-sheet.scss';
+import './action-sheet.scss';
 
 interface DialogProps extends DialogHTMLAttributes<HTMLDialogElement> {
   children: ReactNode;
+  title?: string;
+  description?: string;
   onClose?: () => void;
 }
 
-const BottomSheet = forwardRef<{closeBottomSheet: () => void; openBottomSheet: () => void}, DialogProps>(
-  function BottomSheet({children, onClose}: DialogProps, ref): JSX.Element {
+const ActionSheet = forwardRef<{closeActionSheet: () => void; openActionSheet: () => void}, DialogProps>(
+  function ActionSheet({children, title, description, onClose}: DialogProps, ref): JSX.Element {
     const [isAnimating, setIsAnimating] = useState(false);
     const internalRef = useRef<HTMLDialogElement>(null);
-    // Expose the internalDialogRef through the forwarded dialogRef
-    // Expose the toggleBottomSheet and closeBottomSheet functions through the ref
     useImperativeHandle(ref, () => ({
-      openBottomSheet,
-      closeBottomSheet,
+      openActionSheet,
+      closeActionSheet,
     }));
 
     useEffect(() => {
@@ -48,37 +48,46 @@ const BottomSheet = forwardRef<{closeBottomSheet: () => void; openBottomSheet: (
       };
     }, [isAnimating, onClose]);
 
-    const openBottomSheet = () => {
+    const openActionSheet = () => {
       if (!internalRef.current) return;
       internalRef.current.showModal();
     };
 
-    const closeBottomSheet = () => {
+    const closeActionSheet = () => {
       if (!internalRef.current) return;
       internalRef.current.classList.add('animate-fadeout');
       setIsAnimating(true);
     };
 
-    const handleClick = (event: MouseEvent) => {
-      if (isAnimating || !internalRef.current) return;
-      const {currentTarget, target} = event;
-      if (currentTarget === target) {
-        closeBottomSheet();
-      }
-    };
+    // const handleClick = (event: MouseEvent) => {
+    //   if (isAnimating || !internalRef.current) return;
+    //   const {currentTarget, target} = event;
+    //   if (currentTarget === target) {
+    //     closeActionSheet();
+    //   }
+    // };
 
     const handleKeydown = (event: React.KeyboardEvent<HTMLDialogElement>) => {
       if (event.key === 'Escape') {
         event.preventDefault();
-        closeBottomSheet();
+        closeActionSheet();
       }
     };
 
     return (
-      <dialog ref={internalRef} className="bottom-sheet" onKeyDown={handleKeydown} onClick={handleClick}>
-        <div className="bottom-sheet__content">{children}</div>
+      <dialog ref={internalRef} className="action-sheet" onKeyDown={handleKeydown}>
+        <div className="action-sheet__content">
+          <div className="action-sheet-header">
+            {title && <div className="as-title">{title}</div>}
+            {description && <div className="as-description">{description}</div>}
+          </div>
+          {children}
+        </div>
+        <button className="close-btn" onClick={closeActionSheet} autoFocus>
+          Cancel
+        </button>
       </dialog>
     );
   }
 );
-export default BottomSheet;
+export default ActionSheet;

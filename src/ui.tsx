@@ -1,14 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {createRoot} from 'react-dom/client';
 import Plugin from './plugin';
+import {DataQueryContextProvider} from './components/DataQueryContext';
+import {GuidelinesContextProvider} from './components/GudelinesContext';
 import './ui.scss';
-import Announcer from './components/announcer';
 
 const container = document.getElementById('react-root') as HTMLElement;
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <Plugin />
+    <DataQueryContextProvider>
+      <GuidelinesContextProvider>
+        <Plugin />
+      </GuidelinesContextProvider>
+    </DataQueryContextProvider>
   </React.StrictMode>
 );

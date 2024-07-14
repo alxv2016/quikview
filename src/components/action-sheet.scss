@@ -1,0 +1,98 @@
+.action-sheet {
+  width: 100%;
+  max-width: 768px;
+  padding: 0;
+  margin: 0;
+  inset: 0;
+  margin-top: auto;
+  transform: translateY(100%);
+  border: none;
+  color: currentColor;
+  overflow: hidden;
+  padding: var(--spacing-md);
+  padding-bottom: var(--spacing-xl);
+  background-color: transparent;
+
+  &__content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: var(--spacing-md);
+    overflow: auto;
+    background-color: var(--color-bg);
+    margin-bottom: var(--spacing-xs);
+    border-radius: 6px;
+    border: 1px solid var(--color-border);
+  }
+
+  &-header {
+    position: relative;
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-sm);
+  }
+}
+
+.close-btn {
+  width: 100%;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-brand);
+  transition: background-color 220ms ease;
+  &:hover,
+  &:focus {
+    background-color: var(--color-bg-hover);
+  }
+
+  &:active {
+    background-color: var(--color-bg-hover);
+  }
+}
+
+.as-title {
+  font-weight: 600;
+}
+
+.as-description {
+  color: var(--color-text-secondary);
+}
+
+.action-sheet[open] {
+  animation: open 320ms ease forwards;
+}
+
+.action-sheet.animate-fadeout {
+  animation: close 320ms ease forwards;
+}
+
+dialog::backdrop {
+  transition: background-color 320ms ease;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+dialog:not([open]) {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@keyframes open {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes close {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
