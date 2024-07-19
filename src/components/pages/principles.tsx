@@ -1,6 +1,6 @@
 import {Criterion} from '../../data/wcag.interface';
 import {OperableIcon, PerceivableIcon, RobustIcon, UnderstandableIcon} from '../icons';
-import ListItem from '../list-item';
+import PrincipleItem from '../principle-item';
 import './principles.scss';
 
 interface PrinciplesProps {
@@ -42,13 +42,13 @@ function Principles({data, handleClick}: PrinciplesProps): JSX.Element {
     const {icon, color, backgroundColor} = iconMap[item.title];
     return (
       <li key={index}>
-        <ListItem
+        <PrincipleItem
           icon={icon}
           data={item}
           iconColor={color}
           iconBGColor={backgroundColor}
           onClick={() => handleClick(item)}
-        ></ListItem>
+        ></PrincipleItem>
       </li>
     );
   });

@@ -1,4 +1,4 @@
-import {Fragment, MouseEvent} from 'react';
+import {MouseEvent} from 'react';
 import {Successcriterion} from '../../data/wcag.interface';
 import './criteria.scss';
 import {InfoIcon, PlusIcon} from '../icons';
@@ -58,50 +58,47 @@ function Criteria({data}: CriteriaProps): JSX.Element {
 
   const renderTags = tags?.map((tag, index) => {
     return (
-      <div key={index} className="level-tag">
+      <div key={index} className="c-tag">
         {tag}
       </div>
     );
   });
 
   return (
-    <Fragment>
-      <div className="criteria">
-        <div className="criteria__header">
-          <div className="criteria-title-group">
-            <div className="criteria-title">{title}</div>
-            <div className="criteria-tags">{renderTags}</div>
-          </div>
-          {renderBrief}
-          <div className="criteria-success">
-            <div className="criteria-subtitle">Success criteria</div>
-            <div className="criteria-description">{description}</div>
-          </div>
+    <div className="criteria">
+      <div className="criteria__header">
+        <div className="criteria-title-group">
+          <div className="criteria-title">{title}</div>
+          <div className="criteria-tags">{renderTags}</div>
         </div>
-        {special_cases && (
-          <div className="special-cases">
-            <div className="special-cases__header">
-              <InfoIcon />
-              {special_cases[0].type === SpecialCases.EXCEPTION ? 'Exceptions' : 'No exceptions'}
-            </div>
-            <div className="special-cases__body">{renderSpecialCases}</div>
-          </div>
-        )}
-        {notes && (
-          <div className="special-cases special-cases--info">
-            <div className="special-cases__header">Notes</div>
-            <div className="special-cases__body">{renderNotes}</div>
-          </div>
-        )}
-        <div className="brief">
-          <div className="brief-title">References</div>
-          <div className="brief-description">{renderRefs}</div>
+        <div className="criteria-success">
+          <div className="criteria-description">{description}</div>
         </div>
-        <button className="btn-icon-suffix">
-          <PlusIcon /> Create reference
-        </button>
+        {renderBrief}
       </div>
-    </Fragment>
+      {special_cases && (
+        <div className="special-cases">
+          <div className="special-cases__header">
+            <InfoIcon />
+            {special_cases[0].type === SpecialCases.EXCEPTION ? 'Exceptions' : 'No exceptions'}
+          </div>
+          <div className="special-cases__body">{renderSpecialCases}</div>
+        </div>
+      )}
+      {notes && (
+        <div className="special-cases special-cases--info">
+          <div className="special-cases__header">Notes</div>
+          <div className="special-cases__body">{renderNotes}</div>
+        </div>
+      )}
+      <div className="brief">
+        <div className="brief-title">References</div>
+        <div className="brief-description">{renderRefs}</div>
+      </div>
+      <button className="btn-icon-suffix">
+        <PlusIcon /> Create reference
+      </button>
+    </div>
   );
 }
 

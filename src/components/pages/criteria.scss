@@ -20,13 +20,6 @@
   flex-direction: column;
 }
 
-.criteria-overline {
-  display: block;
-  line-height: var(--ui-line-height);
-  font-size: var(--legal);
-  color: var(--color-text-secondary);
-}
-
 .criteria-title {
   position: relative;
   display: inline-flex;
@@ -40,13 +33,9 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  font-size: var(--caption);
   font-weight: 500;
+  font-size: var(--body-02);
   line-height: var(--ui-line-height);
-}
-
-.criteria-overline ~ .criteria-title {
-  margin-top: var(--spacing-xs);
 }
 
 .criteria-tags {
@@ -59,26 +48,24 @@
   margin-top: var(--spacing-xs);
 }
 
-.level-tag {
+.c-tag {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   line-height: var(--ui-line-height);
-  font-size: var(--fineprint);
   padding: var(--spacing-2xs) var(--spacing-xs);
   border: 1px solid var(--color-border);
   border-radius: 4px;
 }
 
-.level-tag ~ .level-tag {
+.c-tag ~ .c-tag {
   margin-left: var(--spacing-xs);
 }
 
 .criteria-description {
   position: relative;
   width: 100%;
-  font-size: var(--caption);
   color: var(--color-text);
   margin-bottom: var(--spacing-lg);
 }
@@ -87,7 +74,7 @@
   margin-top: var(--spacing-sm);
 }
 
-.criteria-title ~ .level-tag {
+.criteria-title ~ .c-tag {
   margin-top: var(--spacing-xs);
 }
 
@@ -112,15 +99,14 @@
 }
 
 .brief-title {
-  font-size: var(--fineprint);
   font-weight: 600;
-  padding: var(--spacing-2xs) var(--spacing-xs);
+  padding: var(--spacing-sm);
   border-bottom: 1px solid var(--color-border);
   color: var(--color-text-secondary);
 }
 
 .brief-description {
-  padding: var(--spacing-xs);
+  padding: var(--spacing-sm);
 }
 
 .special-cases {
@@ -163,7 +149,6 @@
 }
 
 .special-case-title {
-  font-size: var(--legal);
   font-weight: 600;
   color: var(--color-text-secondary);
 }
@@ -176,6 +161,10 @@
   display: block;
   text-decoration: underline;
   color: var(--color-text-brand);
+}
+
+.ref-link ~ .ref-link {
+  margin-top: var(--spacing-sm);
 }
 
 .action-bar {

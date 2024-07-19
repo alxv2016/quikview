@@ -5,7 +5,7 @@
   padding: var(--spacing-md);
 
   .guideline ~ .guideline {
-    margin-top: var(--spacing-sm);
+    margin-top: var(--spacing-md);
   }
 }
 
@@ -64,7 +64,6 @@
 
 .sc-description {
   color: var(--color-text-secondary);
-  font-size: var(--legal);
 }
 
 .sc-title ~ .sc-description {
@@ -91,6 +90,6 @@
   border: 1px solid var(--color-border);
   min-width: 28px;
   min-height: 20px;
-  font-size: var(--fineprint);
+  //font-size: var(--fineprint);
   color: var(--color-text);
 }

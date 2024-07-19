@@ -24,7 +24,7 @@ function Guidelines({data, handleClick}: GuidelinesProps): JSX.Element {
   };
 
   const renderGuidelines = guidelinesData.map((item: Successcriterion, index: number) => {
-    const {title, description, ref_id} = item;
+    const {title, description, ref_id, tags} = item;
 
     return (
       <li key={index} className="guideline">
@@ -37,7 +37,7 @@ function Guidelines({data, handleClick}: GuidelinesProps): JSX.Element {
           </div>
           <div className="success-criteria__footer">
             <ul className="sc-tags">
-              {item.tags?.map((item, index) => {
+              {tags?.slice(1).map((item, index) => {
                 return (
                   <li key={index} className="sc-tag">
                     {item}

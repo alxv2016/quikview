@@ -1,4 +1,4 @@
-import {useRef, useState, ReactNode, Fragment} from 'react';
+import {useRef, useState, Fragment} from 'react';
 import {Criterion, Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
 import wcagRefs from './data/refs.json';
@@ -8,7 +8,6 @@ import {extractSuccessCriteria} from './utils';
 import ButtonGroup from './components/button-group';
 import ButtonIcon from './components/button-icon';
 import {BackIcon, OverflowIcon, RefsIcon} from './components/icons';
-import CriterionDetails from './components/pages/criteria';
 import Principles from './components/pages/principles';
 import {useDataQueryContext, useGuidelinesContext} from './hooks';
 import Guidelines from './components/pages/guidelines';
