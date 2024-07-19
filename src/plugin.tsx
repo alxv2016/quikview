@@ -1,25 +1,22 @@
-import {useContext, useEffect, useRef, useState, MouseEvent, ReactNode, Fragment, act} from 'react';
+import {useRef, useState, ReactNode, Fragment} from 'react';
 import {Criterion, Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
 import wcagRefs from './data/refs.json';
 import Search from './components/search';
-import {DataQueryContext} from './components/DataQueryContext';
 import Announcer from './components/announcer';
 import {extractSuccessCriteria} from './utils';
 import ButtonGroup from './components/button-group';
 import ButtonIcon from './components/button-icon';
-import {BackIcon, HomeIcon, OverflowIcon, RefsIcon} from './components/icons';
-import BottomSheet from './components/bottom-sheet';
-import ListItem from './components/list-item';
-import PourList from './components/guidelines';
-import CriterionDetails from './components/criterion-details';
-import Principles from './components/principles';
+import {BackIcon, OverflowIcon, RefsIcon} from './components/icons';
+import CriterionDetails from './components/pages/criteria';
+import Principles from './components/pages/principles';
 import {useDataQueryContext, useGuidelinesContext} from './hooks';
-import Guidelines from './components/guidelines';
+import Guidelines from './components/pages/guidelines';
 import Page from './components/page';
 import ActionSheet from './components/action-sheet';
 import {WCAGRefs} from './data/refs.interface';
-import ActionContent from './components/action-content';
+import SupportingDocs from './components/pages/supoorting-docs';
+import Criteria from './components/pages/criteria';
 
 enum FilterType {
   ALL = 0,
@@ -38,32 +35,22 @@ export default function Plugin(): JSX.Element {
   const keys = ['ref_id', 'tags', 'title', 'level'];
   const [data, setData] = useState<Successcriterion[]>(successCriteriaDataset);
   const [announcement, setAnnouncement] = useState('');
-  const [bottomSheetContent, setBottomSheetContent] = useState<ReactNode>(null);
-  const pageRef = useRef<{closePage: () => void; openPage: () => void}>(null);
-  const page2Ref = useRef<{closePage: () => void; openPage: () => void}>(null);
+  // const [bottomSheetContent, setBottomSheetContent] = useState<ReactNode>(null);
+  const guidelinesPage = useRef<{closePage: () => void; openPage: () => void}>(null);
+  const criteriaPage = useRef<{closePage: () => void; openPage: () => void}>(null);
   const actionSheetRef = useRef<{closeActionSheet: () => void; openActionSheet: () => void}>(null);
   const {dataQuery, setDataQuery} = useDataQueryContext();
   const {guidelines, setGuidelines} = useGuidelinesContext();
 
-  const openBottomSheet = () => {
-    if (!pageRef.current) return;
-    pageRef.current.openPage();
-  };
-
-  const closeBottomSheet = () => {
-    if (!pageRef.current) return;
-    pageRef.current.closePage();
-  };
-
-  const closePage2 = () => {
-    if (!page2Ref.current) return;
-    page2Ref.current.closePage();
+  const closeCriteriaPage = () => {
+    if (!criteriaPage.current) return;
+    criteriaPage.current.closePage();
     setDataQuery(null);
   };
 
-  const closePage1 = () => {
-    if (!pageRef.current) return;
-    pageRef.current.closePage();
+  const closeGuidelinePage = () => {
+    if (!guidelinesPage.current) return;
+    guidelinesPage.current.closePage();
     setGuidelines(null);
   };
 
@@ -103,18 +90,18 @@ export default function Plugin(): JSX.Element {
   const handleSelection = (result: Successcriterion) => {
     if (!result) return;
     setDataQuery(result);
-    page2Ref.current?.openPage();
+    criteriaPage.current?.openPage();
   };
 
   const handleResultClick = (item: Successcriterion) => {
     if (!item) return;
     setDataQuery(item);
-    page2Ref.current?.openPage();
+    criteriaPage.current?.openPage();
   };
 
   const handlePrincipleClick = (item: Criterion) => {
     setGuidelines(item);
-    pageRef.current?.openPage();
+    guidelinesPage.current?.openPage();
   };
 
   return (
@@ -146,11 +133,11 @@ export default function Plugin(): JSX.Element {
           who need a creditable source of referenceable technical standards for accessibility guidelines.
         </div>
       </div>
-      <Page ref={pageRef}>
+      <Page ref={guidelinesPage}>
         <div className="nav-toolbar">
           <div className="nav-title">{guidelines?.title}</div>
           <div className="nav-btn-group">
-            <ButtonIcon label="Home" onClick={closePage1}>
+            <ButtonIcon label="Back" onClick={closeGuidelinePage}>
               <BackIcon />
             </ButtonIcon>
             <ButtonIcon label="More actions">
@@ -160,11 +147,11 @@ export default function Plugin(): JSX.Element {
         </div>
         {guidelines && <Guidelines data={guidelines} handleClick={handleResultClick} />}
       </Page>
-      <Page ref={page2Ref}>
+      <Page ref={criteriaPage}>
         <div className="nav-toolbar">
           <div className="nav-title">Understanding {dataQuery?.ref_id}</div>
           <div className="nav-btn-group">
-            <ButtonIcon label="Back" onClick={closePage2}>
+            <ButtonIcon label="Back" onClick={closeCriteriaPage}>
               <BackIcon />
             </ButtonIcon>
             <ButtonIcon label="More actions">
@@ -172,10 +159,10 @@ export default function Plugin(): JSX.Element {
             </ButtonIcon>
           </div>
         </div>
-        {dataQuery && <CriterionDetails data={dataQuery} />}
+        {dataQuery && <Criteria data={dataQuery} />}
       </Page>
       <ActionSheet title={title} ref={actionSheetRef}>
-        <ActionContent data={refData} />
+        <SupportingDocs data={refData} />
       </ActionSheet>
     </Fragment>
   );

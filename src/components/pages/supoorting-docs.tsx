@@ -1,13 +1,13 @@
 import {Fragment, MouseEvent} from 'react';
-import {WCAGRefs} from '../data/refs.interface';
-import './action-content.scss';
-import {ExternalIcon} from './icons';
+import {WCAGRefs} from '../../data/refs.interface';
+import './supporting-docs.scss';
+import {ExternalIcon} from '../icons';
 
-interface ActionContentProps {
+interface SupportingDocsProps {
   data: WCAGRefs[];
 }
 
-function ActionContent({data}: ActionContentProps): JSX.Element {
+function SupportingDocs({data}: SupportingDocsProps): JSX.Element {
   const {ref_id, title, description, url, supporting_docs} = data[0];
 
   const handleLink = (e: MouseEvent, url: string) => {
@@ -35,4 +35,4 @@ function ActionContent({data}: ActionContentProps): JSX.Element {
   );
 }
 
-export default ActionContent;
+export default SupportingDocs;

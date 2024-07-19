@@ -1,14 +1,7 @@
-import {useContext, useRef, useState, ReactNode, Fragment} from 'react';
-import {Criterion} from '../data/wcag.interface';
-import {OperableIcon, PerceivableIcon, RobustIcon, UnderstandableIcon} from './icons';
-import ListItem from './list-item';
+import {Criterion} from '../../data/wcag.interface';
+import {OperableIcon, PerceivableIcon, RobustIcon, UnderstandableIcon} from '../icons';
+import ListItem from '../list-item';
 import './principles.scss';
-import PourList from './guidelines';
-import BottomSheet from './bottom-sheet';
-import {DataQueryContext} from './DataQueryContext';
-import {useGuidelinesContext} from '../hooks';
-import Guidelines from './guidelines';
-import Page from './page';
 
 interface PrinciplesProps {
   data: Criterion[] | null;
@@ -16,8 +9,6 @@ interface PrinciplesProps {
 }
 
 function Principles({data, handleClick}: PrinciplesProps): JSX.Element {
-  const {guidelines, setGuidelines} = useGuidelinesContext();
-
   const iconMap: {
     [key: string]: {
       icon: JSX.Element;
@@ -63,12 +54,10 @@ function Principles({data, handleClick}: PrinciplesProps): JSX.Element {
   });
 
   return (
-    <Fragment>
-      <div className="principles">
-        <div className="label">Browse guidelines by principle</div>
-        <ul className="principles-list">{renderPrinciples}</ul>
-      </div>
-    </Fragment>
+    <div className="principles">
+      <div className="label">Browse guidelines by principle</div>
+      <ul className="principles-list">{renderPrinciples}</ul>
+    </div>
   );
 }
 export default Principles;

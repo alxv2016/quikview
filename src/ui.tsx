@@ -1,9 +1,9 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import Plugin from './plugin';
-import {DataQueryContextProvider} from './components/DataQueryContext';
-import {GuidelinesContextProvider} from './components/GudelinesContext';
 import './ui.scss';
+import {DataQueryContextProvider} from './DataQueryContext';
+import {GuidelinesContextProvider} from './GudelinesContext';
 
 const container = document.getElementById('react-root') as HTMLElement;
 const root = createRoot(container);

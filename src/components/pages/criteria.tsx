@@ -1,11 +1,10 @@
-import {Fragment, MouseEvent, useContext} from 'react';
-import {Successcriterion} from '../data/wcag.interface';
-import './criterion-details.scss';
-import {BackIcon, InfoIcon, OverflowIcon, PlusIcon} from './icons';
-import {useDataQueryContext} from '../hooks';
-import ButtonIcon from './button-icon';
+import {Fragment, MouseEvent} from 'react';
+import {Successcriterion} from '../../data/wcag.interface';
+import './criteria.scss';
+import {InfoIcon, PlusIcon} from '../icons';
+import {useDataQueryContext} from '../../hooks';
 
-interface CriterionDetailsProps {
+interface CriteriaProps {
   data: Successcriterion;
 }
 
@@ -14,7 +13,7 @@ enum SpecialCases {
   ALLTRUE = 'all_true',
 }
 
-function CriterionDetails({data}: CriterionDetailsProps): JSX.Element {
+function Criteria({data}: CriteriaProps): JSX.Element {
   const {ref_id, title, description, tags, url, level, brief, special_cases, notes, references} = data;
   const {dataQuery, setDataQuery} = useDataQueryContext();
 
@@ -31,10 +30,6 @@ function CriterionDetails({data}: CriterionDetailsProps): JSX.Element {
   const handleLink = (e: MouseEvent, url: string) => {
     e.preventDefault();
     window.open(url, '_blank');
-  };
-
-  const handleClose = () => {
-    setDataQuery(null);
   };
 
   const renderRefs = references.map((item, index) => {
@@ -71,16 +66,16 @@ function CriterionDetails({data}: CriterionDetailsProps): JSX.Element {
 
   return (
     <Fragment>
-      <div className="criterion">
-        <div className="criterion__header">
-          <div className="criterion-title-group">
-            <div className="criterion-title">{title}</div>
-            <div className="criterion-tags">{renderTags}</div>
+      <div className="criteria">
+        <div className="criteria__header">
+          <div className="criteria-title-group">
+            <div className="criteria-title">{title}</div>
+            <div className="criteria-tags">{renderTags}</div>
           </div>
           {renderBrief}
-          <div className="criterion-success">
-            <div className="criterion-subtitle">Success criterion</div>
-            <div className="criterion-description">{description}</div>
+          <div className="criteria-success">
+            <div className="criteria-subtitle">Success criteria</div>
+            <div className="criteria-description">{description}</div>
           </div>
         </div>
         {special_cases && (
@@ -110,4 +105,4 @@ function CriterionDetails({data}: CriterionDetailsProps): JSX.Element {
   );
 }
 
-export default CriterionDetails;
+export default Criteria;
