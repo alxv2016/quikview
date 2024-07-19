@@ -1,0 +1,46 @@
+.support-link {
+  position: relative;
+  width: 100%;
+  text-decoration: none;
+  padding: var(--spacing-sm);
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  cursor: default;
+  transition: background-color 220ms ease;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-bg-hover);
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: 0 0 0 2px hsla(204, 96%, 54%, 100%);
+  }
+
+  &__heading {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  svg {
+    color: var(--color-text);
+  }
+}
+
+.support-link ~ .support-link {
+  margin-top: var(--spacing-sm);
+}
+
+.sp-title {
+  text-decoration: underline;
+}
+
+.sp-description {
+  color: var(--color-text);
+  font-size: var(--legal);
+}

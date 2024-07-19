@@ -107,6 +107,10 @@
   margin-top: var(--spacing-sm);
 }
 
+.brief ~ button {
+  margin-top: var(--spacing-xl);
+}
+
 .brief-title {
   font-size: var(--fineprint);
   font-weight: 600;

@@ -1,13 +1,14 @@
 import {useContext, useEffect, useRef, useState, MouseEvent, ReactNode, Fragment, act} from 'react';
 import {Criterion, Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
+import wcagRefs from './data/refs.json';
 import Search from './components/search';
 import {DataQueryContext} from './components/DataQueryContext';
 import Announcer from './components/announcer';
 import {extractSuccessCriteria} from './utils';
 import ButtonGroup from './components/button-group';
 import ButtonIcon from './components/button-icon';
-import {BackIcon, HomeIcon, OverflowIcon} from './components/icons';
+import {BackIcon, HomeIcon, OverflowIcon, RefsIcon} from './components/icons';
 import BottomSheet from './components/bottom-sheet';
 import ListItem from './components/list-item';
 import PourList from './components/guidelines';
@@ -17,6 +18,8 @@ import {useDataQueryContext, useGuidelinesContext} from './hooks';
 import Guidelines from './components/guidelines';
 import Page from './components/page';
 import ActionSheet from './components/action-sheet';
+import {WCAGRefs} from './data/refs.interface';
+import ActionContent from './components/action-content';
 
 enum FilterType {
   ALL = 0,
@@ -28,7 +31,9 @@ enum FilterType {
 export default function Plugin(): JSX.Element {
   // window.onmessage = (e) => console.log('UI LOG', e.data.pluginMessage);
   // parent.postMessage({pluginMessage: `ui.html: ${Date.now()}`}, '*');
+  const refData: WCAGRefs[] = wcagRefs;
   const successCriteriaDataset = extractSuccessCriteria(wcagData);
+  const {title, description, url, version, supporting_docs} = refData[0];
 
   const keys = ['ref_id', 'tags', 'title', 'level'];
   const [data, setData] = useState<Successcriterion[]>(successCriteriaDataset);
@@ -131,7 +136,7 @@ export default function Plugin(): JSX.Element {
               onButtonClick={handleFilterClick}
             />
             <ButtonIcon label="Settings" onClick={showActions}>
-              <OverflowIcon />
+              <RefsIcon />
             </ButtonIcon>
           </div>
         </div>
@@ -169,8 +174,8 @@ export default function Plugin(): JSX.Element {
         </div>
         {dataQuery && <CriterionDetails data={dataQuery} />}
       </Page>
-      <ActionSheet title={'Actions'} description="Hello world this is the shit" ref={actionSheetRef}>
-        <p>Hello world</p>
+      <ActionSheet title={title} ref={actionSheetRef}>
+        <ActionContent data={refData} />
       </ActionSheet>
     </Fragment>
   );

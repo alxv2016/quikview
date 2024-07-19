@@ -1,7 +1,7 @@
 import {Fragment, MouseEvent, useContext} from 'react';
 import {Successcriterion} from '../data/wcag.interface';
 import './criterion-details.scss';
-import {BackIcon, InfoIcon, OverflowIcon} from './icons';
+import {BackIcon, InfoIcon, OverflowIcon, PlusIcon} from './icons';
 import {useDataQueryContext} from '../hooks';
 import ButtonIcon from './button-icon';
 
@@ -102,6 +102,9 @@ function CriterionDetails({data}: CriterionDetailsProps): JSX.Element {
           <div className="brief-title">References</div>
           <div className="brief-description">{renderRefs}</div>
         </div>
+        <button className="btn-icon-suffix">
+          <PlusIcon /> Create reference
+        </button>
       </div>
     </Fragment>
   );
