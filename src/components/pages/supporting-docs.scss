@@ -33,14 +33,18 @@
 }
 
 .support-link ~ .support-link {
-  margin-top: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.sp-overview {
+  margin-bottom: var(--spacing-xl);
 }
 
 .sp-title {
   text-decoration: underline;
+  color: var(--color-text-brand);
 }
 
 .sp-description {
   color: var(--color-text);
-  font-size: var(--legal);
 }

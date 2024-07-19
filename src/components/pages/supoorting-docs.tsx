@@ -30,6 +30,7 @@ function SupportingDocs({data}: SupportingDocsProps): JSX.Element {
 
   return (
     <Fragment>
+      <div className="sp-overview">{description}</div>
       <div className="actions">{renderRefs}</div>
     </Fragment>
   );

@@ -2,14 +2,14 @@
   {
     "ref_id": "1",
     "title": "WCAG 2.2 Supporting Documents",
-    "description": "The WCAG 2.2 document is designed to meet the needs of those who need a stable, referenceable technical standard. Other documents, called supporting documents, are based on the WCAG 2.2 document and address other important purposes, including the ability to be updated to describe how WCAG would be applied with new technologies. Supporting documents include:",
+    "description": "The WCAG 2.2 document is designed to meet the needs of those who need a stable, referenceable technical standard. Supporting documents include:",
     "url": "https://www.w3.org/TR/2023/REC-WCAG22-20231005/#wcag-2-2-supporting-documents",
     "version": "WCAG 2.2",
     "supporting_docs": [
       {
         "ref_id": "1.1",
         "title": "How to Meet WCAG 2.2",
-        "description": "A customizable quick reference to WCAG 2.2 that includes all of the guidelines, success criteria, and techniques for authors to use as they are developing and evaluating Web content. This includes content from WCAG 2.0, 2.1 2.2 and can be filtered in many ways to help authors focus on relevant content.",
+        "description": "A customizable quick reference to WCAG 2.2 that includes all of the guidelines, success criteria, and techniques for authors to use as they are developing and evaluating Web content.",
         "url": "https://www.w3.org/WAI/WCAG22/quickref/"
       },
       {
