@@ -535,11 +535,11 @@
             "special_cases": [
               {
                 "type": "all_true",
-                "title": "The input field serves a purpose identified in the Input Purposes for User Interface Components section; and"
+                "description": "The input field serves a purpose identified in the Input Purposes for User Interface Components section; and"
               },
               {
                 "type": "all_true",
-                "title": "The content is implemented using technologies with support for identifying the expected meaning for form input data."
+                "description": "The content is implemented using technologies with support for identifying the expected meaning for form input data."
               }
             ],
             "notes": null,
@@ -652,7 +652,7 @@
             "special_cases": null,
             "notes": [
               {
-                "content": "Since any content that does not meet this success criterion can interfere with a user's ability to use the whole page, all content on the Web page (whether or not it is used to meet other success criteria) must meet this success criterion. See Conformance Requirement 5: Non-Interference. (https://www.w3.org/TR/WCAG22/#cc5)"
+                "content": "Since any content that does not meet this success criterion can interfere with a user's ability to use the whole page, all content on the Web page (whether or not it is used to meet other success criteria) must meet this success criterion. See Conformance Requirement 5: Non-Interference."
               }
             ],
             "references": [
@@ -903,23 +903,23 @@
             "special_cases": [
               {
                 "type": "all_true",
-                "title": "Foreground and background colors can be selected by the user."
+                "description": "Foreground and background colors can be selected by the user."
               },
               {
                 "type": "all_true",
-                "title": "Width is no more than 80 characters or glyphs (40 if CJK)."
+                "description": "Width is no more than 80 characters or glyphs (40 if CJK)."
               },
               {
                 "type": "all_true",
-                "title": "Text is not justified (aligned to both the left and the right margins)."
+                "description": "Text is not justified (aligned to both the left and the right margins)."
               },
               {
                 "type": "all_true",
-                "title": "Line spacing (leading) is at least space-and-a-half within paragraphs, and paragraph spacing is at least 1.5 times larger than the line spacing."
+                "description": "Line spacing (leading) is at least space-and-a-half within paragraphs, and paragraph spacing is at least 1.5 times larger than the line spacing."
               },
               {
                 "type": "all_true",
-                "title": "Text can be resized without assistive technology up to 200 percent in a way that does not require the user to scroll horizontally to read a line of text on a full-screen window."
+                "description": "Text can be resized without assistive technology up to 200 percent in a way that does not require the user to scroll horizontally to read a line of text on a full-screen window."
               }
             ],
             "notes": null,
@@ -988,15 +988,15 @@
             "special_cases": [
               {
                 "type": "all_true",
-                "title": "Vertical scrolling content at a width equivalent to 320 CSS pixels;"
+                "description": "Vertical scrolling content at a width equivalent to 320 CSS pixels;"
               },
               {
                 "type": "all_true",
-                "title": "Horizontal scrolling content at a height equivalent to 256 CSS pixels."
+                "description": "Horizontal scrolling content at a height equivalent to 256 CSS pixels."
               },
               {
                 "type": "exception",
-                "title": "Except for parts of the content which require two-dimensional layout for usage or meaning."
+                "description": "Except for parts of the content which require two-dimensional layout for usage or meaning."
               }
             ],
             "notes": [
@@ -1079,23 +1079,23 @@
             "special_cases": [
               {
                 "type": "all_true",
-                "title": "Line height (line spacing) to at least 1.5 times the font size;"
+                "description": "Line height (line spacing) to at least 1.5 times the font size;"
               },
               {
                 "type": "all_true",
-                "title": "Spacing following paragraphs to at least 2 times the font size;"
+                "description": "Spacing following paragraphs to at least 2 times the font size;"
               },
               {
                 "type": "all_true",
-                "title": "Letter spacing (tracking) to at least 0.12 times the font size;"
+                "description": "Letter spacing (tracking) to at least 0.12 times the font size;"
               },
               {
                 "type": "all_true",
-                "title": "Word spacing to at least 0.16 times the font size."
+                "description": "Word spacing to at least 0.16 times the font size."
               },
               {
                 "type": "exception",
-                "title": "Exception: Human languages and scripts that do not make use of one or more of these text style properties in written text can conform using only the properties that exist for that combination of language and script."
+                "description": "Exception: Human languages and scripts that do not make use of one or more of these text style properties in written text can conform using only the properties that exist for that combination of language and script."
               }
             ],
             "notes": null,
@@ -1145,7 +1145,7 @@
               },
               {
                 "type": "exception",
-                "title": "Exception: The visual presentation of the additional content is controlled by the user agent and is not modified by the author."
+                "description": "Exception: The visual presentation of the additional content is controlled by the user agent and is not modified by the author."
               }
             ],
             "notes": [
@@ -1246,7 +1246,7 @@
             "special_cases": null,
             "notes": [
               {
-                "content": "Since any content that does not meet this success criterion can interfere with a user's ability to use the whole page, all content on the Web page (whether it is used to meet other success criteria or not) must meet this success criterion. See Conformance Requirement 5: Non-Interference. (https://www.w3.org/TR/WCAG22/#cc5)"
+                "content": "Since any content that does not meet this success criterion can interfere with a user's ability to use the whole page, all content on the Web page (whether it is used to meet other success criteria or not) must meet this success criterion. See Conformance Requirement 5: Non-Interference."
               }
             ],
             "references": [
@@ -1401,7 +1401,7 @@
             ],
             "notes": [
               {
-                "content": "This success criterion helps ensure that users can complete tasks without unexpected changes in content or context that are a result of a time limit. This success criterion should be considered in conjunction with Success Criterion 3.2.1 (https://www.w3.org/TR/WCAG22/#on-focus), which puts limits on changes of content or context as a result of user action."
+                "content": "This success criterion helps ensure that users can complete tasks without unexpected changes in content or context that are a result of a time limit. This success criterion should be considered in conjunction with Success Criterion 3.2.1, which puts limits on changes of content or context as a result of user action."
               }
             ],
             "references": [
@@ -1446,10 +1446,10 @@
             ],
             "notes": [
               {
-                "content": "For requirements related to flickering or flashing content, refer to Guideline 2.3. (https://www.w3.org/TR/WCAG22/#seizures-and-physical-reactions)"
+                "content": "For requirements related to flickering or flashing content, refer to Guideline 2.3."
               },
               {
-                "content": "Since any content that does not meet this success criterion can interfere with a user's ability to use the whole page, all content on the Web page (whether it is used to meet other success criteria or not) must meet this success criterion. See Conformance Requirement 5: Non-Interference (https://www.w3.org/TR/WCAG22/#cc5)"
+                "content": "Since any content that does not meet this success criterion can interfere with a user's ability to use the whole page, all content on the Web page (whether it is used to meet other success criteria or not) must meet this success criterion. See Conformance Requirement 5: Non-Interference."
               },
               {
                 "content": "Content that is updated periodically by software or that is streamed to the user agent is not required to preserve or present information that is generated or received between the initiation of the pause and resuming presentation, as this may not be technically possible, and in many situations could be misleading to do so."
@@ -1627,7 +1627,7 @@
             "special_cases": null,
             "notes": [
               {
-                "content": "Since any content that does not meet this success criterion can interfere with a user's ability to use the whole page, all content on the Web page (whether it is used to meet other success criteria or not) must meet this success criterion. See Conformance Requirement 5: Non-Interference. (https://www.w3.org/TR/WCAG22/#cc5)"
+                "content": "Since any content that does not meet this success criterion can interfere with a user's ability to use the whole page, all content on the Web page (whether it is used to meet other success criteria or not) must meet this success criterion. See Conformance Requirement 5: Non-Interference."
               }
             ],
             "references": [
@@ -2008,7 +2008,7 @@
                 "content": "'Heading' is used in its general sense and includes titles and other ways to add a heading to different types of content."
               },
               {
-                "content": "This success criterion covers sections within writing, not user interface components. User Interface components are covered under Success Criterion 4.1.2. (https://www.w3.org/TR/WCAG22/#name-role-value)"
+                "content": "This success criterion covers sections within writing, not user interface components. User Interface components are covered under Success Criterion 4.1.2."
               }
             ],
             "references": [
@@ -2109,19 +2109,19 @@
             "special_cases": [
               {
                 "type": "all_true",
-                "title": "is at least as large as the area of a 2 CSS pixel thick perimeter of the unfocused component or sub-component, and"
+                "description": "is at least as large as the area of a 2 CSS pixel thick perimeter of the unfocused component or sub-component, and"
               },
               {
                 "type": "all_true",
-                "title": "has a contrast ratio of at least 3:1 between the same pixels in the focused and unfocused states."
+                "description": "has a contrast ratio of at least 3:1 between the same pixels in the focused and unfocused states."
               },
               {
                 "type": "exception",
-                "title": "The focus indicator is determined by the user agent and cannot be adjusted by the author, or"
+                "description": "The focus indicator is determined by the user agent and cannot be adjusted by the author, or"
               },
               {
                 "type": "exception",
-                "title": "The focus indicator and the indicator’s background color are not modified by the author."
+                "description": "The focus indicator and the indicator’s background color are not modified by the author."
               }
             ],
             "notes": [
@@ -2891,19 +2891,19 @@
             "special_cases": [
               {
                 "type": "at_least_one",
-                "title": "Human contact details;"
+                "description": "Human contact details;"
               },
               {
                 "type": "at_least_one",
-                "title": "Human contact mechanism;"
+                "description": "Human contact mechanism;"
               },
               {
                 "type": "at_least_one",
-                "title": "Self-help option;"
+                "description": "Self-help option;"
               },
               {
                 "type": "at_least_one",
-                "title": "A fully automated contact mechanism."
+                "description": "A fully automated contact mechanism."
               }
             ],
             "notes": [
@@ -3246,7 +3246,7 @@
                 "content": "”Object recognition” and ”Personal content” may be represented by images, video, or audio."
               },
               {
-                "content": "Examples of mechanisms that satisfy this criterion include: <ol><li>support for password entry by password managers to reduce memory need, and</li><li>copy and paste to reduce the cognitive burden of re-typing.</li></ol>"
+                "content": "Examples of mechanisms that satisfy this criterion include: support for password entry by password managers to reduce memory need, and copy and paste to reduce the cognitive burden of re-typing."
               }
             ],
             "references": [

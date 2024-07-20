@@ -25,7 +25,7 @@
   display: inline-flex;
   align-items: center;
   font-size: var(--body-01);
-  font-weight: 500;
+  font-weight: 600;
   line-height: var(--ui-line-height);
 }
 
@@ -45,7 +45,7 @@
 }
 
 .criteria-title ~ .criteria-tags {
-  margin-top: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
 }
 
 .c-tag {
@@ -67,7 +67,7 @@
   position: relative;
   width: 100%;
   color: var(--color-text);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
   font-size: var(--caption);
 }
 
@@ -114,11 +114,12 @@
 .special-cases {
   position: relative;
   width: 100%;
-  margin-top: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
   background-color: var(--color-bg-muted);
   padding: var(--spacing-sm);
   padding-left: var(--spacing-md);
   border-left: 2px solid var(--color-border-warning);
+  padding-bottom: var(--spacing-md);
 
   &__header {
     position: relative;
@@ -126,6 +127,7 @@
     align-items: center;
     padding-bottom: var(--spacing-sm);
     border-bottom: 1px solid var(--color-border);
+    font-weight: 500;
     svg {
       margin-right: var(--spacing-xs);
     }
@@ -147,7 +149,7 @@
 }
 
 .special-case ~ .special-case {
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
 }
 
 .special-case-title {
@@ -157,6 +159,10 @@
 
 .special-case-title ~ .special-case-description {
   margin-top: var(--spacing-xs);
+}
+
+.special-case-note ~ .special-case-note {
+  margin-top: var(--spacing-sm);
 }
 
 .ref-link {

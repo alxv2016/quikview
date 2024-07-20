@@ -41,7 +41,7 @@ export interface Note {
 
 export interface Specialcase {
   type: string;
-  title: string;
+  title?: string;
   description?: string;
 }
 

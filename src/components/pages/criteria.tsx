@@ -11,6 +11,7 @@ interface CriteriaProps {
 enum SpecialCases {
   EXCEPTION = 'exception',
   ALLTRUE = 'all_true',
+  ATLEASTONE = 'at_least_one',
 }
 
 function Criteria({data}: CriteriaProps): JSX.Element {
@@ -53,7 +54,11 @@ function Criteria({data}: CriteriaProps): JSX.Element {
 
   const renderNotes = notes?.map((note, index) => {
     const {content} = note;
-    return <div key={index}>{content}</div>;
+    return (
+      <div key={index} className="special-case-note">
+        {content}
+      </div>
+    );
   });
 
   const renderTags = tags?.map((tag, index) => {
@@ -80,7 +85,9 @@ function Criteria({data}: CriteriaProps): JSX.Element {
         <div className="special-cases">
           <div className="special-cases__header">
             <InfoIcon />
-            {special_cases[0].type === SpecialCases.EXCEPTION ? 'Exceptions' : 'No exceptions'}
+            {special_cases[0].type === SpecialCases.EXCEPTION && 'Exceptions'}
+            {special_cases[0].type === SpecialCases.ALLTRUE && 'No exceptions'}
+            {special_cases[0].type === SpecialCases.ATLEASTONE && 'Provide at lease one of the following options'}
           </div>
           <div className="special-cases__body">{renderSpecialCases}</div>
         </div>
