@@ -1,0 +1,323 @@
+{
+  "patterns": [
+    {
+      "ref_id": "1",
+      "title": "Accordion",
+      "description": "An accordion is a vertically stacked set of interactive headings that each contain a title, content snippet, or thumbnail representing a section of content.",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/accordion/",
+      "design_pattern": {
+        "title": "About this pattern",
+        "descriptions": [
+          "An accordion is a vertically stacked set of interactive headings that each contain a title, content snippet, or thumbnail representing a section of content. The headings function as controls that enable users to reveal or hide their associated sections of content. Accordions are commonly used to reduce the need to scroll when presenting multiple sections of content on a single page."
+        ],
+        "notes": {
+          "title": "Terms for understanding accordions include:",
+          "description": "In some accordions, there are additional elements that are always visible adjacent to the accordion header. For instance, a menubutton may accompany each accordion header to provide access to actions that apply to that section. And, in some cases, a snippet of the hidden content may also be visually persistent.",
+          "terms": [
+            {
+              "title": "Accordion Header",
+              "description": "Label for or thumbnail representing a section of content that also serves as a control for showing, and in some implementations, hiding the section of content."
+            },
+            {
+              "title": "Accordion Panel",
+              "description": "Section of content associated with an accordion header."
+            }
+          ]
+        },
+        "Examples": [
+          {
+            "title": "Accordion example",
+            "description": "Demonstrates a form divided into three sections using an accordion to show one section at a time.",
+            "url": "https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/"
+          }
+        ],
+        "functionality": {
+          "title": "Keyboard Interaction",
+          "description": null,
+          "interactions": [
+            {
+              "keys": "Enter or Space",
+              "actions": [
+                "When focus is on the accordion header for a collapsed panel, expands the associated panel. If the implementation allows only one panel to be expanded, and if another panel is expanded, collapses that panel.",
+                "When focus is on the accordion header for an expanded panel, collapses the panel if the implementation supports collapsing. Some implementations require one panel to be expanded at all times and allow only one panel to be expanded; so, they do not support a collapse function."
+              ]
+            },
+            {
+              "keys": "Tab",
+              "actions": [
+                "Moves focus to the next focusable element; all focusable elements in the accordion are included in the page Tab sequence."
+              ]
+            },
+            {
+              "keys": "Shift + Tab",
+              "actions": [
+                "Moves focus to the previous focusable element; all focusable elements in the accordion are included in the page Tab sequence."
+              ]
+            },
+            {
+              "keys": "Down Arrow (Optional)",
+              "actions": [
+                "If focus is on an accordion header, moves focus to the next accordion header. If focus is on the last accordion header, either does nothing or moves focus to the first accordion header."
+              ]
+            },
+            {
+              "keys": "Up Arrow (Optional)",
+              "actions": [
+                "If focus is on an accordion header, moves focus to the previous accordion header. If focus is on the first accordion header, either does nothing or moves focus to the last accordion header."
+              ]
+            },
+            {
+              "keys": "Home (Optional)",
+              "actions": ["When focus is on an accordion header, moves focus to the first accordion header."]
+            },
+            {
+              "keys": "End (Optional)",
+              "actions": ["When focus is on an accordion header, moves focus to the last accordion header."]
+            }
+          ]
+        },
+        "acceptance_criteria": {
+          "title": "Accessible acceptance criteria",
+          "requirements": [
+            {
+              "property": "button",
+              "critiera": "The title of each accordion header is contained in an element with role button",
+              "notes": null
+            },
+            {
+              "property": "heading tag",
+              "criteria": "Each accordion header button is wrapped in an element with role heading that has a value set for aria-level that is appropriate for the information architecture of the page.",
+              "notes": [
+                "If the native host language has an element with an implicit heading and aria-level, such as an HTML heading tag, a native host language element may be used.",
+                "The button element is the only element inside the heading element. That is, if there are other visually persistent elements, they are not included inside the heading element."
+              ]
+            },
+            {
+              "property": "aria-expanded",
+              "criteria": "If the accordion panel associated with an accordion header is visible, the header button element has aria-expanded set to true. If the panel is not visible, aria-expanded is set to false.",
+              "notes": null
+            },
+            {
+              "property": "aria-controls",
+              "criteria": "The accordion header button element has aria-controls set to the ID of the element containing the accordion panel content.",
+              "notes": null
+            },
+            {
+              "property": "aria-disabled",
+              "criteria": "If the accordion panel associated with an accordion header is visible, and if the accordion does not permit the panel to be collapsed, the header button element has aria-disabled set to true.",
+              "notes": null
+            },
+            {
+              "property": "region and aria-labelledby",
+              "criteria": "Optionally, each element that serves as a container for panel content has role region and aria-labelledby with a value that refers to the button that controls display of the panel.",
+              "notes": [
+                "Avoid using the region role in circumstances that create landmark region proliferation, e.g., in an accordion that contains more than approximately 6 panels that can be expanded at the same time.",
+                "Role region is especially helpful to the perception of structure by screen reader users when panels contain heading elements or a nested accordion."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ref_id": "2",
+      "title": "Alert",
+      "description": "An alert is an element that displays a brief, important message in a way that attracts the user's attention without interrupting the user's task.",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/alert/",
+      "design_pattern": {
+        "title": "About this pattern",
+        "descriptions": [
+          "An alert is an element that displays a brief, important message in a way that attracts the user's attention without interrupting the user's task. Dynamically rendered alerts are automatically announced by most screen readers, and in some operating systems, they may trigger an alert sound. It is important to note that, at this time, screen readers do not inform users of alerts that are present on the page before page load completes.",
+          "Because alerts are intended to provide important and potentially time-sensitive information without interfering with the user's ability to continue working, it is crucial they do not affect keyboard focus. The Alert Dialog Pattern is designed for situations where interrupting work flow is necessary.",
+          "It is also important to avoid designing alerts that disappear automatically. An alert that disappears too quickly can lead to failure to meet WCAG 2.0 success criterion 2.2.3. Another critical design consideration is the frequency of interruption caused by alerts. Frequent interruptions inhibit usability for people with visual and cognitive disabilities, which makes meeting the requirements of WCAG 2.0 success criterion 2.2.4 more difficult."
+        ],
+        "notes": null,
+        "Examples": [
+          {
+            "title": "Alert example",
+            "description": "Demonstrates the Alert Pattern. Activating the Trigger Alert button causes a message to be inserted into the example alert element.",
+            "url": "https://www.w3.org/WAI/ARIA/apg/patterns/alert/examples/alert/"
+          }
+        ],
+        "functionality": {
+          "title": "Keyboard Interaction",
+          "description": null,
+          "interactions": null
+        },
+        "acceptance_criteria": {
+          "title": "Accessible acceptance criteria",
+          "requirements": [
+            {
+              "property": "alert",
+              "criteria": "The widget has a role of alert.",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ref_id": "3",
+      "title": "Alert and Message Dialogs",
+      "description": "An alert dialog is a modal dialog that interrupts the user's workflow to communicate an important message and acquire a response.",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/",
+      "design_pattern": {
+        "title": "About this pattern",
+        "descriptions": [
+          "An alert dialog is a modal dialog that interrupts the user's workflow to communicate an important message and acquire a response. Examples include action confirmation prompts and error message confirmations. The alertdialog role enables assistive technologies and browsers to distinguish alert dialogs from other dialogs so they have the option of giving alert dialogs special treatment, such as playing a system alert sound."
+        ],
+        "notes": null,
+        "Examples": [
+          {
+            "title": "Alert Dialog example",
+            "description": "A confirmation prompt that demonstrates an alert dialog.",
+            "url": "https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/examples/alertdialog/"
+          }
+        ],
+        "functionality": {
+          "title": "Keyboard Interaction",
+          "description": "In the following description, the term tabbable element refers to any element with a tabindex value of zero or greater. Note that values greater than 0 are strongly discouraged.",
+          "interactions": [
+            {
+              "keys": null,
+              "actions": ["When a dialog opens, focus moves to an element inside the dialog."]
+            },
+            {
+              "keys": "Tab",
+              "actions": [
+                "Moves focus to the next tabbable element inside the dialog.",
+                "If focus is on the last tabbable element inside the dialog, moves focus to the first tabbable element inside the dialog."
+              ]
+            },
+            {
+              "keys": "Shift + Tab",
+              "actions": [
+                "Moves focus to the previous tabbable element inside the dialog.",
+                "If focus is on the first tabbable element inside the dialog, moves focus to the last tabbable element inside the dialog."
+              ]
+            },
+            {
+              "keys": "Escape",
+              "actions": ["Closes the dialog"]
+            }
+          ]
+        },
+        "acceptance_criteria": {
+          "title": "Accessible acceptance criteria",
+          "requirements": [
+            {
+              "property": "alertdialog",
+              "criteria": "The element that contains all elements of the dialog, including the alert message and any dialog buttons, has role alertdialog.",
+              "notes": null
+            },
+            {
+              "property": "aria-labelledby",
+              "criteria": "The element with role alertdialog has a value for aria-labelledby that refers to the element containing the title of the dialog if the dialog has a visible label.",
+              "notes": ["Alternatively you can use aria-label if the dialog does not have a visible label."]
+            },
+            {
+              "property": "aria-label (alternative option)",
+              "criteria": "The element with role alertdialog has a value for aria-label if the dialog does not have a visible label.",
+              "notes": ["Consider using aria-labelledby if the dialog has a visible label or title."]
+            },
+            {
+              "property": "aria-describedby",
+              "criteria": "The element with role alertdialog has a value set for aria-describedby that refers to the element containing the alert message.",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ref_id": "4",
+      "title": "Breadcrumb",
+      "description": "A breadcrumb trail consists of a list of links to the parent pages of the current page in hierarchical order.",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/",
+      "design_pattern": {
+        "title": "About this pattern",
+        "descriptions": [
+          "A breadcrumb trail consists of a list of links to the parent pages of the current page in hierarchical order. It helps users find their place within a website or web application. Breadcrumbs are often placed horizontally before a page's main content."
+        ],
+        "notes": null,
+        "Examples": [
+          {
+            "title": "Breadcrumb Example",
+            "description": "The following example demonstrates the Breadcrumb Pattern.",
+            "url": "https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/examples/breadcrumb/"
+          }
+        ],
+        "functionality": {
+          "title": "Keyboard Interaction",
+          "description": "In the following description, the term tabbable element refers to any element with a tabindex value of zero or greater. Note that values greater than 0 are strongly discouraged.",
+          "interactions": null
+        },
+        "acceptance_criteria": {
+          "title": "Accessible acceptance criteria",
+          "requirements": [
+            {
+              "property": "nav landmark region",
+              "criteria": "Breadcrumb trail is contained within a navigation landmark region.",
+              "notes": null
+            },
+            {
+              "property": "aria-label or aria-labelledby",
+              "criteria": "The landmark region is labelled via aria-label or aria-labelledby.",
+              "notes": null
+            },
+            {
+              "property": "aria-current",
+              "criteria": "The link to the current page has aria-current set to page. If the element representing the current page is not a link, aria-current is optional.",
+              "notes": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ref_id": "5",
+      "title": "Button",
+      "description": "A button is a widget that enables users to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/button/",
+      "design_pattern": {
+        "title": "About this pattern",
+        "descriptions": [
+          "A button is a widget that enables users to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation."
+        ],
+        "notes": null,
+        "Examples": [
+          {
+            "title": "Breadcrumb Example",
+            "description": "The following example demonstrates the Breadcrumb Pattern.",
+            "url": "https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/examples/breadcrumb/"
+          }
+        ],
+        "functionality": {
+          "title": "Keyboard Interaction",
+          "description": "In the following description, the term tabbable element refers to any element with a tabindex value of zero or greater. Note that values greater than 0 are strongly discouraged.",
+          "interactions": null
+        },
+        "acceptance_criteria": {
+          "title": "Accessible acceptance criteria",
+          "requirements": [
+            {
+              "property": "nav landmark region",
+              "criteria": "Breadcrumb trail is contained within a navigation landmark region.",
+              "notes": null
+            },
+            {
+              "property": "aria-label or aria-labelledby",
+              "criteria": "The landmark region is labelled via aria-label or aria-labelledby.",
+              "notes": null
+            },
+            {
+              "property": "aria-current",
+              "criteria": "The link to the current page has aria-current set to page. If the element representing the current page is not a link, aria-current is optional.",
+              "notes": null
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
