@@ -9,12 +9,7 @@
   transition: background-color 220ms ease;
 
   &:hover,
-  &:focus {
-    background-color: var(--color-bg-hover);
-  }
-
-  &:focus,
-  &:active {
+  &:focus-visible {
     box-shadow: 0 0 0 2px hsla(204, 96%, 54%, 100%);
   }
 
@@ -41,7 +36,8 @@
 }
 
 .sp-title {
-  text-decoration: underline;
+  //text-decoration: underline;
+  font-weight: 500;
   color: var(--color-text-brand);
 }
 

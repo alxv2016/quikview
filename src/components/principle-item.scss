@@ -11,15 +11,13 @@
     background-color 220ms ease,
     box-shadow 120ms ease;
 
-  &:hover {
-    background-color: var(--color-bg-hover);
-  }
-  &:active,
-  &:focus {
-    background-color: var(--color-bg-hover);
+  &:active {
+    background-color: transparent;
   }
 
-  &:active {
+  &:hover,
+  &:focus-visible {
+    background-color: transparent;
     box-shadow: 0 0 0 2px hsla(204, 96%, 54%, 100%);
   }
 
@@ -55,7 +53,8 @@
 
 .pi-title {
   color: var(--color-text);
-  font-weight: 600;
+  font-weight: 500;
+  font-size: var(--caption);
 }
 
 .pi-descr {

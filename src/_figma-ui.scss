@@ -65,6 +65,10 @@ p {
   font-size: var(--legal);
 }
 
+a {
+  cursor: default;
+}
+
 /* Figma UI styles */
 button {
   display: inline-flex;
@@ -94,7 +98,7 @@ button {
   &.btn-secondary {
     color: var(--figma-color-text);
     background-color: transparent;
-    border: 1px solid var(--color-border-disabled-strong);
+    border: 1px solid var(--color-border);
     &:focus-visible {
       border: 1px solid transparent;
     }
@@ -144,7 +148,7 @@ button {
 
   &.btn-settings {
     margin-right: auto;
-    border: 1px solid var(--color-border-disabled-strong);
+    border: 1px solid var(--color-border);
     &:focus-visible {
       border: 1px solid transparent;
     }

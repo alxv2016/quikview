@@ -41,10 +41,8 @@
     align-items: center;
   }
 
-  &:focus {
-    background-color: var(--color-bg-hover);
-  }
-  &:active {
+  &:hover,
+  &:focus-visible {
     box-shadow: 0 0 0 2px hsla(204, 96%, 54%, 100%);
   }
 }
