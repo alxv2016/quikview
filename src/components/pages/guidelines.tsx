@@ -1,9 +1,11 @@
-import {HTMLAttributes, MouseEvent} from 'react';
+import {Fragment, HTMLAttributes, MouseEvent, ReactNode, useRef, useState} from 'react';
 import {Criterion, Successcriterion} from '../../data/wcag.interface';
 import {extractGuidelines} from '../../utils';
 import ButtonIcon from '../button-icon';
 import {OverflowIcon, PlusIcon} from '../icons';
 import './guidelines.scss';
+import ActionSheet from '../action-sheet';
+import Actions from './actions';
 
 interface GuidelinesProps extends HTMLAttributes<HTMLUListElement> {
   data: Criterion;
@@ -12,15 +14,24 @@ interface GuidelinesProps extends HTMLAttributes<HTMLUListElement> {
 
 function Guidelines({data, handleClick}: GuidelinesProps): JSX.Element {
   const guidelinesData = extractGuidelines(data.guidelines);
+  const [actions, setActions] = useState<ReactNode>(null);
+  const actionSheetRef = useRef<{closeActionSheet: () => void; openActionSheet: () => void}>(null);
 
   const handleCreate = (e: MouseEvent) => {
     e.stopPropagation();
     console.log('clicked here');
   };
 
-  const handleMoreActions = (e: MouseEvent) => {
+  const handleActionClick = (item: Successcriterion) => {
+    handleClick(item);
+    actionSheetRef.current?.closeActionSheet();
+  };
+
+  const showMoreActions = (e: MouseEvent, item: Successcriterion) => {
     e.stopPropagation();
-    console.log('clicked here');
+    if (!actionSheetRef) return;
+    setActions(<Actions data={item} handleClick={handleActionClick} />);
+    actionSheetRef.current?.openActionSheet();
   };
 
   const renderGuidelines = guidelinesData.map((item: Successcriterion, index: number) => {
@@ -49,7 +60,7 @@ function Guidelines({data, handleClick}: GuidelinesProps): JSX.Element {
               <ButtonIcon label="Create" onClick={handleCreate}>
                 <PlusIcon />
               </ButtonIcon>
-              <ButtonIcon label="More actions" onClick={handleMoreActions}>
+              <ButtonIcon label="More actions" onClick={(e) => showMoreActions(e, item)}>
                 <OverflowIcon />
               </ButtonIcon>
             </div>
@@ -59,6 +70,13 @@ function Guidelines({data, handleClick}: GuidelinesProps): JSX.Element {
     );
   });
 
-  return <ul className="guidelines">{renderGuidelines}</ul>;
+  return (
+    <Fragment>
+      <ul className="guidelines">{renderGuidelines}</ul>
+      <ActionSheet title="More actions" ref={actionSheetRef}>
+        {actions}
+      </ActionSheet>
+    </Fragment>
+  );
 }
 export default Guidelines;

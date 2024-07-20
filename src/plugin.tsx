@@ -1,4 +1,4 @@
-import {useRef, useState, Fragment} from 'react';
+import {useRef, useState, Fragment, ReactNode} from 'react';
 import {Criterion, Successcriterion} from './data/wcag.interface';
 import wcagData from './data/wcag.json';
 import wcagRefs from './data/refs.json';
@@ -7,7 +7,7 @@ import Announcer from './components/announcer';
 import {extractSuccessCriteria} from './utils';
 import ButtonGroup from './components/button-group';
 import ButtonIcon from './components/button-icon';
-import {BackIcon, OverflowIcon, RefsIcon} from './components/icons';
+import {BackIcon, OverflowIcon, PlusIcon, RefsIcon} from './components/icons';
 import Principles from './components/pages/principles';
 import {useDataQueryContext, useGuidelinesContext} from './hooks';
 import Guidelines from './components/pages/guidelines';
@@ -34,9 +34,10 @@ export default function Plugin(): JSX.Element {
   const keys = ['ref_id', 'tags', 'title', 'level'];
   const [data, setData] = useState<Successcriterion[]>(successCriteriaDataset);
   const [announcement, setAnnouncement] = useState('');
-  // const [bottomSheetContent, setBottomSheetContent] = useState<ReactNode>(null);
+  const [actions, setActions] = useState<ReactNode>(null);
   const guidelinesPage = useRef<{closePage: () => void; openPage: () => void}>(null);
   const criteriaPage = useRef<{closePage: () => void; openPage: () => void}>(null);
+  const supportingDocsRef = useRef<{closeActionSheet: () => void; openActionSheet: () => void}>(null);
   const actionSheetRef = useRef<{closeActionSheet: () => void; openActionSheet: () => void}>(null);
   const {dataQuery, setDataQuery} = useDataQueryContext();
   const {guidelines, setGuidelines} = useGuidelinesContext();
@@ -53,7 +54,12 @@ export default function Plugin(): JSX.Element {
     setGuidelines(null);
   };
 
-  const showActions = () => {
+  const showSupportingDocs = () => {
+    if (!supportingDocsRef) return;
+    supportingDocsRef.current?.openActionSheet();
+  };
+
+  const showGuidelineActions = () => {
     if (!actionSheetRef) return;
     actionSheetRef.current?.openActionSheet();
   };
@@ -121,7 +127,7 @@ export default function Plugin(): JSX.Element {
               buttons={['All', 'A', 'AA', 'AAA']}
               onButtonClick={handleFilterClick}
             />
-            <ButtonIcon label="Settings" onClick={showActions}>
+            <ButtonIcon label="Settings" onClick={showSupportingDocs}>
               <RefsIcon />
             </ButtonIcon>
           </div>
@@ -139,9 +145,6 @@ export default function Plugin(): JSX.Element {
             <ButtonIcon label="Back" onClick={closeGuidelinePage}>
               <BackIcon />
             </ButtonIcon>
-            <ButtonIcon label="More actions">
-              <OverflowIcon />
-            </ButtonIcon>
           </div>
         </div>
         {guidelines && <Guidelines data={guidelines} handleClick={handleResultClick} />}
@@ -153,14 +156,14 @@ export default function Plugin(): JSX.Element {
             <ButtonIcon label="Back" onClick={closeCriteriaPage}>
               <BackIcon />
             </ButtonIcon>
-            <ButtonIcon label="More actions">
-              <OverflowIcon />
+            <ButtonIcon label="Create reference">
+              <PlusIcon />
             </ButtonIcon>
           </div>
         </div>
         {dataQuery && <Criteria data={dataQuery} />}
       </Page>
-      <ActionSheet title={title} ref={actionSheetRef}>
+      <ActionSheet title={title} ref={supportingDocsRef}>
         <SupportingDocs data={refData} />
       </ActionSheet>
     </Fragment>
