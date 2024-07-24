@@ -17,9 +17,9 @@ function Guidelines({data, handleClick}: GuidelinesProps): JSX.Element {
   const [actions, setActions] = useState<ReactNode>(null);
   const actionSheetRef = useRef<{closeActionSheet: () => void; openActionSheet: () => void}>(null);
 
-  const handleCreate = (e: MouseEvent) => {
+  const handleCreate = (e: MouseEvent, item: Successcriterion) => {
     e.stopPropagation();
-    console.log('clicked here');
+    parent.postMessage({pluginMessage: item}, '*');
   };
 
   const handleActionClick = (item: Successcriterion) => {
@@ -57,7 +57,7 @@ function Guidelines({data, handleClick}: GuidelinesProps): JSX.Element {
               })}
             </ul>
             <div className="success-criteria__actions">
-              <ButtonIcon label="Create" onClick={handleCreate}>
+              <ButtonIcon label="Create" onClick={(e) => handleCreate(e, item)}>
                 <PlusIcon />
               </ButtonIcon>
               <ButtonIcon label="More actions" onClick={(e) => showMoreActions(e, item)}>

@@ -72,6 +72,11 @@ export default function Plugin(): JSX.Element {
     }
   };
 
+  const handleCreate = () => {
+    if (!dataQuery) return;
+    parent.postMessage({pluginMessage: dataQuery}, '*');
+  };
+
   const handleFilterClick = (selectedIndex: number) => {
     switch (true) {
       case selectedIndex === FilterType.ALL:
@@ -156,7 +161,7 @@ export default function Plugin(): JSX.Element {
             <ButtonIcon label="Back" onClick={closeCriteriaPage}>
               <BackIcon />
             </ButtonIcon>
-            <ButtonIcon label="Create reference">
+            <ButtonIcon label="Create reference" onClick={handleCreate}>
               <PlusIcon />
             </ButtonIcon>
           </div>

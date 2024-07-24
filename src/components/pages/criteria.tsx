@@ -33,6 +33,10 @@ function Criteria({data}: CriteriaProps): JSX.Element {
     window.open(url, '_blank');
   };
 
+  const handleCreate = (item: Successcriterion) => {
+    parent.postMessage({pluginMessage: item}, '*');
+  };
+
   const renderRefs = references.map((item, index) => {
     const {title, url} = item;
     return (
@@ -102,7 +106,7 @@ function Criteria({data}: CriteriaProps): JSX.Element {
         <div className="brief-title">References</div>
         <div className="brief-description">{renderRefs}</div>
       </div>
-      <button className="btn-icon-suffix">
+      <button className="btn-icon-suffix" onClick={() => handleCreate(data)}>
         <PlusIcon /> Create reference
       </button>
     </div>
