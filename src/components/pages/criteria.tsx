@@ -1,7 +1,7 @@
 import {MouseEvent} from 'react';
 import {Successcriterion} from '../../data/wcag.interface';
 import './criteria.scss';
-import {InfoIcon, PlusIcon} from '../icons';
+import {InfoIcon, NoteIcon, PlusIcon} from '../icons';
 import {useDataQueryContext} from '../../hooks';
 
 interface CriteriaProps {
@@ -84,6 +84,10 @@ function Criteria({data}: CriteriaProps): JSX.Element {
           <div className="criteria-description">{description}</div>
         </div>
         {renderBrief}
+        <div className="brief">
+          <div className="brief-title">WCAG 2.2 Supporting Documents</div>
+          <div className="brief-description">{renderRefs}</div>
+        </div>
       </div>
       {special_cases && (
         <div className="special-cases">
@@ -98,14 +102,12 @@ function Criteria({data}: CriteriaProps): JSX.Element {
       )}
       {notes && (
         <div className="special-cases special-cases--info">
-          <div className="special-cases__header">Notes</div>
+          <div className="special-cases__header">
+            <NoteIcon /> Notes
+          </div>
           <div className="special-cases__body">{renderNotes}</div>
         </div>
       )}
-      <div className="brief">
-        <div className="brief-title">References</div>
-        <div className="brief-description">{renderRefs}</div>
-      </div>
       <button className="btn-icon-suffix" onClick={() => handleCreate(data)}>
         <PlusIcon /> Create reference
       </button>

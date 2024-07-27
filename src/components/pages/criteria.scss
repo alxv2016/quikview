@@ -96,7 +96,8 @@
   margin-top: var(--spacing-sm);
 }
 
-.brief ~ button {
+.special-cases ~ button,
+.criteria__header ~ button {
   margin-top: var(--spacing-xl);
 }
 

@@ -67,7 +67,7 @@ export function textNode(
   weight: string,
   color: RGB,
   characters: string,
-  align?: 'STRETCH' | 'MIN' | 'MAX' | null,
+  align?: 'STRETCH' | 'MIN' | 'MAX' | 'INHERIT' | null,
   lineHeight?: number | null
 ) {
   const textNode = figma.createText();
