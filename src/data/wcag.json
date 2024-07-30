@@ -887,7 +887,7 @@
             "ref_id": "1.4.8",
             "tags": ["Perceivable", "Distinguishable", "AAA"],
             "title": "Visual Presentation",
-            "description": "For the visual presentation of blocks of text, a mechanism is available to achieve the following:",
+            "description": "For the visual presentation of blocks of text, text appearance can be altered by users to meet preferences.",
             "url": "https://www.w3.org/TR/WCAG22/#visual-presentation",
             "level": "AAA",
             "brief": [
@@ -2377,11 +2377,11 @@
             "references": [
               {
                 "title": "How to Meet 2.5.5",
-                "url": "https://www.w3.org/WAI/WCAG22/quickref/#target-size"
+                "url": "https://www.w3.org/WAI/WCAG22/quickref/#target-size-enhanced"
               },
               {
                 "title": "Understanding 2.5.5",
-                "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size.html"
+                "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html"
               }
             ]
           },

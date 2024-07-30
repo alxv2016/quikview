@@ -186,47 +186,6 @@ function createLinkWrapperFrame(name: string): FrameNode {
   return frame;
 }
 
-function createFooterFrame(name: string): FrameNode {
-  const frame = figma.createFrame();
-  frame.name = `_${name}__footer`;
-  frame.layoutMode = 'VERTICAL';
-  frame.itemSpacing = 24;
-  frame.clipsContent = false;
-  const backgroundColor = '#F5EDD2';
-  const fills = clone(frame.fills);
-  fills[0].visible = true;
-  fills[0].color = figmaRgb(backgroundColor);
-  frame.fills = fills;
-  frame.layoutAlign = 'STRETCH';
-  frame.primaryAxisAlignItems = 'MIN';
-  frame.counterAxisAlignItems = 'MIN';
-  frame.primaryAxisSizingMode = 'AUTO';
-  frame.counterAxisSizingMode = 'AUTO';
-  frame.paddingLeft = 44;
-  frame.paddingTop = 32;
-  frame.paddingRight = 44;
-  frame.paddingBottom = 44;
-  return frame;
-}
-
-function createFooterHeaderFrame(name: string): FrameNode {
-  const frame = figma.createFrame();
-  frame.name = `_${name}__footer-header`;
-  frame.layoutMode = 'HORIZONTAL';
-  frame.itemSpacing = 8;
-  frame.clipsContent = false;
-  frame.fills = [];
-  frame.layoutAlign = 'STRETCH';
-  frame.primaryAxisAlignItems = 'MIN';
-  frame.counterAxisAlignItems = 'CENTER';
-  frame.primaryAxisSizingMode = 'FIXED';
-  frame.counterAxisSizingMode = 'AUTO';
-  const icon = injectSVG(infoIcon, '32', '#7B5F00');
-  icon.name = `_${name}-icon`;
-  frame.appendChild(icon);
-  return frame;
-}
-
 function createExceptionFrame(name: string): FrameNode {
   const frame = figma.createFrame();
   frame.name = `_${name}-exception`;
@@ -271,7 +230,42 @@ function createNotesHeaderFrame(name: string): FrameNode {
   frame.counterAxisAlignItems = 'CENTER';
   frame.primaryAxisSizingMode = 'FIXED';
   frame.counterAxisSizingMode = 'AUTO';
-  const icon = injectSVG(noteIcon, '32', '#7B5F00');
+  const icon = injectSVG(noteIcon, '32', '#0065A8');
+  icon.name = `_${name}-icon`;
+  frame.appendChild(icon);
+  return frame;
+}
+
+function createExceptionsFrame(name: string): FrameNode {
+  const frame = figma.createFrame();
+  frame.name = `_${name}__footer-notes`;
+  frame.layoutMode = 'VERTICAL';
+  frame.itemSpacing = 24;
+  frame.clipsContent = false;
+  frame.fills = [];
+  frame.layoutAlign = 'STRETCH';
+  frame.primaryAxisAlignItems = 'MIN';
+  frame.counterAxisAlignItems = 'MIN';
+  frame.primaryAxisSizingMode = 'AUTO';
+  frame.counterAxisSizingMode = 'AUTO';
+  frame.paddingLeft = 24;
+  stroke(frame, 'CENTER', 4, figmaRgb('#FF9820'), 1, ['LEFT']);
+  return frame;
+}
+
+function createExceptionsHeaderFrame(name: string): FrameNode {
+  const frame = figma.createFrame();
+  frame.name = `_${name}__footer-exceptions-header`;
+  frame.layoutMode = 'HORIZONTAL';
+  frame.itemSpacing = 8;
+  frame.clipsContent = false;
+  frame.fills = [];
+  frame.layoutAlign = 'STRETCH';
+  frame.primaryAxisAlignItems = 'MIN';
+  frame.counterAxisAlignItems = 'CENTER';
+  frame.primaryAxisSizingMode = 'FIXED';
+  frame.counterAxisSizingMode = 'AUTO';
+  const icon = injectSVG(infoIcon, '32', '#BE6700');
   icon.name = `_${name}-icon`;
   frame.appendChild(icon);
   return frame;
@@ -292,19 +286,19 @@ export function createRefComponent(name: string, data: Successcriterion): Compon
   const tagsFrame = createTagsFrame(name);
   const descriptionText = textNode(20, 'Regular', figmaRgb('#131313'), description, 'STRETCH', 32);
   const referenceFrame = createCalloutFrame(name);
-  const refHeading = textNode(18, 'Semi Bold', figmaRgb('#7B5F00'), 'WCAG 2.2 References', 'STRETCH');
+  const refHeading = textNode(18, 'Semi Bold', figmaRgb('#7B5F00'), 'WCAG 2.2 Supporting documents', 'STRETCH');
   const linkWrapperFrame = createLinkWrapperFrame(name);
   let footerFrame: FrameNode | null = null;
   let notesFrame: FrameNode | null = null;
 
   if (special_cases) {
-    footerFrame = createFooterFrame(name);
-    const footerHeaderFrame = createFooterHeaderFrame(name);
+    footerFrame = createExceptionsFrame(name);
+    const footerHeaderFrame = createExceptionsHeaderFrame(name);
     const footerHeading = textNode(
       20,
       'Semi Bold',
-      figmaRgb('#7B5F00'),
-      special_cases[0].type === 'exception' ? 'Exceptions' : 'No exceptions',
+      figmaRgb('#BE6700'),
+      special_cases[0].type === 'exception' ? 'Exceptions' : 'Requirements',
       'MIN'
     );
     footerHeading.layoutGrow = 1;
@@ -313,13 +307,13 @@ export function createRefComponent(name: string, data: Successcriterion): Compon
 
     special_cases.forEach((item) => {
       let title = null;
-      const exceptionFrame = createExceptionFrame(name);
       const description = textNode(18, 'Regular', figmaRgb('#131313'), item.description!, 'STRETCH', 28);
+      const exceptionFrame = createExceptionFrame(name);
       if (item.title) {
         title = textNode(18, 'Semi Bold', figmaRgb('#7B5F00'), item.title);
         exceptionFrame.appendChild(title);
       }
-      exceptionFrame.appendChild(description);
+      exceptionFrame?.appendChild(description);
       footerFrame?.appendChild(exceptionFrame);
     });
   }
@@ -327,7 +321,7 @@ export function createRefComponent(name: string, data: Successcriterion): Compon
   if (notes) {
     notesFrame = createNotesFrame(name);
     const notesHeaderFrame = createNotesHeaderFrame(name);
-    const notesHeading = textNode(20, 'Semi Bold', figmaRgb('#7B5F00'), 'Notes', 'MIN');
+    const notesHeading = textNode(20, 'Semi Bold', figmaRgb('#0065A8'), 'Notes', 'MIN');
     notesHeading.layoutGrow = 1;
     notesHeaderFrame.appendChild(notesHeading);
     notesFrame.appendChild(notesHeaderFrame);
@@ -382,14 +376,14 @@ export function createRefComponent(name: string, data: Successcriterion): Compon
   }
 
   bodyFrame.appendChild(referenceFrame);
+  if (special_cases && footerFrame) {
+    bodyFrame.appendChild(footerFrame);
+  }
   if (notes && notesFrame) {
     bodyFrame.appendChild(notesFrame);
   }
   wrapperFrame.appendChild(bodyFrame);
 
-  if (special_cases && footerFrame) {
-    wrapperFrame.appendChild(footerFrame);
-  }
   refComp.appendChild(wrapperFrame);
 
   return refComp;

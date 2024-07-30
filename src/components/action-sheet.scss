@@ -12,6 +12,7 @@
   padding: var(--spacing-md);
   padding-bottom: var(--spacing-xl);
   background-color: transparent;
+  user-select: none;
 
   &__content {
     position: relative;

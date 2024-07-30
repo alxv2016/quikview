@@ -85,7 +85,7 @@ function Criteria({data}: CriteriaProps): JSX.Element {
         </div>
         {renderBrief}
         <div className="brief">
-          <div className="brief-title">WCAG 2.2 Supporting Documents</div>
+          <div className="brief-title">WCAG 2.2 Supporting documents</div>
           <div className="brief-description">{renderRefs}</div>
         </div>
       </div>

@@ -5,7 +5,7 @@ export function injectSVG(icon: string, size: string, color: string) {
 }
 
 export function notify(message: string) {
-  figma.notify(message, {timeout: 275});
+  figma.notify(message, {timeout: 300});
 }
 
 /* Load Figma fonts */
@@ -87,28 +87,40 @@ export function textNode(
   return textNode;
 }
 
-function preventCollision(name: string, spacing: number): void {
+export function preventCollision(name: string, spacing: number): void {
   // Get the existing elements with the specified name and type on the current page
   const existingElements = figma.currentPage.findChildren((n) => n.name === name && n.type === 'INSTANCE');
+
   // Iterate over each object in the existingElements array
   for (let i = 0; i < existingElements.length; i++) {
     const node1 = existingElements[i];
     const node1BoundingRec = node1.absoluteBoundingBox as Rect;
+
     // Compare the current object with every other object in the array, excluding itself
     for (let j = 0; j < existingElements.length; j++) {
       if (i === j) continue;
 
       const node2 = existingElements[j];
       const node2BoundingRec = node2.absoluteBoundingBox as Rect;
-      // Calculate the distance between the two objects
-      const dx = node2BoundingRec.x - node1BoundingRec.x;
-      const dy = node2BoundingRec.y - node1BoundingRec.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
 
-      // Check if the distance is less than the sum of their radii (half of their heights)
-      if (distance < node2BoundingRec.height / 2 + node1BoundingRec.height / 2) {
+      // Define variables for the edges of the bounding boxes
+      const node1Left = node1BoundingRec.x;
+      const node1Right = node1BoundingRec.x + node1BoundingRec.width;
+      const node1Top = node1BoundingRec.y;
+      const node1Bottom = node1BoundingRec.y + node1BoundingRec.height;
+
+      const node2Left = node2BoundingRec.x;
+      const node2Right = node2BoundingRec.x + node2BoundingRec.width;
+      const node2Top = node2BoundingRec.y;
+      const node2Bottom = node2BoundingRec.y + node2BoundingRec.height;
+
+      // Check for horizontal and vertical overlap
+      const isHorizontalOverlap = node1Left < node2Right && node1Right > node2Left;
+      const isVerticalOverlap = node1Top < node2Bottom && node1Bottom > node2Top;
+
+      if (isHorizontalOverlap && isVerticalOverlap) {
         // Adjust the y position of the colliding object to prevent overlap
-        node2.y = node1BoundingRec.y + node2BoundingRec.height + spacing;
+        node2.y = node1Bottom + spacing;
       }
     }
   }
@@ -120,18 +132,12 @@ export function createInstance(node: ComponentNode): InstanceNode {
   return nodeInstance;
 }
 
-function nodeFill(fills: any, color: RGB | RGBA): any {
-  const newFills = clone(fills);
-  newFills[0].color = color;
-  return newFills;
-}
-
-function scrollAndZoomIntoView(instance: BaseNode[], message: string) {
+export function scrollAndZoomIntoView(instance: BaseNode[], message: string) {
   figma.viewport.scrollAndZoomIntoView(instance);
   figma.notify(message);
 }
 
-function handleSelectionChange(): SceneNode | null {
+export function handleSelectionChange(): SceneNode | null {
   const selections = figma.currentPage.selection;
   if (selections.length !== 0) {
     return selections[0];

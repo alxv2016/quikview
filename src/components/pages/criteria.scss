@@ -6,6 +6,7 @@
   padding-bottom: 64px;
   display: flex;
   flex-direction: column;
+  user-select: none;
 
   &__header {
     position: relative;
