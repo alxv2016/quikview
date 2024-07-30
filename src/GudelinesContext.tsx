@@ -1,5 +1,5 @@
 import {ReactNode, createContext, useState} from 'react';
-import {Criterion} from '../data/wcag.interface';
+import {Criterion} from './data/wcag.interface';
 
 interface Guideline {
   guidelines: Criterion | null;

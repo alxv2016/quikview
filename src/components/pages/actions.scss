@@ -1,0 +1,59 @@
+.criteria-actions {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-action {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-brand);
+  background-color: transparent;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: default;
+  outline: none;
+  transition: box-shadow 125ms ease;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-bg-hover);
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: 0 0 0 2px hsla(204, 96%, 54%, 100%);
+  }
+
+  &:active {
+    background-color: var(--color-bg-active);
+  }
+}
+
+.c-action ~ .c-action {
+  margin-top: var(--spacing-sm);
+}
+
+.c-action--primary {
+  background-color: var(--color-bg-brand);
+  color: var(--color-text-onbrand);
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: var(--color-bg-brand);
+  }
+
+  &:active {
+    background-color: var(--color-bg-brand-hover);
+    box-shadow: none;
+  }
+  &:focus {
+    background-color: var(--color-bg-brand-hover);
+    box-shadow: 0 0 0 2px hsla(204, 96%, 54%, 100%);
+  }
+}

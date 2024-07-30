@@ -1,5 +1,5 @@
 import {ReactNode, createContext, useState} from 'react';
-import {Successcriterion} from '../data/wcag.interface';
+import {Successcriterion} from './data/wcag.interface';
 
 interface DataQuery {
   dataQuery: Successcriterion | null;

@@ -9,12 +9,12 @@
 }
 .button-group-btn {
   padding: var(--spacing-2xs) var(--spacing-sm);
-  font-size: var(--fineprint);
   min-width: 36px;
   background-color: transparent;
   border: 1px solid var(--color-border);
   text-transform: uppercase;
   border-radius: 4px;
+  font-size: var(--legal);
   color: var(--color-text);
   transition: background-color 220ms ease;
   &:hover {

@@ -11,6 +11,7 @@
   color: currentColor;
   background-color: var(--color-bg);
   overflow: hidden;
+  user-select: none;
 
   &__content {
     position: relative;

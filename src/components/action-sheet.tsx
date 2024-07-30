@@ -76,13 +76,11 @@ const ActionSheet = forwardRef<{closeActionSheet: () => void; openActionSheet: (
 
     return (
       <dialog ref={internalRef} className="action-sheet" onKeyDown={handleKeydown}>
-        <div className="action-sheet__content">
-          <div className="action-sheet-header">
-            {title && <div className="as-title">{title}</div>}
-            {description && <div className="as-description">{description}</div>}
-          </div>
-          {children}
+        <div className="action-sheet-header">
+          {title && <div className="as-title">{title}</div>}
+          {description && <div className="as-description">{description}</div>}
         </div>
+        <div className="action-sheet__content">{children}</div>
         <button className="close-btn" onClick={closeActionSheet} autoFocus>
           Cancel
         </button>

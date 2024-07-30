@@ -1,10 +1,11 @@
-import {Fragment, HTMLAttributes, MouseEvent, RefObject, useContext, useRef} from 'react';
-import {Criterion, Successcriterion} from '../data/wcag.interface';
-import {extractGuidelines, extractSuccessCriteria} from '../utils';
-import ButtonIcon from './button-icon';
-import {HomeIcon, OverflowIcon, PlusIcon} from './icons';
+import {Fragment, HTMLAttributes, MouseEvent, ReactNode, useRef, useState} from 'react';
+import {Criterion, Successcriterion} from '../../data/wcag.interface';
+import {extractGuidelines} from '../../utils';
+import ButtonIcon from '../button-icon';
+import {OverflowIcon, PlusIcon} from '../icons';
 import './guidelines.scss';
-import {useDataQueryContext, useGuidelinesContext} from '../hooks';
+import ActionSheet from '../action-sheet';
+import Actions from './actions';
 
 interface GuidelinesProps extends HTMLAttributes<HTMLUListElement> {
   data: Criterion;
@@ -13,30 +14,28 @@ interface GuidelinesProps extends HTMLAttributes<HTMLUListElement> {
 
 function Guidelines({data, handleClick}: GuidelinesProps): JSX.Element {
   const guidelinesData = extractGuidelines(data.guidelines);
-  const {dataQuery, setDataQuery} = useDataQueryContext();
-  const {guidelines, setGuidelines} = useGuidelinesContext();
+  const [actions, setActions] = useState<ReactNode>(null);
+  const actionSheetRef = useRef<{closeActionSheet: () => void; openActionSheet: () => void}>(null);
 
-  // const handleResultClick = (item: Successcriterion) => {
-  //   setDataQuery(item);
-  //   setGuidelines(null);
-  // };
-
-  const handleCreate = (e: MouseEvent) => {
+  const handleCreate = (e: MouseEvent, item: Successcriterion) => {
     e.stopPropagation();
-    console.log('clicked here');
+    parent.postMessage({pluginMessage: item}, '*');
   };
 
-  const handleMoreActions = (e: MouseEvent) => {
-    e.stopPropagation();
-    console.log('clicked here');
+  const handleActionClick = (item: Successcriterion) => {
+    handleClick(item);
+    actionSheetRef.current?.closeActionSheet();
   };
 
-  const handleNav = () => {
-    setGuidelines(null);
+  const showMoreActions = (e: MouseEvent, item: Successcriterion) => {
+    e.stopPropagation();
+    if (!actionSheetRef) return;
+    setActions(<Actions data={item} handleClick={handleActionClick} />);
+    actionSheetRef.current?.openActionSheet();
   };
 
   const renderGuidelines = guidelinesData.map((item: Successcriterion, index: number) => {
-    const {title, description, ref_id} = item;
+    const {title, description, ref_id, tags} = item;
 
     return (
       <li key={index} className="guideline">
@@ -49,7 +48,7 @@ function Guidelines({data, handleClick}: GuidelinesProps): JSX.Element {
           </div>
           <div className="success-criteria__footer">
             <ul className="sc-tags">
-              {item.tags?.map((item, index) => {
+              {tags?.slice(1).map((item, index) => {
                 return (
                   <li key={index} className="sc-tag">
                     {item}
@@ -58,10 +57,10 @@ function Guidelines({data, handleClick}: GuidelinesProps): JSX.Element {
               })}
             </ul>
             <div className="success-criteria__actions">
-              <ButtonIcon label="Create" onClick={handleCreate}>
+              <ButtonIcon label="Create" onClick={(e) => handleCreate(e, item)}>
                 <PlusIcon />
               </ButtonIcon>
-              <ButtonIcon label="More actions" onClick={handleMoreActions}>
+              <ButtonIcon label="More actions" onClick={(e) => showMoreActions(e, item)}>
                 <OverflowIcon />
               </ButtonIcon>
             </div>
@@ -74,6 +73,9 @@ function Guidelines({data, handleClick}: GuidelinesProps): JSX.Element {
   return (
     <Fragment>
       <ul className="guidelines">{renderGuidelines}</ul>
+      <ActionSheet title="More actions" ref={actionSheetRef}>
+        {actions}
+      </ActionSheet>
     </Fragment>
   );
 }
