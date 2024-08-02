@@ -251,14 +251,14 @@ export function createRefComponent(name: string, data: Successcriterion): Compon
     renderContentFrames(
       bodyFrame,
       brief.map((sc) => ({title: sc.title, description: sc.description!})),
-      '#BE6700'
+      '#7B5F00'
     );
   }
   bodyFrame.appendChild(referenceFrame);
   wrapperFrame.appendChild(bodyFrame);
 
   if (special_cases && special_cases.length > 0) {
-    const footerFrame = createCalloutFrame({
+    const calloutFrame = createCalloutFrame({
       name,
       icon: infoIcon,
       color: '#BE6700',
@@ -266,11 +266,11 @@ export function createRefComponent(name: string, data: Successcriterion): Compon
       titleText: 'Exceptions',
     });
     renderContentFrames(
-      footerFrame,
+      calloutFrame,
       special_cases.map((sc) => ({title: sc.title, description: sc.description!})),
-      '#BE6700'
+      '#7B5F00'
     );
-    bodyFrame.appendChild(footerFrame);
+    bodyFrame.appendChild(calloutFrame);
   }
 
   if (notes && notes.length > 0) {
@@ -284,7 +284,7 @@ export function createRefComponent(name: string, data: Successcriterion): Compon
     renderContentFrames(
       notesFrame,
       notes.map((note) => ({description: note.content})),
-      '#0065A8'
+      '#7B5F00'
     );
     bodyFrame.appendChild(notesFrame);
   }
