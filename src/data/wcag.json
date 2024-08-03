@@ -26,6 +26,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Non-text information is available to more people."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People who can’t fully see or hear content can understand it."
               },
@@ -101,8 +105,12 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Non-text information is available to more people."
+              },
+              {
                 "title": "Why it's important",
-                "description": "People who can’t fully see or hear content can understand it."
+                "description": "Audio and video-only content can be understood by more people."
               },
               {
                 "title": "What to do",
@@ -142,6 +150,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Videos can be played with captions."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People who are deaf or hard of hearing can understand audio in videos."
               },
@@ -171,6 +183,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#audio-description-or-media-alternative-prerecorded",
             "level": "A",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Prerecorded videos can be understood by more people."
+              },
               {
                 "title": "Why it's important",
                 "description": "People who are blind or who cannot understand the visual content can have it described."
@@ -202,6 +218,10 @@
             "level": "AA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Live videos have captions."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People who are deaf or hard of hearing can understand audio in real-time video content."
               },
@@ -231,6 +251,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#audio-description-prerecorded",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Videos can be played with audio descriptions."
+              },
               {
                 "title": "Why it's important",
                 "description": "People who cannot see or understand the visual content can hear about it while playing videos."
@@ -262,6 +286,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Videos can be accompanied by sign language."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People who are deaf or hard of hearing have more ways to understand multimedia content."
               },
@@ -291,6 +319,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#extended-audio-description-prerecorded",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Videos can be played with more detailed audio descriptions."
+              },
               {
                 "title": "Why it's important",
                 "description": "People who are blind or who cannot understand the visual content can have it described to them while playing videos."
@@ -322,6 +354,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Precorded videos can be understood by more people."
+              },
+              {
                 "title": "Why it's important",
                 "description": "More people, including those who are deaf-blind, can better understand the content at their own pace."
               },
@@ -351,6 +387,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#audio-only-live",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Live audio can be understood by more people."
+              },
               {
                 "title": "Why it's important",
                 "description": "People who cannot hear or understand real-time audio can read an equivalent."
@@ -396,6 +436,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Information about content structure is available to more people."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People can adapt the presentation to suit their needs while preserving the original meaning."
               },
@@ -426,6 +470,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "The order of content can be understood by more people."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Sound distracts some people, and also interferes with screen readers."
               },
@@ -455,6 +503,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#sensory-characteristics",
             "level": "A",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Instructions are understandable by more people."
+              },
               {
                 "title": "Why it's important",
                 "description": "People who are blind or have low vision need non-visual instructions."
@@ -490,6 +542,10 @@
             "level": "AA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Devices can be used in any orientation."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Wheelchair users and others may have devices mounted in a fixed orientation."
               },
@@ -523,6 +579,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#identify-input-purpose",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "It is easier to fill out forms."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people with cognitive disabilities may not understand the input's purpose from the label alone."
@@ -562,6 +622,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#identify-purpose",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "It is easier to operate and navigate content."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people with cognitive disabilities may not understand a control's purpose from the name alone."
@@ -607,6 +671,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Color is not the only way of distinguishing information."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Not everyone sees colors or sees them the same way."
               },
@@ -641,6 +709,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "A page that plays music or sounds doesn't disrupt people."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Sound distracts some people, and also interferes with screen readers."
               },
@@ -674,6 +746,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#contrast-minimum",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Text can be seen by more people."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people cannot read faint text."
@@ -721,6 +797,10 @@
             "level": "AA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Text can be enlarged."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Some people can only read text when it is bigger."
               },
@@ -750,6 +830,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#images-of-text",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users can adjust how text is presented."
+              },
               {
                 "title": "Why it's important",
                 "description": "People cannot alter how text looks in images."
@@ -796,6 +880,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Text can be seen by people who need strong contrast."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Some people cannot read text with minimum contrast."
               },
@@ -841,6 +929,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#low-or-no-background-audio",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Prerecorded speech is not disrupted by background sound."
+              },
               {
                 "title": "Why it's important",
                 "description": "People who are hard of hearing may have difficulty distinguishing speech from music and other sounds."
@@ -891,6 +983,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#visual-presentation",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Text appearance can be altered by users to meet preferences."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some text formats are more readable for people with cognitive disabilities and low vision."
@@ -943,6 +1039,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users can always adjust how text is presented."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People cannot alter how text looks in images."
               },
@@ -976,6 +1076,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#reflow",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Content can be enlarged without increasing line length."
+              },
               {
                 "title": "Why it's important",
                 "description": "People who need bigger text find it difficult if they must scroll to read long lines."
@@ -1027,6 +1131,10 @@
             "level": "AA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Important visual information meets the same minimum contrast required for larger text."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Some people cannot see elements with low contrast."
               },
@@ -1067,6 +1175,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#text-spacing",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users can adjust text spacing to make it easier to read."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people need text with different spacing or font characteristics."
@@ -1118,6 +1230,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#content-on-hover-or-focus",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "More users can perceive and dismiss non-persistent content."
+              },
               {
                 "title": "Why it's important",
                 "description": "Unpredictable temporary content can be hard for some to consume and may disrupt others."
@@ -1198,6 +1314,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Everything can be done with a keyboard except freehand movements."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Many people rely on the keyboard interface, including blind and some mobility impaired people."
               },
@@ -1235,6 +1355,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Keyboard users don't get stuck."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People who rely on the keyboard often have no other means to navigate."
               },
@@ -1269,6 +1393,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Everything can be done with a keyboard."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People who can only use the keyboard interface need to be able to accomplish everything."
               },
@@ -1298,6 +1426,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#character-key-shortcuts",
             "level": "A",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Reduce accidental activation of keyboard shortcuts."
+              },
               {
                 "title": "Why it's important",
                 "description": "Character-key shortcuts are easy to accidentally trigger, especially with speech input."
@@ -1358,6 +1490,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#timing-adjustable",
             "level": "A",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users have adequate time to complete tasks."
+              },
               {
                 "title": "Why it's important",
                 "description": "People with disabilities may need more time to complete activities."
@@ -1424,6 +1560,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Fewer users are distracted by content that updates or moves."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Some people with cognitive disabilities and attention deficits cannot concentrate with continual movement."
               },
@@ -1478,6 +1618,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users do not face time limits."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People with disabilities often need more time to complete actions."
               },
@@ -1507,6 +1651,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#interruptions",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users are not interrupted."
+              },
               {
                 "title": "Why it's important",
                 "description": "Updates distract and disrupt assistive technology users and people with attention deficits."
@@ -1538,6 +1686,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users do not lose information or context due to reauthentication."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Some people may require additional time to complete an activity."
               },
@@ -1567,6 +1719,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#timeouts",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users do not lose data due to unknown timeouts."
+              },
               {
                 "title": "Why it's important",
                 "description": "People with disabilities may need more time to complete actions."
@@ -1616,6 +1772,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Content does not trigger seizures."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Flashing content can cause migraines, dizziness, nausea, and seizures."
               },
@@ -1650,6 +1810,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Content does not trigger seizures."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Flashing content can cause migraines, dizziness, nausea, and seizures."
               },
@@ -1679,6 +1843,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#animation-from-interactions",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users are not harmed or distracted by motion."
+              },
               {
                 "title": "Why it's important",
                 "description": "People can get sick from motion effects."
@@ -1724,6 +1892,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users can more easily navigate by keyboard."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Users reliant on the keyboard interface can move around pages efficiently."
               },
@@ -1753,6 +1925,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#page-titled",
             "level": "A",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Each web page has a meaningful title."
+              },
               {
                 "title": "Why it's important",
                 "description": "Page titles help users identify and distinguish different pages."
@@ -1784,6 +1960,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Keyboard users navigate content in a correct order."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Navigating a site or application with only the keyboard will make sense."
               },
@@ -1813,6 +1993,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#link-purpose-in-context",
             "level": "A",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users understand what each link will do."
+              },
               {
                 "title": "Why it's important",
                 "description": "People with visual and cognitive disabilities can navigate more easily."
@@ -1844,6 +2028,10 @@
             "level": "AA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users can get to content in multiple ways."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Not everyone can navigate content in the same way."
               },
@@ -1873,6 +2061,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#headings-and-labels",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "A page's content is described in headings and labels."
+              },
               {
                 "title": "Why it's important",
                 "description": "People can orient themselves, especially those with cognitive or visual disabilities."
@@ -1904,6 +2096,10 @@
             "level": "AA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users know which element has keyboard focus."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Without a focus indicator, sighted keyboard users cannot operate the page."
               },
@@ -1933,6 +2129,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#location",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users know where they are in a set of pages."
+              },
               {
                 "title": "Why it's important",
                 "description": "Location indicators reduce confusion for people with cognitive disabilities."
@@ -1964,6 +2164,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users understand what each link will do."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Descriptive link text is more understandable for all users, especially when using assistive technology."
               },
@@ -1993,6 +2197,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#section-headings",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users understand how content is organized in sections."
+              },
               {
                 "title": "Why it's important",
                 "description": "People can orient themselves, especially those with cognitive or visual disabilities."
@@ -2031,6 +2239,10 @@
             "level": "AA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Keep the focused item visible."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People who can't use a mouse need to see what has keyboard focus."
               },
@@ -2068,6 +2280,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Don't cover any part of the item with focus."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People who can't use a mouse need to see what has keyboard focus."
               },
@@ -2097,6 +2313,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#focus-appearance",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Make it easier to spot the keyboard focus."
+              },
               {
                 "title": "Why it's important",
                 "description": "Many people can't see small changes in visual appearance, including older people."
@@ -2169,6 +2389,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Let users operate touchscreens with one finger and reduced gestures."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Not everyone can perform complex and multi-touch gestures."
               },
@@ -2202,6 +2426,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#pointer-cancellation",
             "level": "A",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Reduce accidental activation of controls by mouse or touch."
+              },
               {
                 "title": "Why it's important",
                 "description": "Make it easier for anyone to recover from something they didn’t mean to do."
@@ -2261,6 +2489,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "The visual label for controls is a trigger for speech activation."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People who operate with voice interaction use the visible labels in their commands."
               },
@@ -2294,6 +2526,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#motion-actuation",
             "level": "A",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Content is not dependent on a user's ability to move a device."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people cannot hold or move a device steadily."
@@ -2335,6 +2571,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#target-size",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Controls can be operated more easily, especially on touch screens."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people cannot tap small objects."
@@ -2394,6 +2634,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users can choose different ways of inputting content."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People may not be able to work using just one input method."
               },
@@ -2423,6 +2667,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#dragging-movements",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Don’t rely on dragging for user actions."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people cannot use a mouse to drag items."
@@ -2457,6 +2705,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#target-size-minimum",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Make controls easier to activate."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people with physical impairments cannot click small buttons that are close together."
@@ -2536,6 +2788,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Assistive technology can determine the language of a page."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People using assistive technology get information in the correct language."
               },
@@ -2565,6 +2821,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#language-of-parts",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Assistive technology can identify the languages used within a page."
+              },
               {
                 "title": "Why it's important",
                 "description": "People using assistive technology get information in the correct language."
@@ -2596,6 +2856,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users can identify and learn what unusual words mean."
+              },
+              {
                 "title": "Why it's important",
                 "description": "More people, especially those with cognitive disabilities, can understand the meaning of content."
               },
@@ -2625,6 +2889,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#abbreviations",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users can identify and learn what abbreviations mean."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people, including those with cognitive disabilities, may not understand the shortened form of words."
@@ -2656,6 +2924,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users can get a simplified version of complex information."
+              },
+              {
                 "title": "Why it's important",
                 "description": "More people, especially those with cognitive disabilities, can understand the meaning of content."
               },
@@ -2685,6 +2957,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#pronunciation",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users can identify the pronunciation of ambiguous words."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people, including those with cognitive disabilities, may not understand the meaning of content."
@@ -2730,6 +3006,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Content can be navigated more predictably."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Content that behaves predictably is especially important to people with disabilities."
               },
@@ -2759,6 +3039,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#on-input",
             "level": "A",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Content can be operated more predictably."
+              },
               {
                 "title": "Why it's important",
                 "description": "Content that behaves predictably is especially important to people with disabilities."
@@ -2790,6 +3074,10 @@
             "level": "AA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Content can be navigated more predictably."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Content that behaves predictably is especially important to people with disabilities."
               },
@@ -2819,6 +3107,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#consistent-identification",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Actions are more predictable across pages."
+              },
               {
                 "title": "Why it's important",
                 "description": "Consistently identified actions are especially important to people with disabilities."
@@ -2850,6 +3142,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users have full control of major content changes."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Content that behaves predictably is especially important to people with disabilities."
               },
@@ -2879,6 +3175,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#consistent-help",
             "level": "A",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Make it easier to find help and support."
+              },
               {
                 "title": "Why it's important",
                 "description": "People who need help can find it more easily if it's in the same place."
@@ -2948,6 +3248,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users know an error exists and what is wrong."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Flagging errors helps people with reduced sight and cognitive disabilities resolve them."
               },
@@ -2977,6 +3281,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#labels-or-instructions",
             "level": "A",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users know what information to enter."
+              },
               {
                 "title": "Why it's important",
                 "description": "Everyone, especially those with cognitive disabilities, will know how to respond."
@@ -3008,6 +3316,10 @@
             "level": "AA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users get suggestions on how to resolve errors."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People can address errors faster and with reduced effort."
               },
@@ -3037,6 +3349,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#error-prevention-legal-financial-data",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users can avoid submitting incorrect important information."
+              },
               {
                 "title": "Why it's important",
                 "description": "People with disabilities may be more likely to make mistakes, or not notice them."
@@ -3084,6 +3400,10 @@
             "level": "AAA",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Users can avoid making mistakes."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People with cognitive or other disabilities can complete their tasks more easily."
               },
@@ -3113,6 +3433,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#error-prevention-all",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Users can avoid submitting incorrect information."
+              },
               {
                 "title": "Why it's important",
                 "description": "People with disabilities may be more likely to make mistakes, or not notice them."
@@ -3159,6 +3483,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#redundant-entry",
             "level": "A",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Make it easier for users to complete multi-step processes."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people with cognitive disabilities have difficulty remembering what they entered before."
@@ -3210,6 +3538,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Make logins possible with less mental effort."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people with cognitive disabilities cannot solve puzzles, memorize a username and password, or retype one-time passcodes."
@@ -3268,6 +3600,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#accessible-authentication-enhanced",
             "level": "AAA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Make logins possible with less mental effort."
+              },
               {
                 "title": "Why it's important",
                 "description": "Some people with cognitive disabilities can't do puzzles, including identifying objects and non-text information they previously supplied."
@@ -3332,6 +3668,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "Assistive technology can properly present page content."
+              },
+              {
                 "title": "Why it's important",
                 "description": "People can browse web content more easily with their assistive technology."
               },
@@ -3366,6 +3706,10 @@
             "level": "A",
             "brief": [
               {
+                "title": "Goal",
+                "description": "People using assistive technology understand all components."
+              },
+              {
                 "title": "Why it's important",
                 "description": "Assistive technology only works well when code is done properly."
               },
@@ -3399,6 +3743,10 @@
             "url": "https://www.w3.org/TR/WCAG22/#status-messages",
             "level": "AA",
             "brief": [
+              {
+                "title": "Goal",
+                "description": "Make users aware of important changes in content."
+              },
               {
                 "title": "Why it's important",
                 "description": "People who do not see messages need to be informed about them."
