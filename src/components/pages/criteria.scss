@@ -85,7 +85,7 @@
   margin-top: var(--spacing-xl);
 }
 
-.brief {
+.summary {
   position: relative;
   width: 100%;
   border: 1px solid var(--color-border);
@@ -93,7 +93,7 @@
   background-color: var(--color-bg-muted);
 }
 
-.brief ~ .brief {
+.summary ~ .summary {
   margin-top: var(--spacing-sm);
 }
 
@@ -102,14 +102,14 @@
   margin-top: var(--spacing-xl);
 }
 
-.brief-title {
+.summary-title {
   font-weight: 500;
   padding: var(--spacing-sm);
   border-bottom: 1px solid var(--color-border);
   color: var(--color-text);
 }
 
-.brief-description {
+.summary-description {
   padding: var(--spacing-sm);
 }
 

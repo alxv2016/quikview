@@ -23,14 +23,14 @@ export interface Successcriterion {
   description: string;
   url: string;
   level: string;
-  brief?: Brief[];
+  summary?: Summary[];
   special_cases?: Specialcase[] | null;
   notes?: Note[] | null;
   references: Reference[];
   tags?: string[];
 }
 
-export interface Brief {
+export interface Summary {
   title: string;
   description: string;
 }

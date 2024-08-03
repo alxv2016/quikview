@@ -15,15 +15,15 @@ enum SpecialCases {
 }
 
 function Criteria({data}: CriteriaProps): JSX.Element {
-  const {ref_id, title, description, tags, url, level, brief, special_cases, notes, references} = data;
+  const {ref_id, title, description, tags, url, level, summary, special_cases, notes, references} = data;
   const {dataQuery, setDataQuery} = useDataQueryContext();
 
-  const renderBrief = brief?.map((item, index) => {
+  const rendersummary = summary?.map((item, index) => {
     const {title, description} = item;
     return (
-      <div key={index} className="brief">
-        <div className="brief-title">{title}</div>
-        <div className="brief-description">{description}</div>
+      <div key={index} className="summary">
+        <div className="summary-title">{title}</div>
+        <div className="summary-description">{description}</div>
       </div>
     );
   });
@@ -80,24 +80,40 @@ function Criteria({data}: CriteriaProps): JSX.Element {
           <div className="criteria-title">{title}</div>
           <div className="criteria-tags">{renderTags}</div>
         </div>
-        <div className="criteria-success">
+        {/* <div className="criteria-success">
           <div className="criteria-description">{description}</div>
-        </div>
-        {renderBrief}
-        <div className="brief">
-          <div className="brief-title">WCAG 2.2 Supporting documents</div>
-          <div className="brief-description">{renderRefs}</div>
+        </div> */}
+        {rendersummary}
+        <div className="summary">
+          <div className="summary-title">WCAG 2.2 Supporting documents</div>
+          <div className="summary-description">{renderRefs}</div>
         </div>
       </div>
+      {!special_cases && (
+        <div className="special-cases">
+          <div className="special-cases__header">
+            <InfoIcon /> Success criteria
+          </div>
+          <div className="special-cases__body">{description}</div>
+          {/* <div className="criteria-success">
+            <div className="criteria-description">{description}</div>
+          </div>  */}
+        </div>
+      )}
       {special_cases && (
         <div className="special-cases">
           <div className="special-cases__header">
             <InfoIcon />
-            {special_cases[0].type === SpecialCases.EXCEPTION && 'Exceptions'}
-            {special_cases[0].type === SpecialCases.ALLTRUE && 'No exceptions'}
+            {special_cases[0].type === SpecialCases.EXCEPTION && 'Criteria exceptions'}
+            {special_cases[0].type === SpecialCases.ALLTRUE && 'No criteria exceptions'}
             {special_cases[0].type === SpecialCases.ATLEASTONE && 'Provide at lease one of the following options'}
           </div>
-          <div className="special-cases__body">{renderSpecialCases}</div>
+          <div className="special-cases__body">
+            <div className="special-case">
+              <div className="special-case-description">{description}</div>
+            </div>
+            {renderSpecialCases}
+          </div>
         </div>
       )}
       {notes && (

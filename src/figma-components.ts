@@ -146,7 +146,7 @@ function renderContentFrames(
 }
 
 export function createRefComponent(name: string, data: Successcriterion): ComponentNode {
-  const {ref_id, title, tags, description, references, brief, special_cases, notes} = data;
+  const {ref_id, title, tags, description, references, summary, special_cases, notes} = data;
   const refComp = createComponentNode({name, flexDirection: 'VERTICAL'});
   refComp.resize(675, refComp.height);
 
@@ -247,10 +247,10 @@ export function createRefComponent(name: string, data: Successcriterion): Compon
   headerFrame.appendChild(tagsFrame);
   bodyFrame.appendChild(headerFrame);
   bodyFrame.appendChild(descriptionText);
-  if (brief && brief.length > 0) {
+  if (summary && summary.length > 0) {
     renderContentFrames(
       bodyFrame,
-      brief.map((sc) => ({title: sc.title, description: sc.description!})),
+      summary.map((sc) => ({title: sc.title, description: sc.description!})),
       '#7B5F00'
     );
   }
