@@ -2,38 +2,38 @@
   {
     "ref_id": "1",
     "title": "WCAG 2.2 Supporting Documents",
-    "description": "The WCAG 2.2 document is designed to meet the needs of those who need a stable, referenceable technical standard. Supporting documents include:",
+    "description": "The WCAG 2.2 document provides a stable, referenceable technical standard. Supporting documents include:",
     "url": "https://www.w3.org/TR/2023/REC-WCAG22-20231005/#wcag-2-2-supporting-documents",
     "version": "WCAG 2.2",
     "supporting_docs": [
       {
         "ref_id": "1.1",
         "title": "How to Meet WCAG 2.2",
-        "description": "A customizable quick reference to WCAG 2.2 that includes all of the guidelines, success criteria, and techniques for authors to use as they are developing and evaluating Web content.",
+        "description": "A customizable quick reference to WCAG 2.2 that includes all guidelines, success criteria, and techniques for authors developing and evaluating web content.",
         "url": "https://www.w3.org/WAI/WCAG22/quickref/"
       },
       {
         "ref_id": "1.2",
         "title": "Understanding WCAG 2.2",
-        "description": "A guide to understanding and implementing WCAG 2.2. There is a short Understanding document for each guideline and success criterion in WCAG 2.2 as well as key topics.",
+        "description": "A guide to understanding and implementing WCAG 2.2. This includes short Understanding documents for each guideline and success criterion in WCAG 2.2, as well as key topics.",
         "url": "https://www.w3.org/WAI/WCAG22/Understanding/"
       },
       {
         "ref_id": "1.3",
         "title": "Techniques for WCAG 2.2",
-        "description": "A collection of techniques and common failures, each in a separate document that includes a description, examples, code and tests.",
+        "description": "A collection of techniques and common failures, each in a separate document that includes descriptions, examples, code, and tests.",
         "url": "https://www.w3.org/WAI/WCAG22/Techniques/"
       },
       {
         "ref_id": "1.4",
         "title": "The WCAG 2 Documents",
-        "description": "A summary introduction to the WCAG 2 supporting documents and supplemental guidance.",
+        "description": "An introductory summary of WCAG 2 supporting documents and supplemental guidance.",
         "url": "https://www.w3.org/WAI/standards-guidelines/wcag/docs/"
       },
       {
         "ref_id": "1.5",
         "title": "What's New in WCAG 2.2",
-        "description": "Introduces the new success criteria with persona quotes that illustrate the accessibility issues.",
+        "description": "Introduces new success criteria with persona quotes that illustrate accessibility issues.",
         "url": "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/"
       },
       {

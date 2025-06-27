@@ -139,8 +139,8 @@ export default function Plugin(): JSX.Element {
         </div>
         <Principles data={wcagData} handleClick={handlePrincipleClick} />
         <div className="plugin-footer">
-          This data set is pulled from the <strong>WCAG 2.2 document</strong> and is designed to meet the needs of those
-          who need a creditable source of referenceable technical standards for accessibility guidelines.
+          This dataset is sourced from the <strong>WCAG 2.2 documentation</strong> and provides a credible,
+          referenceable source of technical standards for accessibility guidelines for Designers and Developers.
         </div>
       </div>
       <Page ref={guidelinesPage}>
